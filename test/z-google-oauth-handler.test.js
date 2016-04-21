@@ -91,7 +91,7 @@ describe('Mock /googleauth?code=oauth2codehere', function () {
       method: "GET",
       url: "/googleauth?code=myrandomtoken"
     };
-    // process.env.EMAILS_ALLOWED = JSON.parse(sample_profile).emails[0].value;
+    
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
