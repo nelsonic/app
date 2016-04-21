@@ -249,5 +249,7 @@
     {"index":{"_index":"gmcontact","_type":"categories","_id":1209449}},
     {"id":1209449,"name":"Testing"},
     {"index":{"_index":"gmcontact","_type":"categories","_id":1034733}},
-    {"id":1034733,"name":"UX & Design"}
+    {"id":1034733,"name":"UX & Design"},
+    { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "1" } },
+    { "email": "mario@bros.com"}
   ]
