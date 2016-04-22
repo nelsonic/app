@@ -253,11 +253,19 @@
     { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "1" } },
       { "email": "mario@bros.com",
         "idGoogle": "12",
-        "names": {"firstname": "Mario"}
+        "image": "https://image.com",
+        "names": {"firstname": "Mario", "fullname": "Mario Bros"},
+        "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
+        "role": "Director",
+        "linkedin": "https://linkedin.com/in/marriooo"
       },
     { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "12" } },
       { "email": "simonFake@bros.com",
         "idGoogle": "126767",
-        "names": {"firstname": "Simon"}
+        "image": "https://image.com",
+        "names": {"firstname": "Simon", "fullname": "Simon Fake"},
+        "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
+        "role": "Developer",
+        "linkedin": "https://linkedin.com/in/simFake"
       }
   ]
