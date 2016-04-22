@@ -254,7 +254,8 @@
       { "email": "mario@bros.com",
         "idGoogle": "12",
         "image": "https://image.com",
-        "names": {"firstname": "Mario", "fullname": "Mario Bros"},
+        "idWebsite": 44,
+        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Director",
         "linkedin": "https://linkedin.com/in/marriooo"
@@ -263,7 +264,8 @@
       { "email": "simonFake@bros.com",
         "idGoogle": "126767",
         "image": "https://image.com",
-        "names": {"firstname": "Simon", "fullname": "Simon Fake"},
+        "idWebsite": 45,
+        "names": {"firstname": "Simon", "fullname": "Simon Fake", "lastname": "Fake"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Developer",
         "linkedin": "https://linkedin.com/in/simFake"
