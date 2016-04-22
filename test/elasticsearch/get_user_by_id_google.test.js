@@ -11,8 +11,8 @@ var it = lab.test;
 describe('Get user object by passing the Google Id', function () {
 
   it('returns user object', function (done) {
-    getUserByIdGoogle("1", function(err,  user) {
-      expect(user.idGoogle).to.equal("1");
+    getUserByIdGoogle("12", function(err,  user) {
+      expect(user.idGoogle).to.equal("12");
       expect(user.email).to.equal("mario@bros.com");
       done();
     });
