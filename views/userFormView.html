@@ -1,0 +1,12 @@
+{{>navigation}}
+
+<form action="/users/save" method="post">
+  <input type="hidden" name="idGoogle" value="{{user.idGoogle}}">
+
+  <label>Fullname: </label>
+  <input type="text" name="fullname" value="{{user.names.fullname}}">
+  <label>Linkedin url: </label>
+  <input type="text" name="linkedin" value="{{user.linkedin}}">
+
+  <button type="submit">Save</button>
+</form>
