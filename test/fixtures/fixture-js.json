@@ -188,9 +188,9 @@
         "current": [],
         "past":[]}},
   { "index" : { "_index" : "gmcontact", "_type" : "clients-companies", "_id" : "0" } },
-  {"name":"FAC","jobs": ["1"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Founders And Coders"], "accountManager": 3, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
+  {"name":"FAC","jobs": ["1"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Founders And Coders"], "accountManager": 44, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
   { "index" : { "_index" : "gmcontact", "_type" : "clients-companies", "_id" : "1" } },
-  {"name":"DWYL","jobs": ["1", "5"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Do WYL"], "accountManager": 2, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": false},
+  {"name":"DWYL","jobs": ["1", "5"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Do WYL"], "accountManager": 44, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": false},
   { "index" : { "_index" : "gmcontact", "_type" : "users", "_id" : "12" } },
   { "role": "Developer",
     "phones": {
@@ -255,7 +255,7 @@
         "idGoogle": "12",
         "image": "https://image.com",
         "idWebsite": 44,
-        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros"},
+        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "Mario Bros"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Director",
         "linkedin": "https://linkedin.com/in/marriooo"
@@ -265,7 +265,7 @@
         "idGoogle": "126767",
         "image": "https://image.com",
         "idWebsite": 45,
-        "names": {"firstname": "Simon", "fullname": "Simon Fake", "lastname": "Fake"},
+        "names": {"firstname": "Simon", "fullname": "Simon Fake", "lastname": "Fake", "linkedinName": "Simon Fake"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Developer",
         "linkedin": "https://linkedin.com/in/simFake"
