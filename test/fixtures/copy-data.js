@@ -36,7 +36,7 @@ client.search({
       };
       newData.phones = {
         office: e._source.phones.office,
-        mobile: e._source.phonesmobile
+        mobile: e._source.phones.mobile
       };
       newData.role = e._source.role;
       newData.linkedin = e._source.linkedin;
@@ -50,7 +50,6 @@ client.search({
   })
 
   clientLocal.bulk({ body: bulk}, function (err, resp) {
-    console.log('resp',resp);
     if (response.hits.total !== count) {
     // now we can call scroll over and over
       client.scroll({
