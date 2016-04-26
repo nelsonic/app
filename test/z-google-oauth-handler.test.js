@@ -91,7 +91,7 @@ describe('Mock /googleauth?code=oauth2codehere', function () {
       method: "GET",
       url: "/googleauth?code=myrandomtoken"
     };
-    
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();

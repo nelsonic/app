@@ -2,6 +2,7 @@
 
 <form action="/users/save" method="post">
   <input type="hidden" name="id" value="{{user.id}}">
+  <input type="hidden" name="idGoogle" value="{{user.idGoogle}}">
   </br>
   <label>Fullname: </label>
   <input type="text" name="fullname" value="{{user.names.fullname}}">
@@ -24,6 +25,10 @@
   <p class="active-inactive">
    <label for="active user"></label>
    {{activeCheckbox user.active}}
+  </p>
+  <p class="active-inactive">
+   <label for="Admin user"></label>
+   {{adminCheckbox user.admin}}
   </p>
 
   <button type="submit">Save</button>
