@@ -105,3 +105,41 @@ describe('Mock /googleauth?code=oauth2codehere', function () {
     });
   });
 });
+
+describe('Mock /googleauth?code=oauth2codehere', function () {
+
+  it('Get a google token with a right code and the right permission with admin true', function (done) {
+
+    var token_fixture = fs.readFileSync(__dirname + '/fixtures/sample-auth-token.json');
+
+    nock('https://accounts.google.com')
+      .persist() // https://github.com/pgte/nock#persist
+      .post('/o/oauth2/token')
+      .reply(200, token_fixture);
+
+  // see: http://git.io/v4nTR for google plus api url
+  // https://www.googleapis.com/plus/v1/people/{userId}
+    var sample_profile = fs.readFileSync(__dirname + '/fixtures/profile-admin.json');
+
+    nock('https://www.googleapis.com')
+      .get('/plus/v1/people/me')
+      .reply(200, sample_profile);
+
+    var options = {
+      method: "GET",
+      url: "/googleauth?code=myrandomtoken"
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        //redirect to the home page: /
+        expect(res.statusCode).to.equal(302);
+        server.stop(done);
+      });
+    });
+  });
+});

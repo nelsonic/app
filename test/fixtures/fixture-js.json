@@ -271,5 +271,17 @@
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Developer",
         "linkedin": "https://linkedin.com/in/simFake"
+      },
+    { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "5" } },
+      { "email": "adminTest@bros.com",
+        "active": true,
+        "admin": true,
+        "idGoogle": "12",
+        "image": "https://image.com",
+        "idWebsite": "44",
+        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "Mario Bros"},
+        "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
+        "role": "Director",
+        "linkedin": "https://linkedin.com/in/marriooo"
       }
   ]
