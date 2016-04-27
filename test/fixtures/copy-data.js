@@ -23,25 +23,27 @@ client.search({
   response.hits.hits.forEach(function (e) {
     // console.log(e._source);
     if (e._source.names) {
-      var newData = {};
-      newData.email = e._source.email;
-      newData.idGoogle = e._id;
-      newData.image = '';
-      newData.idWebsite = e._id;
-      newData.names = {
-        firstname: e._source.names.firstname,
-        fullname: e._source.names.fullname,
-        lastname: e._source.names.lastname,
-        linkedinName: e._source.names.linkedinName
+      var newData = {
+        email: e._source.email,
+        idGoogle: e._id,
+        image: '',
+        idWebsite: e._id,
+        names: {
+          firstname: e._source.names.firstname,
+          fullname: e._source.names.fullname,
+          lastname: e._source.names.lastname,
+          linkedinName: e._source.names.linkedinName
+        },
+        phones: {
+          office: e._source.phones.office,
+          mobile: e._source.phones.mobile
+        },
+        role: e._source.role,
+        linkedin: e._source.linkedin,
+        active: true,
+        admin: true
       };
-      newData.phones = {
-        office: e._source.phones.office,
-        mobile: e._source.phones.mobile
-      };
-      newData.role = e._source.role;
-      newData.linkedin = e._source.linkedin;
-
-
+    
       bulk.push({index: {_index: 'gmcontact', _type: process.env.ES_TYPE_GM_USERS, _id: e._id}})
       bulk.push(newData);
     }
