@@ -1,35 +1,38 @@
 {{>navigation}}
+<div class="users-list-wrapper">
 
-<form action="/users/save" method="post">
-  <input type="hidden" name="id" value="{{user.id}}">
-  <input type="hidden" name="idGoogle" value="{{user.idGoogle}}">
-  </br>
-  <label>Fullname: </label>
-  <input type="text" name="fullname" value="{{user.names.fullname}}">
-  <label>Firstname: </label>
-  <input type="text" name="firstname" value="{{user.names.firstname}}">
-  <label>Lastname: </label>
-  <input type="text" name="lastname" value="{{user.names.lastname}}">
-  <label>Email:</label>
-  <input type="text" name="email" value="{{user.email}}">
-  <label>Linkedin url: </label>
-  <input type="text" name="linkedin" value="{{user.linkedin}}">
-  <label>Linkedin username (for extension use):</label>
-  <input type="text" name="linkedinName" value="{{user.names.linkedinName}}">
-  <label>Phone (office):</label>
-  <input type="text" name="office" value="{{user.phones.office}}">
-  <label>Phone (mobile):</label>
-  <input type="text" name="mobile" value="{{user.phones.mobile}}">
-  <label>Role:</label>
-  <input type="text" name="role" value="{{user.role}}">
-  <p class="active-inactive">
-   <label for="active user"></label>
-   {{activeCheckbox user.active}}
-  </p>
-  <p class="active-inactive">
-   <label for="Admin user"></label>
-   {{adminCheckbox user.admin}}
-  </p>
+  <form action="/users/save" method="post">
+    <input type="hidden" name="id" value="{{user.id}}">
+    <input type="hidden" name="idGoogle" value="{{user.idGoogle}}">
+    </br>
+    <label>Fullname: </label>
+    <input type="text" name="fullname" value="{{user.names.fullname}}">
+    <label>Firstname: </label>
+    <input type="text" name="firstname" value="{{user.names.firstname}}">
+    <label>Lastname: </label>
+    <input type="text" name="lastname" value="{{user.names.lastname}}">
+    <label>Email:</label>
+    <input type="text" name="email" value="{{user.email}}">
+    <label>Linkedin url: </label>
+    <input type="text" name="linkedin" value="{{user.linkedin}}">
+    <label>Linkedin username (for extension use):</label>
+    <input type="text" name="linkedinName" value="{{user.names.linkedinName}}">
+    <label>Phone (office):</label>
+    <input type="text" name="office" value="{{user.phones.office}}">
+    <label>Phone (mobile):</label>
+    <input type="text" name="mobile" value="{{user.phones.mobile}}">
+    <label>Role:</label>
+    <input type="text" name="role" value="{{user.role}}">
+    <p class="active-inactive">
+     <label for="active user"></label>
+     {{activeCheckbox user.active}}
+    </p>
+    <p class="active-inactive">
+     <label for="Admin user"></label>
+     {{adminCheckbox user.admin}}
+    </p>
 
-  <button type="submit">Save</button>
-</form>
+    <button type="submit">Save</button>
+  </form>
+
+</div>
