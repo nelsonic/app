@@ -13,7 +13,7 @@ describe('Get user object by passing the Google Id', function () {
   it('returns user object', function (done) {
     getUserByIdGoogle("12", function(err,  user) {
       expect(user.idGoogle).to.equal("12");
-      expect(user.email).to.equal("mario@bros.com");
+      expect(user.email).to.equal("simonFake@bros.com");
       done();
     });
   });
