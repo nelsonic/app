@@ -14,6 +14,7 @@ describe('Get the user with the matching name', function () {
     var name = 'Mario Bros';
     getUsersByName(name, function(err,  user) {
       expect(user.names.linkedinName).to.equal(name);
+      expect(user.role).to.equal("Developer Test")
       done();
     });
   });

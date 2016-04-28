@@ -191,16 +191,7 @@
   {"name":"FAC","jobs": ["1"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Founders And Coders"], "accountManager": 44, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
   { "index" : { "_index" : "gmcontact", "_type" : "clients-companies", "_id" : "1" } },
   {"name":"DWYL","jobs": ["1", "5"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Do WYL"], "accountManager": 44, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": false},
-  { "index" : { "_index" : "gmcontact", "_type" : "users", "_id" : "12" } },
-  { "role": "Developer",
-    "phones": {
-      "office": "1234",
-      "mobile": "54657"
-    },
-    "names": {"fullname": "Simon", "linkedinName": "Mario Bros"},
-    "linkedin": "in/liUrl"
-  },
-   { "index" : { "_index" : "gmcontact", "_type" : "analytics", "_id" : "13" } },
+  { "index" : { "_index" : "gmcontact", "_type" : "analytics", "_id" : "13" } },
     {"idUser":"45",
       "userName": "Anita",
       "queryUrl": "/location=London",
@@ -256,7 +247,7 @@
         "idGoogle": "12",
         "image": "https://image.com",
         "idWebsite": "44",
-        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "Mario Bros"},
+        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "the Linkedin name"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Director",
         "linkedin": "https://linkedin.com/in/marriooo"
@@ -267,10 +258,11 @@
         "idGoogle": "126767",
         "image": "https://image.com",
         "idWebsite": "45",
-        "names": {"firstname": "Simon", "fullname": "Simon Fake", "lastname": "Fake", "linkedinName": "Simon Fake"},
+        "names": {"firstname": "Simon", "fullname": "Simon Fake", "lastname": "Fake", "linkedinName": "Mario Bros"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
-        "role": "Developer",
-        "linkedin": "https://linkedin.com/in/simFake"
+        "role": "Developer Test",
+        "linkedin": "https://linkedin.com/in/simFake",
+        "admin": true
       },
     { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "5" } },
       { "email": "adminTest@bros.com",
@@ -279,7 +271,7 @@
         "idGoogle": "12",
         "image": "https://image.com",
         "idWebsite": "44",
-        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "Mario Bros"},
+        "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "nameLI"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Director",
         "linkedin": "https://linkedin.com/in/marriooo"

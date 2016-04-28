@@ -49,3 +49,27 @@ describe('Attempt to get /users/edit/1 with authorization', function () {
     });
   });
 });
+
+describe('Attempt to get /users/edit/12 with authorization, this user as Admin=true', function () {
+
+  it('return form for edit user ', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      var options = {
+        method: "GET",
+        url: "/users/edit/12",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true, scope: 'admin'}
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+    });
+  });
+});
