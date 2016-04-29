@@ -127,8 +127,8 @@ describe('update a user with existing id: /users/save with authorization', funct
       headers: { cookie: "token=" + token },
       credentials: { id: '12', "name": "Simon", valid: true, scope: 'admin'},
       payload: {
-        id:'1',
-        idGoogle: '12',
+        id:'5',
+        idGoogle: '123',
         names: {
           fullname: 'Bob Fake',
           firstname: 'Bob',
