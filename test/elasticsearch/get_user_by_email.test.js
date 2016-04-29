@@ -12,8 +12,6 @@ describe('Search by passing email to the gm_users table', function () {
 
   it('returns user object', function (done) {
     getUserByEmail("mario@bros.com", function(err,  exist) {
-      console.log(err);
-      console.log(exist);
       expect(exist.email).to.equal("mario@bros.com");
       expect(exist.names.fullname).to.equal("Mario Bros");
       done();
