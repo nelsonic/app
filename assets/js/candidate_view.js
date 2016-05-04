@@ -67,4 +67,42 @@
       document.querySelector('.dropdown-save').style.display = 'inline-block';
     })
 
+
+
+    // var clients = document.querySelectorAll('#clients');
+    //
+    // for (var i = 0; i < clients.length; i++) {
+    //   clients[i].addEventListener('change', function (e) {
+    //     console.log(e.target.value);
+    //
+    //     var jobs = document.querySelectorAll('#jobs');
+    //
+    //     for (var i = 0; i < jobs.length; i++) {
+    //       console.log(jobs[i].options);
+    //     }
+    //
+    //   })
+    // }
+
+    document.getElementById("clients").addEventListener("change", function(e) {
+
+    		console.log("Selected element", e.target.value);
+        var selected = e.target.value;
+
+
+        var jobs = document.getElementsByClassName(selected);
+
+          Array.prototype.forEach.call(jobs, function(el){
+            console.log(el.textContent);
+            // el.disabled = true;
+            var selectJ = document.getElementById('jobs');
+            var newOption = document.createElement("option");
+            newOption.text = el.textContent;
+            newOption.value = 'some value';
+            document.querySelector('#jobs').appendChild(newOption);
+          });
+
+    }, false);
+
+
 })();

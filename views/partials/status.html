@@ -3,22 +3,21 @@
 </div>
 <form>
   <div class="dropdown-clients">
-    <select class="dropbtn">
+    <select class="dropbtn" id="clients">
       {{#each clients}}
       <option value="{{id}}">{{name}}</option>
       {{/each}}
     </select>
   </div>
   <div class="dropdown-jobs">
-    <select class="dropbtn">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
+    <select class="dropbtn" id="jobs">
+      {{#each jobs}}
+      <option class="{{client}}" value="{{id}}">{{title}}</option>
+      {{/each}}
     </select>
   </div>
   <div class="dropdown-stages">
-    <select class="dropbtn">
+    <select class="dropbtn" id="stages">
       <option value="stage1">stage1</option>
       <option value="stage2">stage2</option>
       <option value="stage3">stage3</option>
