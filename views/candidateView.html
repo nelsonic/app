@@ -45,6 +45,12 @@
         {{emailIndicatorHelper candidate.lastEmail true}}
       {{/if}}
 
+      {{#if candidate.statusHistory}}
+          {{#each candidate.statusHistory}}
+            <h4 class="status-candidate">{{statusInfoHelper this ../clients ../jobs}} <span>{{idStage}}</span></h4>
+          {{/each}}
+      {{/if}}
+
       {{>status}}
 
         {{#if candidate.cvDocumentLink}}
