@@ -187,9 +187,13 @@ header {
   -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
 }
 
-.headline {
+.candidate-box .headline {
   position: relative;
   overflow: hidden;
+}
+
+.headline {
+  position: relative;
 }
 
 .headline img {

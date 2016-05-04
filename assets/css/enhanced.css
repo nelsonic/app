@@ -56,7 +56,7 @@
 .headline .initials {
   margin: 8px 8px 0 0;
   font-size: 0.9em;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
 .headline p.mobile {
@@ -152,7 +152,7 @@ select{
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
-  outline: none; 
+  outline: none;
 }
 input[type=text]:focus,
 textarea:focus,
@@ -257,6 +257,39 @@ span.close > i.fa-times {
 /*==============================
  End 404 page
 ================================*/
+
+/*==============================
+ Status dropdowns
+================================*/
+#add-status {
+  display: block;
+  margin-top: 30px;
+}
+
+.dropbtn, #add-status {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    min-width: 160px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-clients, .dropdown-jobs, .dropdown-stages, .dropdown-save {
+    position: relative;
+    display: none;
+    margin-top: 30px;
+}
+
+.dropdown-clients > select, .dropdown-jobs > select, .dropdown-stages > select {
+  outline:0;
+  border: none;
+}
+
+/*==============================
+ End Status dropdowns
+================================*/
 @media (min-width: 1440px) {
 
   .search-form input {
@@ -312,7 +345,7 @@ span.close > i.fa-times {
   .candidate_view img {
     width: 80px;
   }
-  
+
 /* .notes textarea {
     width: 150px;
   }*/

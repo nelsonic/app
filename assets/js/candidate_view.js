@@ -43,13 +43,13 @@
     var close = document.querySelectorAll('.close');
 
     for (var i = 0; i < displayEmail.length; i++) {
-     displayEmail[i].addEventListener('click', function (e) {    
+     displayEmail[i].addEventListener('click', function (e) {
       e.preventDefault();
       this.nextElementSibling.nextElementSibling.style.display = 'block';
       this.nextElementSibling.style.display = 'block';
       }, false);
     }
-    
+
     for (var i = 0; i < close.length; i++) {
       close[i].addEventListener('click', function (e) {
         e.preventDefault();
@@ -57,5 +57,14 @@
         this.style.display = 'none';
       }, false);
     }
-    
+
+    var addStatus = document.getElementById('add-status');
+    addStatus.addEventListener('click', function (e) {
+      this.style.display = 'none';
+      document.querySelector('.dropdown-clients').style.display = 'inline-block';
+      document.querySelector('.dropdown-jobs').style.display = 'inline-block';
+      document.querySelector('.dropdown-stages').style.display = 'inline-block';
+      document.querySelector('.dropdown-save').style.display = 'inline-block';
+    })
+
 })();

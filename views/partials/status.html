@@ -1,0 +1,32 @@
+<div>
+  <button id="add-status">Add status</button>
+</div>
+<form>
+  <div class="dropdown-clients">
+    <select class="dropbtn">
+      {{#each clients}}
+      <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="dropdown-jobs">
+    <select class="dropbtn">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+  </div>
+  <div class="dropdown-stages">
+    <select class="dropbtn">
+      <option value="stage1">stage1</option>
+      <option value="stage2">stage2</option>
+      <option value="stage3">stage3</option>
+      <option value="stage4">stage4</option>
+    </select>
+  </div>
+
+  <div class="dropdown-save">
+    <button class="dropbtn">Save</button>
+  </div>
+</form>
