@@ -1,2 +1,5 @@
-    changes:
-      enabled: no
+comment:
+  layout: header, diff
+coverage:
+  status:
+    patch: false
