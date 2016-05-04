@@ -200,3 +200,46 @@ describe('update a user with existing id: /users/save with authorization with ad
     });
   });
 });
+
+describe('update a user with existing id: /users/save with authorization but not in redis', function () {
+
+  it('redirect to users/list after updating user with admin on', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "POST",
+      url: "/users/save",
+      headers: { cookie: "token=" + token },
+      credentials: { id: '12', "name": "Simon", valid: true, scope: 'admin'},
+      payload: {
+        id:'1',
+        idGoogle: '1234567885435789',
+        names: {
+          fullname: 'Bob Fake',
+          firstname: 'Bob',
+          lastname: 'Fake',
+          linkedinName: 'Bon Fake'
+        },
+        linkedin: 'https://linkedin.com/bob',
+        phones: {
+          office: '0203 555 555',
+          mobile: '022 888 888'
+        },
+        email: 'bob@something.com',
+        role: 'Director',
+        active: 'off',
+        admin: 'on'
+      }
+    };
+
+    Server.init(0, function (err, server) {
+
+      server.inject(options , function (res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(302);
+        server.stop(done);
+      });
+    });
+  });
+});

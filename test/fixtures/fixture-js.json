@@ -32,7 +32,7 @@
      "headline": "JS dev",
      "location": "London, United Kingdom",
      "favourite": [12],
-     "jobApplications": [{"jobID": "1", "timestamp": 1458213700542, "comments": "some comment", "skillset": "Css"}],
+     "jobApplications": [{"jobID": "1", "timestamp": 1458213700542, "comments": "some comment", "skillset": "Css"}, {"jobID": "wrongIdJob", "timestamp": 1458213700542, "comments": "some comment", "skillset": "Html"}],
      "current": "The best company ever",
      "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
      "contacts": {
@@ -187,10 +187,10 @@
     "experience":{
         "current": [],
         "past":[]}},
-  { "index" : { "_index" : "gmcontact", "_type" : "clients-companies", "_id" : "0" } },
-  {"name":"FAC","jobs": ["1"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Founders And Coders"], "accountManager": 44, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
-  { "index" : { "_index" : "gmcontact", "_type" : "clients-companies", "_id" : "1" } },
-  {"name":"DWYL","jobs": ["1", "5"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Do WYL"], "accountManager": 44, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": false},
+  { "index" : { "_index" : "gmcontact", "_type" : "gmclients", "_id" : "0" } },
+  {"name":"FAC","jobs": ["1"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Founders And Coders"], "accountManager": "5", "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
+  { "index" : { "_index" : "gmcontact", "_type" : "gmclients", "_id" : "1" } },
+  {"name":"DWYL","jobs": ["1", "5"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Do WYL"], "accountManager": "5", "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": false},
   { "index" : { "_index" : "gmcontact", "_type" : "analytics", "_id" : "13" } },
     {"idUser":"45",
       "userName": "Anita",
@@ -205,16 +205,12 @@
       },
       "nbResults": 23
     },
-    {"index":{"_index":"gmcontact","_type":"jobs","_id":"1"}},
+    {"index":{"_index":"gmcontact","_type":"gmjobs","_id":"1"}},
     {"id":"1", "client": "1", "title":"Node.js Developer", "active": true,"description":"<h1>Greate opportunity!</h1><p>This job is very cool!</p>","startDate":1456840872712,"dateAdded":1456840872712,"dateEnd":1456840872712,"skillList":"node.js, html5, react","address":{"city":"London","countryID":"2188"},"categories":{"total":1,"data":[{"id":"1210106"}]},"businessSectors": {"total":1,"data":[{"id":"1029442"}]},"customText1":"Senior","customText2":"UK & Ireland","customText3":"Great Job","customText5":"Very cool job","customText6":"http://global-m.co.uk/wp-content/uploads/2016/01/Fireworks-Atlantis-Hotel-Dubai.jpg","customText7":"Node.js!!","customText8":"http://global-m.co.uk/wp-content/uploads/2016/01/tech-team-opportunities.jpg","customText11":"http://global-m.co.uk/wp-content/uploads/2016/01/IT-jobs-Middle-East.jpg","customTextBlock1":"Fancy a new job with Node.js","customTextBlock2":"London is great","salary":"50000","payRate":"0","customText12":"GBP","owner":{"id":"2","firstName":"Nick","lastName":"Waller"},"source":"","employmentType":"Permanent"},
-    {"index":{"_index":"gmcontact","_type":"jobs","_id":"2"}},
+    {"index":{"_index":"gmcontact","_type":"gmjobs","_id":"2"}},
     {"id":"2","title":"Test job","active": false, "description":"<h1>Greate opportunity!</h1><p>This job is very cool too!</p>","startDate":1456840872712,"dateAdded":1456840872712,"dateEnd":null,"skillList":"node.js, html, react","address":{"city":"London","countryID":"2188"},"categories":{"total":0,"data":[]},"businessSectors": {"total":0,"data":[]},"customText1":"Senior","customText2":"Europe","customText3":"Great Job","customText5":"Very cool job","customText6":"http://global-m.co.uk/wp-content/uploads/2016/01/Fireworks-Atlantis-Hotel-Dubai.jpg","customText7":"Node.js!!","customText8":"http://global-m.co.uk/wp-content/uploads/2016/01/tech-team-opportunities.jpg","customText11":"http://global-m.co.uk/wp-content/uploads/2016/01/IT-jobs-Middle-East.jpg","customTextBlock1":"Fancy a new job with Node.js","customTextBlock2":"London is great","salary":"50000","payRate":"0","customText12":"GBP","owner":{"id":"2","firstName":"Nick","lastName":"Waller"},"source":"","employmentType":"Permanent"},
     {"index":{"_index":"gmcontact","_type":"countries","_id":2188}},
     {"value":2188,"label":"Andorra"},
-    {"index":{"_index":"gmcontact","_type":"owners","_id":2}},
-    {"firstName": "Mario", "lastName": "Bros","id": 2, "name":"Mario Bros","email":"mario@bros.co.uk"},
-    {"index":{"_index":"gmcontact","_type":"owners","_id":3}},
-    {"firstName": "Daniel", "lastName": "Oba","id": 3, "name":"Daniel Oba","email":"mario@bros.co.uk"},
     {"index":{"_index":"gmcontact","_type":"sectors","_id":1040725}},
     {"id":1040725,"dateAdded":1401699272337,"name":"FinTech"},
     {"index":{"_index":"gmcontact","_type":"sectors","_id":1029442}},
@@ -250,7 +246,8 @@
         "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "the Linkedin name"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Director",
-        "linkedin": "https://linkedin.com/in/marriooo"
+        "linkedin": "https://linkedin.com/in/marriooo",
+        "dev": false
       },
     { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "12" } },
       { "email": "simonFake@bros.com",
@@ -262,7 +259,8 @@
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Developer Test",
         "linkedin": "https://linkedin.com/in/simFake",
-        "admin": true
+        "admin": true,
+        "dev": false
       },
     { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "5" } },
       { "email": "adminTest@bros.com",
@@ -274,6 +272,7 @@
         "names": {"firstname": "Mario", "fullname": "Mario Bros", "lastname": "Bros", "linkedinName": "nameLI"},
         "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
         "role": "Director",
-        "linkedin": "https://linkedin.com/in/marriooo"
+        "linkedin": "https://linkedin.com/in/marriooo",
+        "dev": false
       }
   ]

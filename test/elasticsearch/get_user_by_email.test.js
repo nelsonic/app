@@ -11,9 +11,9 @@ var it = lab.test;
 describe('Search by passing email to the gm_users table', function () {
 
   it('returns user object', function (done) {
-    getUserByEmail("mario@bros.com", function(err,  exist) {
-      expect(exist.email).to.equal("mario@bros.com");
-      expect(exist.names.fullname).to.equal("Mario Bros");
+    getUserByEmail("simonFake@bros.com", function(err,  exist) {
+      expect(exist.email).to.equal("simonFake@bros.com");
+      expect(exist.names.fullname).to.equal("Simon Fake");
       done();
     });
   });

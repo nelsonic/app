@@ -6,7 +6,7 @@
   <form action="/clients/save" method="POST">
       <div class="client-info-create">
         <input type="hidden" name="id" value="{{client.id}}">
-        <input type="hidden" name="createdAt" value="{{client.startFrom}}">
+        <input type="hidden" name="createdAt" value="{{client.createdAt}}">
         <label>Client name: </label>
         <input type="text" name="name" value="{{client.name}}">
 
