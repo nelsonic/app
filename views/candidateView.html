@@ -20,6 +20,7 @@
       {{/if}}
 
       <img src="{{candidate.picture}}" alt="" />
+      <br/>
       <h1 class="fullname"><strong class="check-highlight">{{candidate.fullname}}</strong></h1>
       <h2 class="headline"><strong class="check-highlight">{{candidate.headline}}</strong></h2>
       <p class="check-highlight">{{candidate.location}}</p>
@@ -45,10 +46,18 @@
         {{emailIndicatorHelper candidate.lastEmail true}}
       {{/if}}
 
-      {{#if candidate.statusHistory}}
-          {{#each candidate.statusHistory}}
-            <h4 class="status-candidate">{{statusInfoHelper this ../clients ../jobs}} <span>{{idStage}}</span></h4>
+      {{#if candidate.statusCurrent}}
+          {{#each candidate.statusCurrent}}
+          <!-- <div class="status-wrapper"> -->
+            <h4 class="status-candidate">{{statusInfoHelper this ../clients ../jobs}} <span>{{idStage}}</span><span> {{idUser}}</span></h4>
+              <form action="/status/delete" method="POST">
+                <input type="hidden" name="idCandidate" value="{{idCandidate}}">
+                <input type="hidden" name="timestamp" value="{{timestamp}}">
+                <button type="submit">Delete</button>
+              </form>
+          <!-- </div> -->
           {{/each}}
+
       {{/if}}
 
       {{>status}}

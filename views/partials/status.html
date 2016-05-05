@@ -12,11 +12,13 @@
     </select>
   </div>
   <div class="dropdown-jobs">
+    <div id="jobs-input">
+      {{#each jobs}}
+      <input type="hidden" class="{{client}}" value="{{title}}">
+      {{/each}}
+    </div>
     <select name="idJob" class="dropbtn" id="jobs">
       <option selected disabled>Jobs</option>
-      {{#each jobs}}
-      <option class="{{client}}" value="{{id}}">{{title}}</option>
-      {{/each}}
     </select>
   </div>
   <div class="dropdown-stages">

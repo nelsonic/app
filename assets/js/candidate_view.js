@@ -67,27 +67,31 @@
       document.querySelector('.dropdown-save').style.display = 'inline-block';
     })
 
+    function removeOptions(selectbox){
+      var i;
+      for(i = selectbox.options.length-1; i>= 0; i--){
+          selectbox.remove(i);
+      }
+    }
+
     document.getElementById("clients").addEventListener("change", function(e) {
 
         var selected = e.target.value;
-
         var jobs = document.getElementsByClassName(selected);
+        var jobsDropdown = document.getElementById("jobs");
 
-        var jobsArray = document.getElementById('jobs').options;
+        //delete options of jobsDropdown
+          removeOptions(jobsDropdown);
 
-          Array.prototype.map.call(jobsArray, function (el) {
-
-            if (el.className === selected) {
-                el.disabled = false;
-            }
-
-            if (el.className !== selected) {
-              el.disabled = true;
-            }
-
-          });
+          for (var i = 0; i < jobs.length; i++) {
+              var option = document.createElement('option');
+              option.setAttribute('value', jobs[i].className);
+              var text = document.createTextNode(jobs[i].value);
+              option.appendChild(text);
+              console.log(option);
+              jobsDropdown.appendChild(option);
+          }
 
     }, false);
-
 
 })();

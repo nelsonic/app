@@ -288,9 +288,22 @@ span.close > i.fa-times {
 }
 
 .status-candidate {
-  margin-top: 20px;
-  position: relative;
+  /*margin-top: 20px;*/
+  /*position: relative;*/
 }
+
+.status-wrapper {
+  margin-top: 10px;
+  max-width: 300px;
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.status-wrapper > form {
+  float: right;
+  margin-top: -20px;
+}
+
+
 /*==============================
  End Status dropdowns
 ================================*/

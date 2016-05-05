@@ -1,11 +1,11 @@
 var Handlebars = require('handlebars');
-module.exports = function (statusHistory, clients, jobs) {
+module.exports = function (statusCurrent, clients, jobs) {
 
   var result = "";
 
   clients.forEach(function (obj) {
 
-    if (statusHistory.idClient === obj.id) {
+    if (statusCurrent.idClient === obj.id) {
 
       result += "<span>" + obj.name + " </span>";
 
@@ -13,10 +13,10 @@ module.exports = function (statusHistory, clients, jobs) {
 
   });
 
-  
+
   jobs.forEach(function (obj) {
 
-    if (statusHistory.idClient === obj.client) {
+    if (statusCurrent.idClient === obj.client) {
 
       result += "<span>" + obj.title + " </span>";
 
