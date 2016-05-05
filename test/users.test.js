@@ -38,7 +38,7 @@ describe('Access /users/list with authorization', function () {
         method: "GET",
         url: "/users/list",
         headers: { cookie: "token=" + token },
-        credentials: { id: "12", "name": "Simon", valid: true}
+        credentials: { id: "12", "name": "Simon", valid: true, scope: "admin"}
       };
 
       server.inject(options, function (res) {
