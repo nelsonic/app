@@ -73,7 +73,7 @@ describe('Return the first candidate: /candidate/1', function () {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
           var jobApplications = $('.job-application');
-          expect(jobApplications.length).to.equal(1);
+          expect(jobApplications.length).to.equal(2);
           server.stop(done);
         });
       });

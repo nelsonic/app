@@ -1,0 +1,29 @@
+{{>navigation}}
+
+<div class="clients-job-wrapper">
+  <a class="create-icon" href="/users/create"><i class="fa fa-plus"> New User</i></a>
+
+  <div class="tabs">
+    <ul>
+      <li id="tabHeader_1">Active Users</li>
+      <li id="tabHeader_2">Inactive Users</li>
+    </ul>
+  </div>
+  <div class="tabsContent">
+
+    <div class="tabPage" id="tabpage_1">
+      {{#each activeUsers}}
+        {{>user}}
+      {{/each}}
+    </div>
+
+    <div class="tabPage" id="tabpage_2">
+      {{#each inactiveUsers}}
+        {{>user}}
+      {{/each}}
+    </div>
+  </div>
+
+</div>
+
+<script src="/assets/js/activity-tabs.js"></script>
