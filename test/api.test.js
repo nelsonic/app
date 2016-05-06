@@ -53,8 +53,6 @@ describe('api /profile', function () {
     });
   });
 
-
-
   it('updates profile david', function (done) {
 
     Server.init(0, function (err, server) {
