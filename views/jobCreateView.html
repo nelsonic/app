@@ -38,9 +38,9 @@
 
            <p>
             <label>Owner:</label>
-            <select name="owner" required>
-            {{#each owners}}
-              {{optionsOwners this ../job.owner.id}}
+            <select name="user" required>
+            {{#each users}}
+              {{optionsUsers this ../job.owner.id}}
             {{/each}}
             </select>
           </p>

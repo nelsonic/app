@@ -271,7 +271,7 @@ describe('create a client: /clients/save with authorization', function () {
         name: 'FAC',
         logoUrl: '/assets/img/square-global-m-logo.png',
         possibleNames: 'Founders And Coders, Founders & Coders',
-        accountManager: 2,
+        accountManager: 44,
         terms: 18,
         contactName: 'Bob',
         contactEmail: 'bob@gmail.com',

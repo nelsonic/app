@@ -1,3 +1,4 @@
+'use strict';
 require('env2')('.env');
 
 var client = require('./elastic.js')(process.env.SEARCHBOX_URL_FIXTURES);
@@ -8,7 +9,7 @@ var count = 0;
 client.search({
 
   index: process.env.ES_INDEX_FIXTURES,
-  type: process.env.ES_TYPE_USERS,
+  type: process.env.ES_TYPE_GM_USERS,
   scroll: '30s',
   size: 1000,
   search_type: 'scan'
@@ -18,18 +19,16 @@ client.search({
   if(error) {
     console.log('error', error);
   }
-
   var bulk = [];
   response.hits.hits.forEach(function (e) {
-    // console.log(e._source);
-    bulk.push({index: {_index: 'gmcontact', _type: process.env.ES_TYPE_USERS, _id: e._id}})
+
+    bulk.push({index: {_index: 'gmcontact', _type: process.env.ES_TYPE_GM_USERS, _id: e._id}})
     bulk.push(e._source);
 
     count += 1;
   })
 
   clientLocal.bulk({ body: bulk}, function (err, resp) {
-
     if (response.hits.total !== count) {
     // now we can call scroll over and over
       client.scroll({

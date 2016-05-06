@@ -691,7 +691,9 @@ circle {
 
 .dash-container {
   background-color: #f2f2f2;
+  margin-top: 60px;
 }
+
 .dash-user {
   display: -ms-flexbox;
   display: inline-flex;
@@ -714,13 +716,13 @@ circle {
   justify-content: flex-start;
 }
 
-.home-button > a > i.fa-home {
+.home-button > a > i.fa-home, .user-button > a > i.fa-user {
   color: #E4AD28;
   font-size: 1.5em;
   padding-left: 10px;
 }
 
-.user-pic {
+.user-button {
   justify-content: flex-end;
 }
 
@@ -1329,6 +1331,36 @@ Vacancy
 
 /*==============================
  End Vacancy
+================================*/
+
+/*==============================
+ Users Edit/List
+================================*/
+.users-list-wrapper {
+  margin-top: 60px;
+  width: 70%;
+  margin: 60px auto;
+}
+
+.users-list-wrapper > form > input {
+  padding: 5px 0;
+}
+
+.users-list-wrapper > form > button {
+  background-color: #424A5D;
+  padding: 10px 60px;
+  color: #E4AD28;
+  border: none;
+  margin-top: 20px;
+}
+
+.users-list-wrapper > form > button:hover {
+  background-color: #E4AD28;
+  color: #424A5D;
+}
+
+/*==============================
+ End Users Edit/List
 ================================*/
 
 @media (max-width: 768px) {

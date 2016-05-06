@@ -8,20 +8,21 @@ var expect = Code.expect;
 var it = lab.test;
 
 
-describe('Get the user by passing an id', function () {
+describe('Get user object by passing theId', function () {
 
-  it('returns the user corresponding to the id', function (done) {
-    getUser("12", function(err,  user) {
-      expect(user.names.linkedinName).to.equal("Mario Bros");
+  it('returns user object', function (done) {
+    getUser("1", function(err,  user) {
+      expect(user.id).to.equal("1");
+      expect(user.email).to.equal("bob@something.com");
       done();
     });
   });
 });
 
-describe('return undefined if the id of a user do not match a profile ', function () {
+describe('Get user object by passing the not existing Id', function () {
 
-  it('The value of the user is undefined if the id doesnt match a profile', function (done) {
-    getUser("hsdhhfskdjh", function(err,  user) {
+  it('returns user object', function (done) {
+    getUser("9090909", function(err,  user) {
       expect(user).to.equal(undefined);
       done();
     });

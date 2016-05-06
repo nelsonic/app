@@ -1,18 +1,12 @@
+{{>navigation-dashboard}}
+
 <div class="dash-container">
   <div class="dash-user">
-
-    <div class="home-button">
-        <a class="" href="/"><i class="fa fa-home"></i></a>
-    </div>
 
     <div class="user-name">
       <h1>{{user}}</h1>
     </div>
 
-    <!-- <div class="user-pic">
-      <a class="" href="/"><i class="fa fa-user"></i></a>
-    </div> -->
-   
   </div>
 
   <div class="summary">
@@ -27,10 +21,10 @@
     <div class="box">
       <h1>{{interview.length}}</h1>
       <p>Interview</p>
-    </div>    
+    </div>
     <div class="box">
-      <h1>{{placement.length}}</h1>        
-      <p>Placement</p>    
+      <h1>{{placement.length}}</h1>
+      <p>Placement</p>
     </div>
   </div>
 
@@ -43,7 +37,7 @@
         <p><a href="/candidate/{{id}}">{{fullname}}</a></p>
       </div>
     {{/each}}
-   
+
     </div>
 
     <div class="aside-phone-screen">PHONE SCREEN</div>
@@ -64,7 +58,7 @@
         <p><a href="/candidate/{{id}}">{{fullname}}</a></p>
       </div>
     {{/each}}
-   
+
     </div>
 
     <div class="aside-placement">PLACEMENT</div>
