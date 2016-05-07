@@ -56,7 +56,7 @@
 .headline .initials {
   margin: 8px 8px 0 0;
   font-size: 0.9em;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
 .headline p.mobile {
@@ -152,7 +152,7 @@ select{
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
-  outline: none; 
+  outline: none;
 }
 input[type=text]:focus,
 textarea:focus,
@@ -306,13 +306,13 @@ span.close > i.fa-times {
 
 @media (max-width: 1144px) {
 
-  .notes .field-divided{
+  .notes .field-divided {
     width: 100%;
-}
+  }
   .candidate_view img {
     width: 80px;
   }
-  
+
 /* .notes textarea {
     width: 150px;
   }*/
