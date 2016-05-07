@@ -266,33 +266,42 @@ span.close > i.fa-times {
   margin-top: 30px;
 }
 
+.edit-status {
+  display: block;
+}
+
 .dropbtn, #add-status {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    min-width: 160px;
-    border: none;
-    cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  min-width: 160px;
+  border: none;
+  cursor: pointer;
 }
 
 .dropdown-clients, .dropdown-jobs, .dropdown-stages, .dropdown-save {
-    position: relative;
-    display: none;
-    margin-top: 30px;
+  position: relative;
+  display: none;
+  margin-top: 30px;
 }
 
-.dropdown-clients > select, .dropdown-jobs > select, .dropdown-stages > select {
+.dropdown-clients-edit, .dropdown-jobs-edit, .dropdown-stages-edit, .dropdown-save-edit {
+  /*position: relative;*/
+  display: none;
+}
+
+.dropdown-clients > select, .dropdown-jobs > select, .dropdown-stages > select, .dropdown-clients-edit > select, .dropdown-jobs-edit > select, .dropdown-stages-edit > select {
   outline:0;
   border: none;
 }
 
-.status-candidate {
+/*.status-candidate {*/
   /*margin-top: 20px;*/
   /*position: relative;*/
-}
+/*}*/
 
-.status-wrapper {
+/*.status-wrapper {
   margin-top: 10px;
   max-width: 300px;
   background-color: rgba(0, 0, 255, 0.2);
@@ -301,7 +310,7 @@ span.close > i.fa-times {
 .status-wrapper > form {
   float: right;
   margin-top: -20px;
-}
+}*/
 
 
 /*==============================

@@ -65,7 +65,19 @@
       document.querySelector('.dropdown-jobs').style.display = 'inline-block';
       document.querySelector('.dropdown-stages').style.display = 'inline-block';
       document.querySelector('.dropdown-save').style.display = 'inline-block';
-    })
+    });
+
+    var editStatus = document.getElementsByClassName('edit-status');
+    for (var i = 0; i < editStatus.length; i++) {
+      editStatus[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        this.style.display = 'none';
+        var dropdowns = document.querySelectorAll('.id-' + e.target.id);
+        for (var i = 0; i <dropdowns.length; i++) {
+          dropdowns[i].style.display = 'inline-block';
+        }
+      }, false);
+    }
 
     function removeOptions(selectbox){
       var i;
@@ -93,5 +105,30 @@
           }
 
     }, false);
+
+    var clients_edit =  document.querySelectorAll('.clients-edit');
+
+    for (var i = 0; i < clients_edit.length; i++) {
+      clients_edit[i].addEventListener('click', function (e) {
+
+        var selected = e.target.value;
+        var selectedAttr = e.target.getAttribute('data-tmp');
+
+        var jobs = document.getElementsByClassName(selected);
+        
+        var jobsDropdowns = document.querySelector('.dropbtn.id-' + selectedAttr);
+
+        removeOptions(jobsDropdowns);
+
+        for (var i = 0; i < jobs.length; i++) {
+            var option = document.createElement('option');
+            option.setAttribute('value', jobs[i].className);
+            var text = document.createTextNode(jobs[i].value);
+            option.appendChild(text);
+            console.log(option);
+            jobsDropdowns.appendChild(option);
+        }
+      }, false);
+    }
 
 })();

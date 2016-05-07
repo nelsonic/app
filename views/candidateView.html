@@ -48,14 +48,49 @@
 
       {{#if candidate.statusCurrent}}
           {{#each candidate.statusCurrent}}
-          <!-- <div class="status-wrapper"> -->
             <h4 class="status-candidate">{{statusInfoHelper this ../clients ../jobs}} <span>{{idStage}}</span><span> {{idUser}}</span></h4>
               <form action="/status/delete" method="POST">
                 <input type="hidden" name="idCandidate" value="{{idCandidate}}">
                 <input type="hidden" name="timestamp" value="{{timestamp}}">
                 <button type="submit">Delete</button>
               </form>
-          <!-- </div> -->
+
+              <button id="{{timestamp}}" class="edit-status">Edit</button>
+
+              <form action="/status/edit" method="POST">
+                <input type="hidden" name="timestamp" value="{{timestamp}}">
+                <input type="hidden" name="idCandidate" value="{{idCandidate}}">
+
+                <div class="dropdown-clients-edit id-{{timestamp}}">
+                  <select name="idClient" data-tmp="{{timestamp}}" class="dropbtn clients-edit">
+                    <option selected disabled>Clients</option>
+                    {{#each ../clients}}
+                      {{statusEditClient this ../this.idClient}}
+                    {{/each}}
+                  </select>
+                </div>
+                <div class="dropdown-jobs-edit id-{{timestamp}}">
+                  <select name="idJob" class="dropbtn id-{{timestamp}}">
+                    <option selected disabled>Jobs</option>
+                    {{#each ../jobs}}
+                        {{statusEditJob this ../this.idJob}}
+                    {{/each}}
+                  </select>
+                </div>
+                <div class="dropdown-stages-edit id-{{timestamp}}">
+                  <select name="idStage" class="dropbtn">
+                    <option selected disabled>Stages</option>
+                    <option value="{{idStage}}" selected>{{idStage}}</option>
+                    <option value="stage1">stage1</option>
+                    <option value="stage3">stage3</option>
+                    <option value="stage4">stage4</option>
+                  </select>
+                </div>
+                <div class="dropdown-save-edit id-{{timestamp}}">
+                  <button type="submit" class="dropbtn">Save</button>
+                </div>
+              </form>
+
           {{/each}}
 
       {{/if}}
