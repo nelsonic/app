@@ -18,7 +18,6 @@ coverage.*
 test/fixtures/monitor_log
 lcov.info
 .env
-.env_old
 *~
 .vagrant
 test/fixtures/sample-auth-token-anita.json
