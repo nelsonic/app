@@ -263,6 +263,7 @@ span.close > i.fa-times {
 ================================*/
 .new-dash-wrapper {
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .job-info-dash {
@@ -271,48 +272,61 @@ span.close > i.fa-times {
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-
   justify-content: space-between;
 }
 
-.job-parent {
+.pre-section {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;;
+}
+
+.job-parent, .client-parent{
   outline: 1px solid black;
   overflow-x: auto;
-  /*height: 200px;*/
-
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-
   -webkit-flex-wrap: nowrap;
   -moz-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   -o-flex-wrap: nowrap;
   flex-wrap: nowrap;
-
 }
 
-.stage-child {
-  min-width: 300px;
+.client-parent {
+  height: 100px;
+}
+
+.stage-child, .client-child {
   height: auto;
   outline: 1px solid orange;
-
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   -o-flex-wrap: wrap;
   flex-wrap: wrap;
-
   justify-content: space-around;
-  /*align-items: center;*/
+}
+
+.client-child {
+  min-width: 150px;
+  padding: 10px;
+}
+
+.client-child img {
+  width: 80px;
+}
+
+.stage-child {
+  min-width: 300px;
 }
 
 .candidate {
@@ -320,15 +334,12 @@ span.close > i.fa-times {
   outline: 1px solid black;
   justify-content: center;
   align-items: center;
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-
   align-items: center;
-
   flex-direction: column;
 }
 
@@ -337,7 +348,6 @@ span.close > i.fa-times {
   height: 50px;
   outline: 1px solid green;
   text-align: center;
-
 }
 
 .candidate > button {
