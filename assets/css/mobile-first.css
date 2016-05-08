@@ -82,7 +82,7 @@ header {
 
 .search-form input {
   padding: 5px 0;
-  width: 180px;
+  width: 170px;
 }
 
 .search-form > a > i.fa-star, .search-form > a > i.fa-user {
@@ -421,6 +421,56 @@ input[type='checkbox'] {
 }
 
 /*==============================
+  Info section
+================================*/
+.info-form {
+  margin-top: 5px;
+  display: none;
+}
+
+.info-form label{
+  font-size: 14px;
+  color: rgba(32, 32, 34, 0.86);
+}
+
+.info-wrapper, .info-form {
+  margin-bottom: 10px;
+}
+
+.info-wrapper p {
+  font-size: 12px;
+  color: grey;
+}
+
+.info-wrapper p span {
+  font-size: 14px;
+  color: #000;
+}
+
+.error-tag {
+  display: none;
+  font-size: 14px;
+  color: red;
+}
+
+#edit-info, #save-info {
+  padding: 6px 15px;
+  background-color: #424A5D;
+  color: #FFD777;
+  border: 0 none;
+  cursor: pointer;
+  margin-left: 7px;
+}
+#edit-info:hover, #save-info:hover {
+  background-color: #FFD777;
+  color: #424A5D;
+}
+
+/*==============================
+  End Info section
+================================*/
+
+/*==============================
   Skills inline
 ================================*/
 .viewedBy-initials {
@@ -493,7 +543,11 @@ ul.lang li span {
   padding: 20px 0 20px;
 }
 
-.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, i.fa-file, i.fa-linkedin, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil, #sidebar > h1 > i.fa-comments {
+.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, i.fa-file, i.fa-linkedin,
+#sidebar > h1 > i.fa-envelope,
+#sidebar > h1 > i.fa-pencil,
+#sidebar > h1 > i.fa-comments,
+#sidebar > h1 > i.fa-info-circle {
   font-size: 25px;
   padding-left: 0;
   padding-right: 20px;

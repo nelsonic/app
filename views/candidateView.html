@@ -48,16 +48,18 @@
 
       {{#if candidate.statusCurrent}}
           {{#each candidate.statusCurrent}}
+          <div class="status-wrapper">
             <h4 class="status-candidate">{{statusInfoHelper this ../clients ../jobs}} <span>{{idStage}}</span><span> {{idUser}}</span></h4>
-              <form action="/status/delete" method="POST">
+
+              <form class="delete-status-form" action="/status/delete" method="POST">
                 <input type="hidden" name="idCandidate" value="{{idCandidate}}">
                 <input type="hidden" name="timestamp" value="{{timestamp}}">
                 <button type="submit">Delete</button>
               </form>
 
               <button id="{{timestamp}}" class="edit-status">Edit</button>
-
-              <form action="/status/edit" method="POST">
+            </div>
+              <form class="edit-status-form" action="/status/edit" method="POST">
                 <input type="hidden" name="timestamp" value="{{timestamp}}">
                 <input type="hidden" name="idCandidate" value="{{idCandidate}}">
 
@@ -143,6 +145,8 @@
         </div>
         <br>
         <br>
+        <h1><i class="fa fa-info-circle"></i> INFO</h1>
+        {{>info-section}}
       <h1><i class="fa fa-pencil"></i> NOTES</h1>
       <div class="notes-wrapper">
         <form action="/notes/{{candidate.id}}" method="POST">

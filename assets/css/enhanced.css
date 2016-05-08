@@ -271,7 +271,7 @@ span.close > i.fa-times {
 }
 
 .dropbtn, #add-status {
-  background-color: #4CAF50;
+  background-color: #424A5D;
   color: white;
   padding: 10px;
   font-size: 14px;
@@ -296,22 +296,30 @@ span.close > i.fa-times {
   border: none;
 }
 
-/*.status-candidate {*/
-  /*margin-top: 20px;*/
-  /*position: relative;*/
-/*}*/
-
-/*.status-wrapper {
-  margin-top: 10px;
-  max-width: 300px;
-  background-color: rgba(0, 0, 255, 0.2);
+.status-candidate span {
+  color: black;
 }
 
-.status-wrapper > form {
-  float: right;
-  margin-top: -20px;
-}*/
+.status-wrapper {
+  margin-top: 10px;
+  width: 500px;
+  border-bottom: 1px solid black;
+}
 
+.edit-status-form {
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.status-wrapper .edit-status, .delete-status-form > button {
+  float:right;
+  margin-top: -20px;
+  border: 1px solid #424A5D;
+  background-color: #424A5D;
+  color: #fff;
+  padding:2px 10px;
+  margin-left:10px;
+}
 
 /*==============================
  End Status dropdowns
@@ -365,9 +373,9 @@ span.close > i.fa-times {
 
 @media (max-width: 1144px) {
 
-  .notes .field-divided{
+  .notes .field-divided {
     width: 100%;
-}
+  }
   .candidate_view img {
     width: 80px;
   }
