@@ -43,7 +43,7 @@ describe('submit the status when authenticated', function () {
       idCandidate: '88',
       idUser: '12',
       idJob: '1',
-      idStage: 'stage1',
+      idStage: '1',
       timestamp: '89898989',
       idClient: '1'
     };
@@ -101,7 +101,7 @@ describe('edit the status when authenticated', function () {
       idCandidate: '88',
       timestamp: '89898989',
       idJob: '1',
-      idStage: 'stage4',
+      idStage: '1',
       idClient: '1',
       idUser: '12'
     };

@@ -14,7 +14,7 @@
   </div>
   <form action="/email" method="POST">
 	{{#each candidates}}
-	  {{>candidate keywords=../keywords}}
+	  {{>candidate keywords=../keywords clients=../clients stages=../stages}}
 	{{/each}}
   <input type="hidden" class="pathUrl" name="pathUrl" value="{{pathUrl}}">
   <button id="send-email" type="submit">SEND EMAIL</button>

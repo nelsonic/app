@@ -38,9 +38,6 @@
       {{/each}}
       <br/>
       <br/>
-      {{#if candidate.status}}
-        <span class='status st-profile'>{{candidate.status}}</span>
-      {{/if}}
 
       {{#if candidate.emails}}
         {{emailIndicatorHelper candidate.lastEmail true}}
@@ -49,7 +46,7 @@
       {{#if candidate.statusCurrent}}
           {{#each candidate.statusCurrent}}
           <div class="status-wrapper">
-            <h4 class="status-candidate">{{statusInfoHelper this ../clients ../jobs}} <span>{{idStage}}</span><span> {{idUser}}</span></h4>
+            <h4 class="status-candidate">{{statusInfoHelper this ../clients ../jobs}} <span class="stage-span">{{statusStageHelper idStage ../stages}}</span><span class="stage-initials-span"> {{statusInitialsHelper idUser ../users}}</span></h4>
 
               <form class="delete-status-form" action="/status/delete" method="POST">
                 <input type="hidden" name="idCandidate" value="{{idCandidate}}">
@@ -82,10 +79,9 @@
                 <div class="dropdown-stages-edit id-{{timestamp}}">
                   <select name="idStage" class="dropbtn">
                     <option selected disabled>Stages</option>
-                    <option value="{{idStage}}" selected>{{idStage}}</option>
-                    <option value="stage1">stage1</option>
-                    <option value="stage3">stage3</option>
-                    <option value="stage4">stage4</option>
+                    {{#each ../stages}}
+                      {{statusEditStages this ../this.idStage}}
+                    {{/each}}
                   </select>
                 </div>
                 <div class="dropdown-save-edit id-{{timestamp}}">

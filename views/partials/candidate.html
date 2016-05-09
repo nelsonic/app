@@ -23,9 +23,10 @@
           <p><span class='status-client'>Client Employee</span></p>
         {{/if}}
 
-        {{#if status}}
-          <p><span class='status'>{{status}}</span></p>
-        {{/if}}
+
+        {{#each statusCurrent}}
+            <p><span class='status'>{{generateStatus this ../clients ../stages}}</span></p>
+        {{/each}}
 
         {{else}}
         <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
@@ -40,9 +41,9 @@
         {{/each}}
 
 
-        {{#if status}}
-          <p><span class='status'>{{status}}</span></p>
-        {{/if}}
+        {{#each statusCurrent}}
+          <p><span class='status'>{{generateStatus this ../clients ../stages}}</span></p>
+        {{/each}}
 
         {{#if clientProfile}}
           <p><span class='status-client'>Client Employee</span></p>
@@ -80,7 +81,7 @@
   <aside class="aside aside-1">
   {{#if email}}
     {{#unless emailLast30}}
-      {{#unless status}}
+      {{#unless statusCurrent}}
         {{#unless clientProfile}}
         <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}", "fn":"{{this.firstName}}"}'>
         {{/unless}}

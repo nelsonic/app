@@ -45,6 +45,7 @@ describe('save/update a user: /users/save with authorization', function () {
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true, scope: 'admin'},
       payload: {
+        idGoogle: '111',
         names: {
           fullname: 'Bob Fake',
           firstname: 'Bob',
@@ -86,6 +87,7 @@ describe('save/update a user: /users/save with authorization', function () {
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true, scope: 'admin'},
       payload: {
+        idGoogle: '111',
         names: {
           fullname: 'Bob Fake',
           firstname: 'Bob',

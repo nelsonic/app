@@ -1,4 +1,4 @@
-<div>
+<div class="add-status-div">
   <button id="add-status">Add status</button>
 </div>
 <form action="/status/save" method="POST">
@@ -24,10 +24,9 @@
   <div class="dropdown-stages">
     <select name="idStage" class="dropbtn" id="stages">
       <option selected disabled>Stages</option>
-      <option value="stage1">stage1</option>
-      <option value="stage2">stage2</option>
-      <option value="stage3">stage3</option>
-      <option value="stage4">stage4</option>
+      {{#each stages}}
+        <option value="{{id}}">{{name}}</option>
+      {{/each}}
     </select>
   </div>
 
