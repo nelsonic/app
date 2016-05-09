@@ -3,7 +3,6 @@ var JWT = require('jsonwebtoken');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
-// var getClient = require('../lib/database-helpers/elasticsearch/get_clients');
 
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
@@ -69,6 +68,36 @@ describe('submit the status when authenticated', function () {
     });
   });
 });
+
+describe('submit a wrong status', function () {
+
+  it('redirects to the candidate page when the status object is not valid', function (done) {
+
+    var wrongStatus = {
+    };
+
+    var options = {
+      method: "POST",
+      url: "/status/save",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: wrongStatus
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
 
 describe('/status/edit', function () {
 
