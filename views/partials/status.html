@@ -14,7 +14,7 @@
   <div class="dropdown-jobs">
     <div id="jobs-input">
       {{#each jobs}}
-      <input type="hidden" class="{{client}}" value="{{title}}">
+        <input type="hidden" id="{{id}}" class="{{client}}" value="{{title}}">
       {{/each}}
     </div>
     <select name="idJob" class="dropbtn" id="jobs">

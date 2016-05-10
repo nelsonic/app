@@ -91,16 +91,14 @@
         var selected = e.target.value;
         var jobs = document.getElementsByClassName(selected);
         var jobsDropdown = document.getElementById("jobs");
-
         //delete options of jobsDropdown
           removeOptions(jobsDropdown);
 
           for (var i = 0; i < jobs.length; i++) {
               var option = document.createElement('option');
-              option.setAttribute('value', jobs[i].className);
+              option.setAttribute('value', jobs[i].id);
               var text = document.createTextNode(jobs[i].value);
               option.appendChild(text);
-              console.log(option);
               jobsDropdown.appendChild(option);
           }
 
@@ -125,7 +123,6 @@
             option.setAttribute('value', jobs[i].className);
             var text = document.createTextNode(jobs[i].value);
             option.appendChild(text);
-            console.log(option);
             jobsDropdowns.appendChild(option);
         }
       }, false);

@@ -3,22 +3,22 @@ module.exports = function (statusCurrent, clients, jobs) {
 
   var result = "";
 
-  clients.forEach(function (obj) {
+  clients.forEach(function (client) {
 
-    if (statusCurrent.idClient === obj.id) {
+    if (statusCurrent.idClient === client.id) {
 
-      result += "<span>" + obj.name + " </span>";
+      result += "<span>" + client.name + " </span>";
 
     }
 
   });
 
 
-  jobs.forEach(function (obj) {
+  jobs.forEach(function (job) {
 
-    if (statusCurrent.idClient === obj.client) {
+    if (statusCurrent.idJob === job.id) {
 
-      result += "<span>" + obj.title + " </span>";
+      result += "<span>" + job.title + " </span>";
 
     }
 
