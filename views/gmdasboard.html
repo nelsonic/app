@@ -74,7 +74,7 @@
   <p class="pre-section">Other Jobs</p>
 
     {{#each otherJobs}}
-      {{displayJobs this}}
+      {{{displayJobs this @key ../jobsDetail ../stagesDetail}}}
     {{/each}}
     <!-- <div class="job-info-dash">
       <p>title: Some job</p>
