@@ -342,7 +342,7 @@ span.close > i.fa-times {
 
 .candidate {
   min-width: 120px;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
@@ -365,10 +365,11 @@ span.close > i.fa-times {
   border: 1px solid #424A5D;
   background-color: #424A5D;
   color: #fff;
+  cursor: pointer;
 }
 
 .stage-title {
-  height: 20px;
+  height: 35px;
   width: 300px;
   font-weight: 800;
   color: rgba(0, 0, 0, 0.82);
