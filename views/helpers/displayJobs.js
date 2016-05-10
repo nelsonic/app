@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function (stages, idJob, jobsDetail, stagesDetail) {
+
   let job = jobsDetail[idJob];
   let result = "";
   let data = false
