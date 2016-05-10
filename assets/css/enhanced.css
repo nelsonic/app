@@ -416,9 +416,9 @@ span.close > i.fa-times {
 
 @media (max-width: 1144px) {
 
-  .notes .field-divided{
+  .notes .field-divided {
     width: 100%;
-}
+  }
   .candidate_view img {
     width: 80px;
   }
