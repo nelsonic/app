@@ -14,8 +14,8 @@ module.exports = function (stages, idJob, jobsDetail, stagesDetail) {
   if(data) {
     //job info
     result += '<div class="job-info-dash">';
-    result += '<p>title: '+ job.title  +'</p>';
-    result += '<p>salary:' + job.salary + '</p></div>';
+    result += '<p>Title: '+ job.title  +'</p>';
+    result += '<p>Salary:' + job.salary + '</p></div>';
 
     result += '<div class="job-parent">'
 
@@ -27,7 +27,7 @@ module.exports = function (stages, idJob, jobsDetail, stagesDetail) {
       let candidates = stages[idStage];
       candidates.forEach(candidate => {
         result += '<div class="candidate">';
-        result += '<form class="delete-status-form" action="/status/delete" method="POST">';
+        result += '<form class="delete-status-dash" action="/status/delete" method="POST">';
         result += '<input type="hidden" name="idCandidate" value="' + candidate.id +'">';
         result += '<input type="hidden" name="timestamp" value="' + candidate.statusTimestamp + '">';
         result += '<input type="hidden" name="redirectDashboard" value="true">'

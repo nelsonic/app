@@ -273,12 +273,16 @@ span.close > i.fa-times {
   display: -o-flex;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .pre-section {
   text-align: center;
   margin-top: 50px;
-  padding: 20px;;
+  padding: 20px;
+  font-weight: 800;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /*except first child do margin*/
@@ -287,7 +291,7 @@ span.close > i.fa-times {
 }
 
 .job-parent, .client-parent{
-  outline: 1px solid black;
+  outline: 1px solid rgba(0, 0, 0, 0.08);
   overflow-x: auto;
   display: -webkit-flex;
   display: -moz-flex;
@@ -307,7 +311,8 @@ span.close > i.fa-times {
 
 .stage-child, .client-child {
   height: auto;
-  outline: 1px solid orange;
+  /*outline: 1px solid rgba(255, 165, 0, 0.35);*/
+  border-right: 1px solid rgba(255, 165, 0, 0.35);
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -328,6 +333,7 @@ span.close > i.fa-times {
 
 .client-child img {
   width: 80px;
+  border-radius: 50%;
 }
 
 .stage-child {
@@ -336,7 +342,6 @@ span.close > i.fa-times {
 
 .candidate {
   min-width: 120px;
-  outline: 1px solid black;
   justify-content: center;
   align-items: center;
   display: -webkit-box;
@@ -346,22 +351,27 @@ span.close > i.fa-times {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 10px;
 }
 
 .candidate img {
   width: 50px;
   height: 50px;
-  outline: 1px solid green;
   text-align: center;
 }
 
-.candidate > button {
-  margin-left: 100px;
+.delete-status-dash > button {
+  margin-left: 80px;
+  border: 1px solid #424A5D;
+  background-color: #424A5D;
+  color: #fff;
 }
 
 .stage-title {
   height: 20px;
   width: 300px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.82);
 }
 
 /*==============================
