@@ -303,5 +303,18 @@
         "role": "Director",
         "linkedin": "https://linkedin.com/in/marriooo",
         "dev": false
-      }
+      },
+      { "index" : { "_index" : "gmcontact", "_type" : "gmusers", "_id" : "6" } },
+        { "email": "real@user.com",
+          "active": true,
+          "admin": true,
+          "idGoogle": "123123",
+          "image": "https://image.com",
+          "idWebsite": "4444",
+          "names": {"firstname": "real", "fullname": "Real User", "lastname": "User", "linkedinName": "RU"},
+          "phones": {"office": "0207 000 000", "mobile": "079 777 777"},
+          "role": "User",
+          "linkedin": "https://linkedin.com/in/user",
+          "dev": false
+        }
   ]
