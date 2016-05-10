@@ -72,19 +72,25 @@
 {{/each}}
 
   <p class="pre-section">Other Jobs</p>
-    <div class="job-info-dash">
+
+    {{#each otherJobs}}
+      {{displayJobs this}}
+    {{/each}}
+    <!-- <div class="job-info-dash">
       <p>title: Some job</p>
       <p>salary: 40k</p>
       <p>location: London</p>
     </div>
 
     <div class="job-parent">
+
       <div class="stage-child">
         <div class="candidate stage-title">Stage 1</div>
         <div class="candidate"><button>x</button><img src="cat.jpeg" /><p>Anita Czapla</p></div>
         <div class="candidate"><button>x</button><img src="cat.jpeg" /><p>Simon Labodance</p></div>
         <div class="candidate"><button>x</button><img src="cat.jpeg" /><p>Craig Adam Donovan</p></div>
       </div>
+
       <div class="stage-child">
         <div class="candidate stage-title">Stage 1</div>
         <div class="candidate"><button>x</button><img src="cat.jpeg" /><p>2</p></div>
@@ -126,6 +132,6 @@
         <div class="candidate stage-title">Stage 1</div>
         <div class="candidate"><button>x</button><img src="cat.jpeg" /><p>10</p></div>
       </div>
-    </div>
+    </div> -->
 
 </div>
