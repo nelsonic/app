@@ -11,7 +11,7 @@ var it = lab.test;
 describe('Search by passing email to the gm_users table', function () {
 
   it('returns true if found the email on gm_users and property active is true', function (done) {
-    existActiveUsers("mario@bros.com", function(err,  exist) {
+    existActiveUsers("real@user.com", function(err,  exist) {
       expect(exist).to.equal(true);
       done();
     });

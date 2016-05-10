@@ -1,0 +1,36 @@
+<div class="add-status-div">
+  <button id="add-status">Add status</button>
+</div>
+<form action="/status/save" method="POST">
+  <input type="hidden" name="idCandidate" value="{{candidate.id}}">
+  <div class="dropdown-clients">
+    <select name="idClient" class="dropbtn" id="clients">
+      <option selected disabled>Clients</option>
+      {{#each clients}}
+      <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="dropdown-jobs">
+    <div id="jobs-input">
+      {{#each jobs}}
+        <input type="hidden" id="{{id}}" class="{{client}}" value="{{title}}">
+      {{/each}}
+    </div>
+    <select name="idJob" class="dropbtn" id="jobs">
+      <option selected disabled>Jobs</option>
+    </select>
+  </div>
+  <div class="dropdown-stages">
+    <select name="idStage" class="dropbtn" id="stages">
+      <option selected disabled>Stages</option>
+      {{#each stages}}
+        <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="dropdown-save">
+    <button type="submit" class="dropbtn">Save</button>
+  </div>
+</form>
