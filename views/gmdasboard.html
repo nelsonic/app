@@ -4,22 +4,9 @@
 <div class="new-dash-wrapper">
   <p class="pre-section">Clients</p>
   <div class="client-parent">
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
-    <div class="client-child"><img src="client-logo.jpeg" /></div>
+    {{#each clients}}
+      <div class="client-child"><img src="{{logoUrl}}" /></div>
+    {{/each}}
 </div>
 <p class="pre-section">My Jobs</p>
   <div class="job-info-dash">
