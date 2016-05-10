@@ -281,6 +281,11 @@ span.close > i.fa-times {
   padding: 20px;;
 }
 
+/*except first child do margin*/
+.each-job-wrapper {
+  margin-top: 30px;
+}
+
 .job-parent, .client-parent{
   outline: 1px solid black;
   overflow-x: auto;
