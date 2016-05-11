@@ -36,7 +36,7 @@ describe('access activities, when user is authenticated', function () {
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject({url: '/activities', headers: { cookie: "token=" + token }}, function (res) {
+      server.inject({url: '/activities', headers: { cookie: "token=" + token }, credentials: { id: "12", "name": "Simon", valid: true}}, function (res) {
         expect(res.statusCode).to.equal(200);
         var activity = JSON.parse(res.payload);
         expect(activity[0].query.headline).to.equal('developer');
