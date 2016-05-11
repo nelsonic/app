@@ -1,4 +1,4 @@
-var statusHelper = require('../lib/helpers/generateStatus.js');
+var generateStatus = require('../views/helpers/generateStatus');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
@@ -6,31 +6,16 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
+describe('Create status indicator', function () {
 
-describe('Genereate status from a list of notes', function () {
+  it('return the client and stage of a status', function (done) {
 
-  it('return the right status from the notes', function (done) {
+    var stage = [{id: '1', name: 'stage1'}, {id: '2', name: 'stage2'}];
+    var client = [{id: '2', name: 'clientName'}, {id: '3', name: 'clientName3'}];
+    var status = {idClient: '2', idStage: '1'}
+    var result = generateStatus(status, client, stage);
 
-      //the last item of the array is the most recent
-      var notes = [
-        { status: 'interview',
-          company: 'FAC',
-          notes: 'Good candidate',
-          author: 'Anita'
-        },
-        { status: undefined,
-          company: 'FAC',
-          notes: 'Good candidate again',
-          author: 'Anita'
-        },
-        { status: 'Phone screen',
-          company: 'FAC',
-          notes: 'Good candidate!!',
-          author: 'Anita'
-        },
-      ];
-      var status = statusHelper(notes)
-      expect(status).to.equal('Phone screen at FAC');
-      done();
+    expect(result.string).to.equal('clientName stage1');
+    done();
   });
 });
