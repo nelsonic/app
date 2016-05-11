@@ -23,7 +23,7 @@ module.exports = function (stages, idJob, jobsDetail, stagesDetail) {
       result += '<input type="hidden" name="idCandidate" value="' + candidate.id +'">';
       result += '<input type="hidden" name="timestamp" value="' + candidate.statusTimestamp + '">';
       result += '<input type="hidden" name="redirectDashboard" value="true">'
-      result += '<button>x</button>'
+      result += '<button type="submit">x</button>'
       result += '</form>'
       result += '<img src=' + candidate.picture +' /><p>' + candidate.fullname +'</p></div>'
     })
