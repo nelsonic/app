@@ -149,7 +149,7 @@
         <form action="/notes/save" method="POST">
 
           <ul class="notes">
-            <input type="hidden" name="idCandidate" value="{{id}}">
+            <input type="hidden" name="idCandidate" value="{{candidate.id}}">
             <li>
               <textarea name="notes" class="field-long field-textarea" placeholder="Further notes"></textarea>
             </li>
@@ -160,7 +160,10 @@
         </form>
         <br>
         <div class="notes notes-box">
-
+          {{#each candidate.notesList}}
+            <div class="notes-item">{{displayNotes this ../users}}</div>
+            <hr>
+          {{/each}}
         </div>
         <br>
         </div>

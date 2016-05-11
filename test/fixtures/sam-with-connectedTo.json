@@ -5,6 +5,7 @@
     "viewedBy": "Mario Bros",
     "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "fullname": "Sam",
+    "notesList": [],
     "favourite":[],
     "location": "Porto",
     "current": "relax",

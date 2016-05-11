@@ -4,6 +4,7 @@
   "fullname": "David Dupont",
   "favourite":["14"],
   "viewedBy": "Mario Bros",
+  "notesList": [],
   "jobApplications": [{"jobID": 1, "timestamp": 1458213700542, "comments": "some comment", "skillset": "Css"},{"jobID": null, "timestamp": 1458213700542, "comments": "another application", "skillset": "Css, html"} ],
   "location": "London, United Kingdom",
   "current": "The best company ever",

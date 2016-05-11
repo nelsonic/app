@@ -3,6 +3,7 @@
     "fullname": "Tom",
     "location": "New york",
     "viewedBy": "Mario Bros",
+    "notesList": [],
     "favourite":[],
     "current": "it super developer",
     "contacts": {"email": "", "phone": "", "im": [], "address": "" },
