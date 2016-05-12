@@ -266,6 +266,25 @@ span.close > i.fa-times {
   margin-bottom: 60px;
 }
 
+.dropdown-users {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-users > form > button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #424A5D;
+  background-color: #424A5D;
+  color: #fff;
+  cursor: pointer;
+}
+
 .job-info-dash {
   display: -webkit-flex;
   display: -moz-flex;
@@ -291,7 +310,6 @@ span.close > i.fa-times {
 }
 
 .job-parent, .client-parent{
-  outline: 1px solid rgba(0, 0, 0, 0.08);
   overflow-x: auto;
   display: -webkit-flex;
   display: -moz-flex;
@@ -311,8 +329,6 @@ span.close > i.fa-times {
 
 .stage-child, .client-child {
   height: auto;
-  /*outline: 1px solid rgba(255, 165, 0, 0.35);*/
-  border-right: 1px solid rgba(255, 165, 0, 0.35);
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -324,6 +340,15 @@ span.close > i.fa-times {
   -o-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: space-around;
+
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
 }
 
 .client-child {
@@ -337,12 +362,11 @@ span.close > i.fa-times {
 }
 
 .stage-child {
-  min-width: 300px;
+  max-width: 300px;
 }
 
 .candidate {
   min-width: 120px;
-  /*justify-content: center;*/
   align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
@@ -373,6 +397,7 @@ span.close > i.fa-times {
   width: 300px;
   font-weight: 800;
   color: rgba(0, 0, 0, 0.82);
+  justify-content: center;
 }
 
 /*==============================
