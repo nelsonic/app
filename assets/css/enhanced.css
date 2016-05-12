@@ -369,6 +369,7 @@ span.close > i.fa-times {
 .client-child > form > button {
   border: none;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .stage-child {
