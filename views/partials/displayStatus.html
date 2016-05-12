@@ -1,5 +1,5 @@
 {{#each jobs as |stages idJob|}}
-
+<div class="each-job-wrapper">
   <div class="job-info-dash">
     <p>Title: {{lookup (lookup ../jobsDetail idJob) 'title'}}</p>
     <p>Salary: {{lookup (lookup ../jobsDetail idJob) 'salary'}}</p>
@@ -16,11 +16,12 @@
             <input type="hidden" name="timestamp" value="{{statusTimestamp}}">
             <input type="hidden" name="redirectDashboard" value="true">
             <button type="submit">x</button>
-            <img src='{{picture}}'/><p>{{fullname}}</p>
           </form>
+          <img src='{{picture}}'/><p>{{fullname}}</p>
         </div>
       {{/each}}
       </div>
     {{/each}}
   </div>
+</div>
 {{/each}}
