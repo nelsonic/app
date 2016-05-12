@@ -304,6 +304,10 @@ span.close > i.fa-times {
   color: rgba(0, 0, 0, 0.7);
 }
 
+.pre-section span {
+  color: green;
+}
+
 /*except first child do margin*/
 .each-job-wrapper {
   margin-top: 30px;
@@ -324,7 +328,8 @@ span.close > i.fa-times {
 }
 
 .client-parent {
-  height: 100px;
+  height: 150px;
+  align-items: center;
 }
 
 .stage-child, .client-child {
@@ -359,6 +364,11 @@ span.close > i.fa-times {
 .client-child img {
   width: 80px;
   border-radius: 50%;
+}
+
+.client-child > form > button {
+  border: none;
+  background-color: #fff;
 }
 
 .stage-child {

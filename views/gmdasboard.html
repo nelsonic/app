@@ -3,6 +3,7 @@
 
 <div class="new-dash-wrapper">
 
+  {{#if admin}}
   <div class="dropdown-users">
     <form action="/gmdashboard/user" method="post">
 
@@ -14,6 +15,7 @@
       <button type="submit">Load dashboard</button>
     </form>
   </div>
+  {{/if}}
 
   <p class="pre-section">Clients</p>
 
