@@ -34,11 +34,9 @@ describe('delete a user', function () {
 
   it('search for "Manuel", expect duplicate profiles', function (done) {
     var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
-    var name = 'manuel';
-    var queryString = encodeURIComponent(name);
     var options = {
       method: "GET",
-      url: "/search/all/" + queryString + "/1",
+      url: "/query?job=&fullname=manuel&location=&current=&skills=&page=&totalPages=",
       headers: { cookie: "token=" + token }
     };
     Server.init(0, function (err, server) {
@@ -75,11 +73,9 @@ describe('delete a user', function () {
     it('search for "Manuel", expect NO duplicate profiles', function (done) {
 
       var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
-      var name = 'manuel';
-      var queryString = encodeURIComponent(name);
       var options = {
         method: "GET",
-        url: "/search/all/" + queryString + "/1",
+        url: "/query?job=&fullname=manuel&location=&current=&skills=&page=&totalPages=",
         headers: { cookie: "token=" + token }
       };
       Server.init(0, function (err, server) {

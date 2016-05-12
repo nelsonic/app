@@ -145,19 +145,11 @@
         {{>info-section}}
       <h1><i class="fa fa-pencil"></i> NOTES</h1>
       <div class="notes-wrapper">
-        <form action="/notes/{{candidate.id}}" method="POST">
-          <ul class="notes">
-            <li>
-              <select name="status" class="field-divided">
-                <option disabled selected value="">Status</option>
-                <option value="submitted">Submitted to</option>
-                <option value="phone-screen">Phone screen at</option>
-                <option value="interview">Interview at</option>
-                <option value="placement">Placement at</option>
-              </select>
-              <input type="text" name="company" class="field-divided" placeholder="Company" />
-            </li>
 
+        <form action="/notes/save" method="POST">
+
+          <ul class="notes">
+            <input type="hidden" name="idCandidate" value="{{candidate.id}}">
             <li>
               <textarea name="notes" class="field-long field-textarea" placeholder="Further notes"></textarea>
             </li>
@@ -168,9 +160,9 @@
         </form>
         <br>
         <div class="notes notes-box">
-          {{#each candidate.notes}}
-            <div class="notes-item">{{notesHelper this}}</div>
-             <hr>
+          {{#each candidate.notesList}}
+            <div class="notes-item">{{displayNotes this ../users}}</div>
+            <hr>
           {{/each}}
         </div>
         <br>

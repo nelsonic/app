@@ -26,7 +26,6 @@ describe('Complete a profile with all the properties required', function () {
     expect(result.hasOwnProperty('languages')).to.be.equal(true);
     expect(result.hasOwnProperty('date')).to.be.equal(true);
     expect(result.hasOwnProperty('headline')).to.be.equal(true);
-    expect(result.hasOwnProperty('notes')).to.be.equal(true);
     expect(result.hasOwnProperty('contacts')).to.be.equal(true);
     expect(result.hasOwnProperty('experience')).to.be.equal(true);
     done();
