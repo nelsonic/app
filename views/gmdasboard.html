@@ -2,27 +2,31 @@
 
 
 <div class="new-dash-wrapper">
+
+  <div class="dropdown-users">
+    <form action="/gmdashboard/user" method="post">
+
+    <select class="users" name="user">
+      {{#each users}}
+        <option value='{{idGoogle}}'>{{names.firstname}}</option>
+      {{/each}}
+    </select>
+    <input type="submit" value="Load dashboard">
+
+    </form>
+  </div>
+
   <p class="pre-section">Clients</p>
   <div class="client-parent">
     {{#each clients}}
-      <div class="client-child"><a href="/gmdashboard/{{id}}"><img src="{{logoUrl}}" /></a></div>
+      <div class="client-child"><a href="/gmdashboard/client/{{id}}"><img src="{{logoUrl}}" /></a></div>
     {{/each}}
   </div>
 
 <p class="pre-section">My Jobs</p>
-
-{{#each myJobs}}
-  <div class="each-job-wrapper">
-   {{{displayMyJobs this @key ../jobsDetail ../stagesDetail}}}
-  </div>
-{{/each}}
+  {{>displayStatus jobs=myJobs}}
+</div>
 
 <p class="pre-section">Other Jobs</p>
-
-  {{#each otherJobs}}
-  <div class="each-job-wrapper">
-    {{{displayJobs this @key ../jobsDetail ../stagesDetail}}}
-  </div>
-  {{/each}}
-
+  {{>displayStatus jobs=otherJobs}}
 </div>
