@@ -7,7 +7,7 @@ var expect = Code.expect;
 var it = lab.test;
 
 
-describe('create an object from candidates who has statusCurrent', function () {
+describe('link the status to the job object', function () {
 
   it('return the object with status', function (done) {
 
@@ -16,7 +16,41 @@ describe('create an object from candidates who has statusCurrent', function () {
         fullname: 'Lara Craft',
         picture: 'https://image',
         statusCurrent: [
-          {idJob: '12', idStage: '2', idUser: '33', timestamp: '34343'},
+          {idJob: '12', idStage: '1', idUser: '1', timestamp: '34343'},
+          {idJob: '10', idStage: '3', idUser: '44', timestamp: '454545'}
+        ]},
+        {id: '2',
+        fullname: 'Mario Bros',
+        picture: 'https://image2',
+        statusCurrent: [
+          {idJob: '1', idStage: '2', idUser: '55', timestamp: '34343'},
+          {idJob: '10', idStage: '3', idUser: '66', timestamp: '454545'}
+        ]}
+      ];
+
+      const jobsObject = {'12': {
+        '1':[],
+        '2':[]
+        }
+      };
+      const myId = '1';
+
+      const result = linkStatusToObj(candidates, jobsObject, myId);
+      expect(result['12']['1'][0].fullname).to.equal('Lara Craft');
+      done();
+  });
+});
+
+describe('link status to job object', function () {
+
+  it('return the object even if the idJob is not in job object', function (done) {
+
+      const candidates = [
+        {id: '1',
+        fullname: 'Lara Craft',
+        picture: 'https://image',
+        statusCurrent: [
+          {idJob: '12', idStage: '2', idUser: '1', timestamp: '34343'},
           {idJob: '10', idStage: '3', idUser: '44', timestamp: '454545'}
         ]},
         {id: '2',
@@ -30,15 +64,13 @@ describe('create an object from candidates who has statusCurrent', function () {
 
       const jobsObject = {'1': {
         '1':[],
-        '2':[],
-        '3':[]
+        '2':[]
         }
       };
       const myId = '1';
 
       const result = linkStatusToObj(candidates, jobsObject, myId);
-      // expect(result['1']).to.equal(jobsObject['1']);
-      // expect(result['1']['1'].statusCurrent[0].idJob).to.equal('12');
+      expect(result['1']['1']).to.be.an.array();
       done();
   });
 });
