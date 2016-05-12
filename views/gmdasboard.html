@@ -8,7 +8,7 @@
 
       <select class="users" name="user">
         {{#each users}}
-          <option value='{{idGoogle}}'>{{names.firstname}}</option>
+          {{createOptionUser this ../userIdGoogle}}
         {{/each}}
       </select>
       <button type="submit">Load dashboard</button>
@@ -20,9 +20,10 @@
   <div class="client-parent">
     {{#each clients}}
       <div class="client-child">
-        <a href="/gmdashboard/client/{{id}}">
-          <img src="{{logoUrl}}" />
-        </a>
+        <form action="/gmdashboard/client/{{id}}" method="post">
+          <input type="hidden" name="idUser" value="{{../userIdGoogle}}">
+          <button type="submit"><img src="{{logoUrl}}" /></button>
+        </form>
       </div>
     {{/each}}
   </div>
