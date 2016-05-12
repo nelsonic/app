@@ -364,6 +364,7 @@ span.close > i.fa-times {
 .client-child img {
   width: 80px;
   border-radius: 50%;
+  height: 80px;
 }
 
 .client-child > form > button {
