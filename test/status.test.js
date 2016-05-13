@@ -210,3 +210,35 @@ describe('delete the status when authenticated', function () {
     });
   });
 });
+
+describe('delete the status when authenticated', function () {
+
+  it('redirects to the candidate page with new status is deleted', function (done) {
+
+    var status = {
+      idCandidate: '88',
+      timestamp: '89898989',
+      redirectDashboard: true
+    };
+
+    var options = {
+      method: "POST",
+      url: "/status/delete",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: status
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});

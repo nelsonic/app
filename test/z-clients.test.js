@@ -51,9 +51,9 @@ describe('Attempt to get /clients/list with authorization', function () {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
           var clients = $('.client-job-main-content ul');
-          expect(clients.length).to.equal(2);
+          expect(clients.length).to.equal(3);
           var images = $('img');
-          expect(images.length).to.equal(2);
+          expect(images.length).to.equal(3);
           expect(images[0].attribs.src).to.equal('/assets/img/square-global-m-logo.png');
           server.stop(done);
         });
