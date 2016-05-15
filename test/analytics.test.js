@@ -35,7 +35,7 @@ describe('access analytics, when user is authenticated', function () {
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject({url: '/analytics', headers: { cookie: "token=" + token }}, function (res) {
+      server.inject({url: '/analytics', headers: { cookie: "token=" + token }, credentials: { id: "12", "name": "Simon", valid: true}}, function (res) {
         expect(res.statusCode).to.equal(200);
 
         server.stop(done);

@@ -257,6 +257,97 @@ span.close > i.fa-times {
 /*==============================
  End 404 page
 ================================*/
+
+/*==============================
+ Status dropdowns
+================================*/
+.add-status-div {
+  margin-top: 15px;
+}
+
+#add-status {
+  display: block;
+}
+
+.edit-status {
+  display: block;
+}
+
+.dropbtn, #add-status {
+  background-color: #424A5D;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  min-width: 160px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-clients, .dropdown-jobs, .dropdown-stages, .dropdown-save {
+  position: relative;
+  display: none;
+}
+
+.dropdown-clients-edit, .dropdown-jobs-edit, .dropdown-stages-edit, .dropdown-save-edit {
+  display: none;
+}
+
+.dropdown-clients > select, .dropdown-jobs > select, .dropdown-stages > select, .dropdown-clients-edit > select, .dropdown-jobs-edit > select, .dropdown-stages-edit > select {
+  outline:0;
+  border: none;
+}
+
+.status-candidate {
+  margin-bottom: -20px;
+}
+
+.status-candidate:first-of-type {
+  margin-top: 20px;
+
+}
+
+.status-candidate span {
+  color: black;
+}
+
+.status-wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 5px;
+}
+
+.edit-status-form {
+  display: inline-block;
+}
+
+.status-wrapper .edit-status {
+  float: left;
+  border: 1px solid #424A5D;
+  background-color: #424A5D;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.delete-status-form > button {
+  float:left;
+  border: 1px solid #424A5D;
+  background-color: #424A5D;
+  color: #fff;
+}
+
+.status-candidate span.stage-span {
+  color: green;
+  font-weight: 600;
+}
+
+.stage-initials-span {
+  font-weight: 800;
+  padding-right: 5px;
+}
+
+/*==============================
+ End Status dropdowns
+================================*/
 @media (min-width: 1440px) {
 
   .search-form input {
