@@ -1,0 +1,27 @@
+{{#each jobs as |stages idJob|}}
+<div class="each-job-wrapper">
+  <div class="job-info-dash">
+    <p>Title: <a href="/jobs/{{idJob}}">{{lookup (lookup ../jobsDetail idJob) 'title'}}</a></p>
+    <p>Salary: {{lookup (lookup ../jobsDetail idJob) 'salary'}}</p>
+  </div>
+
+  <div class="job-parent">
+    {{#each stages as |candidates idStage|}}
+      <div class="stage-child">
+      <div class="candidate stage-title">{{lookup (lookup ../../stagesDetail idStage) 'name'}}</div>
+      {{#each candidates}}
+        <div class="candidate">
+          <form class="delete-status-dash" action="/status/delete" method="POST">
+            <input type="hidden" name="idCandidate" value="{{id}}">
+            <input type="hidden" name="timestamp" value="{{statusTimestamp}}">
+            <input type="hidden" name="redirectDashboard" value="true">
+            <button type="submit">x</button>
+          </form>
+          <img src='{{picture}}'/><p><a href="/candidate/{{id}}">{{fullname}}</a></p>
+        </div>
+      {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</div>
+{{/each}}

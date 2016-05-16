@@ -1,0 +1,41 @@
+{{>navigation-dashboard}}
+
+
+<div class="new-dash-wrapper">
+
+  {{#if admin}}
+  <div class="dropdown-users">
+    <form action="/dashboard/user" method="post">
+
+      <select class="users" name="user">
+        {{#each users}}
+          {{createOptionUser this ../userIdGoogle}}
+        {{/each}}
+      </select>
+      <button type="submit">Load dashboard</button>
+    </form>
+  </div>
+  {{/if}}
+
+  <p class="pre-section">Clients</p>
+
+  <div class="client-parent">
+    {{#each clients}}
+      <div class="client-child">
+        <form action="/dashboard/client/{{id}}" method="post">
+          <input type="hidden" name="idUser" value="{{../userIdGoogle}}">
+          <button type="submit"><img src="{{logoUrl}}" /></button>
+        </form>
+      </div>
+    {{/each}}
+  </div>
+
+<p class="pre-section">My Jobs</p>
+  {{>displayStatus jobs=myJobs}}
+
+
+<p class="pre-section">Other Jobs</p>
+  {{>displayStatus jobs=otherJobs}}
+
+
+</div>
