@@ -10,7 +10,7 @@ var expect = Code.expect;
 var it = lab.test;
 
 
-describe('/gmdashboard', function () {
+describe('/dashboard', function () {
 
   it('redirect not authenticated user to the login page', function (done) {
 
@@ -18,7 +18,7 @@ describe('/gmdashboard', function () {
 
       expect(err).to.not.exist();
 
-      server.inject('/gmdashboard', function (res) {
+      server.inject('/dashboard', function (res) {
 
         expect(res.statusCode).to.equal(302);
 
@@ -28,13 +28,13 @@ describe('/gmdashboard', function () {
   });
 });
 
-describe('/gmdashboard', function () {
+describe('/dashboard', function () {
 
-  it('display gmdashboard for authenticated users', function (done) {
+  it('display dashboard for authenticated users', function (done) {
 
     var options = {
       method: "GET",
-      url: "/gmdashboard",
+      url: "/dashboard",
       credentials: { id: "12", "name": "Simon", valid: true}
     };
 
@@ -48,7 +48,7 @@ describe('/gmdashboard', function () {
   });
 });
 
-describe('Access /gmdashboard/user with authorization', function () {
+describe('Access /dashboard/user with authorization', function () {
 
   it('return dashboard for the user', function (done) {
 
@@ -59,7 +59,7 @@ describe('Access /gmdashboard/user with authorization', function () {
 
       var options = {
         method: "POST",
-        url: "/gmdashboard/user",
+        url: "/dashboard/user",
         headers: { cookie: "token=" + token },
         credentials: { id: "12", "name": "Simon", valid: true, scope: "admin"},
         payload: {user: '12'}
@@ -73,7 +73,7 @@ describe('Access /gmdashboard/user with authorization', function () {
   });
 });
 
-describe('Access /gmdashboard/client/4', function () {
+describe('Access /dashboard/client/4', function () {
 
   it('return dashboard for the user', function (done) {
 
@@ -85,7 +85,7 @@ describe('Access /gmdashboard/client/4', function () {
 
       var options = {
         method: "POST",
-        url: "/gmdashboard/client/4",
+        url: "/dashboard/client/4",
         headers: { cookie: "token=" + token },
         credentials: { id: "12", "name": "Simon", valid: true, scope: "admin"},
         payload: {idUser: '12'}

@@ -1,4 +1,4 @@
-var filterJobs = require('../lib/handlers/gmdashboard/helpers/filter_jobs');
+var filterJobs = require('../lib/handlers/dashboard/helpers/filter_jobs');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();

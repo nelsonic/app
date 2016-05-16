@@ -1,4 +1,4 @@
-var linkCandidatesToJob = require('../lib/handlers/gmdashboard/helpers/link_candidates_to_job');
+var linkCandidatesToJob = require('../lib/handlers/dashboard/helpers/link_candidates_to_job');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();

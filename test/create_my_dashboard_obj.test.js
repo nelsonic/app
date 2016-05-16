@@ -1,4 +1,4 @@
-var createMyDashboardObj = require('../lib/handlers/gmdashboard/helpers/create_my_dashboard_obj');
+var createMyDashboardObj = require('../lib/handlers/dashboard/helpers/create_my_dashboard_obj');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();

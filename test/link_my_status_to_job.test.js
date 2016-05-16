@@ -1,4 +1,4 @@
-var linkStatusToObj = require('../lib/handlers/gmdashboard/helpers/link_my_status_to_job');
+var linkStatusToObj = require('../lib/handlers/dashboard/helpers/link_my_status_to_job');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();

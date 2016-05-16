@@ -5,7 +5,7 @@
 
   {{#if admin}}
   <div class="dropdown-users">
-    <form action="/gmdashboard/user" method="post">
+    <form action="/dashboard/user" method="post">
 
       <select class="users" name="user">
         {{#each users}}
@@ -22,7 +22,7 @@
   <div class="client-parent">
     {{#each clients}}
       <div class="client-child">
-        <form action="/gmdashboard/client/{{id}}" method="post">
+        <form action="/dashboard/client/{{id}}" method="post">
           <input type="hidden" name="idUser" value="{{../userIdGoogle}}">
           <button type="submit"><img src="{{logoUrl}}" /></button>
         </form>

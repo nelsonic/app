@@ -1,4 +1,4 @@
-var stagesToObj = require('../lib/handlers/gmdashboard/helpers/stages_to_object');
+var stagesToObj = require('../lib/handlers/dashboard/helpers/stages_to_object');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();

@@ -1,4 +1,4 @@
-var filterStages = require('../lib/handlers/gmdashboard/helpers/filter_stages');
+var filterStages = require('../lib/handlers/dashboard/helpers/filter_stages');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
