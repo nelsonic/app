@@ -130,6 +130,9 @@ describe('Return the second candidate: /candidate/2 ' , function () {
         server.inject(options, function(res) {
           expect(err).to.not.exist();
           expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          var liUrl = $('#sidebar a')[0];
+          expect(liUrl.attribs.href).to.equal("https://www.linkedin.com/in/fakeprofile3");
           server.stop(done);
         });
       });
