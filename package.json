@@ -7,7 +7,7 @@
     "resetdb": "node test/fixtures/initialize.js",
     "test": "node test/fixtures/initialize.js && node test/fixtures/copy-data.js && node test/fixtures/copy-status.js && ./node_modules/lab/bin/lab ./test/*.test.js ./test/*/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
     "coverage": "./node_modules/lab/bin/lab -r html -o ./test/coverage.html",
-    "start": "node lib/start.js",
+    "start": "node --max_old_space_size=400 lib/start.js --production",
     "dev": "./node_modules/.bin/nodemon lib/start.js",
     "codeclimate": "CODECLIMATE_REPO_TOKEN=2a233c5d8243d7c785eedd5a366eb834c7ebe4bbfc2de5e951585cb839fbad9a ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./lcov.info"
   },
