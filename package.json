@@ -34,7 +34,7 @@
     "hoek": "^4.0.0",
     "inert": "^4.0.0",
     "joi": "^8.0.2",
-    "jsonwebtoken": "^6.2.0",
+    "jsonwebtoken": "^7.0.0",
     "linkedin-canonical-url": "^1.0.5",
     "redis-connection": "^4.0.0",
     "vision": "^4.0.0"
