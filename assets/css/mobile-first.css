@@ -1104,13 +1104,35 @@ circle {
 /*=============================
 Upload Cv
 =============================*/
-.upload-cv-form > button, .upload-cv-form > input[type="file"] {
-  /*float: right;*/
+.upload-cv-form > button {
+  float: right;
   background-color: #424A5D;
   color: #FFD777;
   border: none;
   padding: 5px 10px;
+  margin-top: -5px;
 }
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input.custom-file-input {
+  outline: none;
+}
+
+.custom-file-input::before {
+  content: 'Browse';
+  display: inline-block;
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 8px;
+  outline: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
 /*==============================
  Email
 ================================*/
