@@ -120,7 +120,7 @@
         {{#if candidate.cvDocumentLink}}
           <p><span>CV: </span><a href="{{candidate.cvDocumentLink}}" target="_blank">Preview/Download the CV</a></p>
         {{/if}}
-        <form action="/cv/upload" method="post" enctype="multipart/form-data">
+        <form class='upload-cv-form' action="/cv/upload" method="post" enctype="multipart/form-data">
           <input type="file" name="selectedCv" required>
           <input type="hidden" name="idCandidate" value="{{candidate.id}}">
           <button type="submit">Upload</button>

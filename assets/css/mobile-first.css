@@ -1101,10 +1101,20 @@ circle {
  End Jobs
 ================================*/
 
+/*=============================
+Upload Cv
+=============================*/
+.upload-cv-form > button, .upload-cv-form > input[type="file"] {
+  /*float: right;*/
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 10px;
+}
 /*==============================
  Email
 ================================*/
-.send-email-form > button{
+.send-email-form > button {
   float: right;
   margin-top: -35px;
   background-color: #424A5D;
