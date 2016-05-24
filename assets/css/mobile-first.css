@@ -1104,6 +1104,10 @@ circle {
 /*=============================
 Upload Cv
 =============================*/
+.upload-cv-form {
+  margin: 20px 0 10px 0;
+}
+
 .upload-cv-form > button {
   float: right;
   background-color: #424A5D;
@@ -1111,6 +1115,7 @@ Upload Cv
   border: none;
   padding: 5px 10px;
   margin-top: -5px;
+  cursor: pointer;
 }
 
 .custom-file-input::-webkit-file-upload-button {
