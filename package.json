@@ -36,6 +36,7 @@
     "joi": "^8.0.2",
     "jsonwebtoken": "^6.2.0",
     "linkedin-canonical-url": "^1.0.5",
+    "mime-types": "^2.1.11",
     "redis-connection": "^4.0.0",
     "vision": "^4.0.0"
   },
