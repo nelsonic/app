@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/FAC-GM/app#readme",
   "dependencies": {
+    "bcrypt": "^0.8.6",
     "btoa": "^1.1.2",
     "elasticsearch": "^11.0.1",
     "env2": "^2.0.4",

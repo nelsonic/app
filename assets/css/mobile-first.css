@@ -1340,17 +1340,28 @@ Vacancy
 /*==============================
  Users Edit/List
 ================================*/
-.users-list-wrapper {
+.users-list-wrapper, .client-users-wrapper {
   margin-top: 60px;
   width: 70%;
   margin: 60px auto;
 }
 
-.users-list-wrapper > form > input {
+.users-list-wrapper > form > input, .client-users-wrapper > form > input, .client-users-wrapper > form > input[type="password"] {
   padding: 5px 0;
 }
 
-.users-list-wrapper > form > button {
+.client-users-wrapper > form > select, .client-users-wrapper > form > input[type="password"] {
+  padding: 5px 0px;
+  outline: none;
+  width: 100%;
+  margin: 5px;
+}
+
+.client-users-wrapper > form > button {
+  margin: 5px;
+}
+
+.users-list-wrapper > form > button, .client-users-wrapper > form > button {
   background-color: #424A5D;
   padding: 10px 60px;
   color: #E4AD28;
@@ -1358,11 +1369,14 @@ Vacancy
   margin-top: 20px;
 }
 
-.users-list-wrapper > form > button:hover {
+.users-list-wrapper > form > button:hover, .client-users-wrapper > form > button:hover {
   background-color: #E4AD28;
   color: #424A5D;
 }
 
+.authorized {
+  margin: 5px 0 0 -8px;
+}
 /*==============================
  End Users Edit/List
 ================================*/

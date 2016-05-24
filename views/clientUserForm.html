@@ -1,0 +1,21 @@
+{{>navigation-dashboard}}
+
+<div class="client-users-wrapper">
+  <form action="/client-users/save" method="POST">
+    <label>Client: </label>
+    <select name="client" required>
+      {{#each clients}}
+       <option value="{{id}}">{{name}}</option>
+       {{/each}}
+    </select>
+    <label>Email:</label>
+    <input type="text" name="email" value="" required>
+    <label>Password:</label>
+    <input type="password" name="password" value="" required>
+    <p class="authorized">
+     <label for="active user"></label>
+      {{authorizedCheckbox true}}
+    </p>
+    <button type="submit">Save</button>
+  </form>
+</div>
