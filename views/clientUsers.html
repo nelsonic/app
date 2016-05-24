@@ -1,0 +1,13 @@
+{{>navigation-dashboard}}
+
+<div class="clients-job-wrapper">
+  <a class="create-icon" href="/client-users/create"><i class="fa fa-plus"> New Client</i></a>
+
+  {{#each clientUsers}}
+
+  <p><a href="/client-users/edit/{{id}}">{{nameClient}}</a></p>
+  <p>{{email}}</p>
+  <p>{{authorized}}</p>
+
+  {{/each}}
+</div>

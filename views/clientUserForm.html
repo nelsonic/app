@@ -2,19 +2,20 @@
 
 <div class="client-users-wrapper">
   <form action="/client-users/save" method="POST">
+    <input type="hidden" name="idClientUser" value="{{clientUser.id}}">
     <label>Client: </label>
     <select name="client" required>
       {{#each clients}}
-       <option value="{{id}}">{{name}}</option>
-       {{/each}}
+        {{optionsClientUser this ../clientUser.idClient}}
+      {{/each}}
     </select>
     <label>Email:</label>
-    <input type="text" name="email" value="" required>
+    <input type="text" name="email" value="{{clientUser.email}}" required>
     <label>Password:</label>
     <input type="password" name="password" value="" required>
     <p class="authorized">
      <label for="active user"></label>
-      {{authorizedCheckbox true}}
+      {{authorizedCheckbox clientUser.authorized}}
     </p>
     <button type="submit">Save</button>
   </form>
