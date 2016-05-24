@@ -13,7 +13,6 @@ var FormData = require('form-data');
 var fs = require('fs');
 var streamToPromise = require('stream-to-promise');
 
-
 describe('/cv/upload without authentication', function () {
 
   it('attempt to upload a cv without being authenticated', function (done) {
@@ -33,28 +32,23 @@ describe('/cv/upload without authentication', function () {
 
         expect(err).to.not.exist();
 
-        var options = {
-          method: "POST",
-          url: "/cv/upload",
-          headers: form.getHeaders(),
-          payload: payload,
-        };
+          var options = {
+            method: "POST",
+            url: "/cv/upload",
+            headers: form.getHeaders(),
+            payload: payload,
+          };
 
-        server.inject(options, function (res) {
-          //redirect to the login page
-          expect(res.statusCode).to.equal(302);
-          expect(res.headers.location).to.equal('/login');
-          server.stop(done);
+          server.inject(options, function (res) {
+            //redirect to the login page
+            expect(res.statusCode).to.equal(302);
+            expect(res.headers.location).to.equal('/login');
+            server.stop(done);
+          });
         });
       });
     });
   });
-  });
-
-
-
-
-
 });
 
 describe('/cv/upload cv from the app', function () {
@@ -93,10 +87,6 @@ describe('/cv/upload cv from the app', function () {
           server.stop(done);
         });
       });
-
-
-    })
-
-
+    });
   });
 });
