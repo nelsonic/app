@@ -1,13 +1,25 @@
 {{>navigation-dashboard}}
 
-<div class="clients-job-wrapper">
+<div class="client-users-wrapper">
   <a class="create-icon" href="/client-users/create"><i class="fa fa-plus"> New Client</i></a>
 
   {{#each clientUsers}}
-
-  <p><a href="/client-users/edit/{{id}}">{{nameClient}}</a></p>
-  <p>{{email}}</p>
-  <p>{{authorized}}</p>
-
+    <div class="list-wrapper">
+      <article class="main">
+        <div class="client-user-box">
+          <div class="headline">
+            <a href="/client-users/edit/{{id}}">
+            <div class="client-user-main-content">
+              <ul>
+                <li><span>Name:</span> {{nameClient}}</li>
+                <li><span>Email:</span> {{email}}</li>
+                <li><span>Authorized:</span> {{authorized}}</li>
+              </ul>
+            </div>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
   {{/each}}
 </div>
