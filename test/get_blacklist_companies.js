@@ -16,6 +16,7 @@ describe('Get the list of clients', function () {
       expect(list.indexOf('FAC')).to.be.above(-1);
       expect(list.indexOf('Founders And Coders')).to.be.above(-1);
       expect(list.indexOf('DWYL')).to.be.above(-1);
+      expect(list.indexOf('Do WYL')).to.equal(-1);
       done();
     })
   });

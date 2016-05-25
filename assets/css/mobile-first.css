@@ -1101,10 +1101,47 @@ circle {
  End Jobs
 ================================*/
 
+/*=============================
+Upload Cv
+=============================*/
+.upload-cv-form {
+  margin: 20px 0 10px 0;
+}
+
+.upload-cv-form > button {
+  float: right;
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 10px;
+  margin-top: -5px;
+  cursor: pointer;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input.custom-file-input {
+  outline: none;
+}
+
+.custom-file-input::before {
+  content: 'Browse';
+  display: inline-block;
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 8px;
+  outline: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
 /*==============================
  Email
 ================================*/
-.send-email-form > button{
+.send-email-form > button {
   float: right;
   margin-top: -35px;
   background-color: #424A5D;
