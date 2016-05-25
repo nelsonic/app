@@ -176,7 +176,7 @@ header {
   background-color: #fff;
 }
 
-.candidate-box {
+.candidate-box, .client-user-box {
   margin-bottom: 5px;
   padding: 10px;
   background-color: #fff;
@@ -187,7 +187,7 @@ header {
   -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
 }
 
-.candidate-box .headline {
+.candidate-box .headline, .client-user-box .headline {
   position: relative;
   overflow: hidden;
 }
@@ -233,6 +233,10 @@ i.fa-star, i.fa-user, i.fa-tachometer {
   border: none;
   float: right;
   margin-top: 10px;
+}
+
+i.fa-plus-circle {
+  color: #E4AD28;
 }
 
 .favourite-form button {

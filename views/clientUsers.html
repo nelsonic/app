@@ -3,23 +3,27 @@
 <div class="client-users-wrapper">
   <a class="create-icon" href="/client-users/create"><i class="fa fa-plus"> New Client</i></a>
 
-  {{#each clientUsers}}
-    <div class="list-wrapper">
-      <article class="main">
-        <div class="client-user-box">
-          <div class="headline">
-            <a href="/client-users/edit/{{id}}">
-            <div class="client-user-main-content">
-              <ul>
-                <li><span>Name:</span> {{nameClient}}</li>
-                <li><span>Email:</span> {{email}}</li>
-                <li><span>Authorized:</span> {{authorized}}</li>
-              </ul>
-            </div>
-            </a>
-          </div>
-        </div>
-      </article>
+  <div class="tabs">
+    <ul>
+      <li id="tabHeader_1">Authorized</li>
+      <li id="tabHeader_2">Inauthorized</li>
+    </ul>
+  </div>
+  <div class="tabsContent">
+
+    <div class="tabPage" id="tabpage_1">
+      {{#each authorizedClients}}
+        {{>client_user}}
+      {{/each}}
     </div>
-  {{/each}}
+
+    <div class="tabPage" id="tabpage_2">
+      {{#each inauthorizedClients}}
+        {{>client_user}}
+      {{/each}}
+    </div>
+  </div>
+
 </div>
+
+<script src="/assets/js/activity-tabs.js"></script>
