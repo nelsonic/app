@@ -13,3 +13,9 @@ before_script:
   - curl -XPOST 'localhost:9200/_bulk?pretty' --data-binary "@./test/fixtures/fixture.json"
 after_script:
     - curl -XDELETE 'localhost:9200/fixture'
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
