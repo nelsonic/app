@@ -6,7 +6,7 @@
   <div class="tabs">
     <ul>
       <li id="tabHeader_1">Authorized</li>
-      <li id="tabHeader_2">Inauthorized</li>
+      <li id="tabHeader_2">Unauthorized</li>
     </ul>
   </div>
   <div class="tabsContent">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="tabPage" id="tabpage_2">
-      {{#each inauthorizedClients}}
+      {{#each unAuthorizedClients}}
         {{>client_user}}
       {{/each}}
     </div>
