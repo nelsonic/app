@@ -24,7 +24,7 @@
   height: 90%;
 }
 
-.client-job-wrapper, .client-user {
+.client-job-wrapper {
   width: 60%;
 }
 
@@ -522,7 +522,7 @@ span.close > i.fa-times {
     width: 80%;
   }
 
-  .client-job-wrapper, .client-user {
+  .client-job-wrapper {
     width: 75%;
   }
 
