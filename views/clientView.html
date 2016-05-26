@@ -21,22 +21,41 @@
       {{else}}
         <p><span class="inactive-span">Inactive</span></p>
       {{/if}}
-
       <br/>
 
     </div>
 
     <div class="client-key-contact">
       <a class="create-icon edit" href="/clients/edit/{{client.id}}">Edit</a>
-      
+
       <p><span>Key Contact:</span> <strong>{{client.contactName}}</strong></p>
       <p><span>Email:</span> {{client.contactEmail}}</p>
-      <p><span>Phone:</span> {{client.contactPhone}}</p>  
+      <p><span>Phone:</span> {{client.contactPhone}}</p>
+
+      {{#if clientUsersList}}
+        <p><span>Login email:</span> <br/></p>
+      {{/if}}
+        {{#each clientUsersList}}
+          <p>
+          {{#if ../user.admin}}
+            <a href="/client-users/edit/{{id}}">{{email}}</a>
+          {{else}}
+            {{email}}
+          {{/if}}
+          {{#if authorized}}
+            <span class="active-span">Authorized</span>
+            {{else}}
+            <span class="inactive-span">Unauthorized</span>
+          {{/if}}
+        </p>
+          
+        {{/each}}
+
     </div>
 
   </div>
   <h2 class="open-roles">Open Roles: {{client.jobs.length}} </h2>
-  
+
   {{#each client.jobs}}
     {{>job}}
   {{/each}}
