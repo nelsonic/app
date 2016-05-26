@@ -1,0 +1,14 @@
+<div class="container-login">
+  <h1>Welcome to GM</h1>
+  {{message}}
+  <form action="/client-auth" method="post">
+
+    <label for="email">Email: </label>
+    <input id="email" type="text" name="email" placeholder="example@email.com" required >
+
+    <label for="password">Password: </label>
+    <input type="password" name="password" required>
+
+    <button type="submit" >Login</button>
+  </form>
+</div>
