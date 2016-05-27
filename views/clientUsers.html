@@ -1,0 +1,29 @@
+{{>navigation-dashboard}}
+
+<div class="client-users-wrapper">
+  <a class="create-icon" href="/client-users/create"><i class="fa fa-plus"> New Client</i></a>
+
+  <div class="tabs">
+    <ul>
+      <li id="tabHeader_1">Authorized</li>
+      <li id="tabHeader_2">Unauthorized</li>
+    </ul>
+  </div>
+  <div class="tabsContent">
+
+    <div class="tabPage" id="tabpage_1">
+      {{#each authorizedClients}}
+        {{>client_user}}
+      {{/each}}
+    </div>
+
+    <div class="tabPage" id="tabpage_2">
+      {{#each unAuthorizedClients}}
+        {{>client_user}}
+      {{/each}}
+    </div>
+  </div>
+
+</div>
+
+<script src="/assets/js/activity-tabs.js"></script>
