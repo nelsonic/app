@@ -1387,11 +1387,11 @@ Vacancy
   margin: 60px auto;
 }
 
-.users-list-wrapper > form > input, .client-users-wrapper > form > input, .client-users-wrapper > form > input[type="password"] {
+.users-list-wrapper input, .client-users-wrapper input {
   padding: 5px 0;
 }
 
-.client-users-wrapper > form > select, .client-users-wrapper > form > input[type="password"] {
+.client-users-wrapper select, .client-users-wrapper input[type="password"] {
   padding: 5px 0px;
   outline: none;
   width: 100%;
