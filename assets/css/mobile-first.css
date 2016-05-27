@@ -1400,6 +1400,20 @@ Vacancy
 
 .client-users-wrapper > form > button {
   margin: 5px;
+  cursor: pointer;
+}
+
+.client-users-wrapper > form > a {
+  color:  #E4AD28;
+  text-decoration: none;
+  background-color:  #424A5D;
+  padding: 10px 60px;
+  font-size: 12px;
+  border: none;
+}
+.client-users-wrapper > form > a:hover {
+  background-color: #E4AD28;
+  color: #424A5D;
 }
 
 .users-list-wrapper > form > button, .client-users-wrapper > form > button {
