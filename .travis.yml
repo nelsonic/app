@@ -1,11 +1,13 @@
 language: node_js
 node_js:
-  - 4.2
+  - 4.4.5
+sudo: false
 services:
   - elasticsearch
   - redis-server
 before_install:
   - pip install --user codecov
+  - $CXX --version
 after_success:
   - codecov --file lcov.info --disable search
 before_script:
@@ -13,3 +15,12 @@ before_script:
   - curl -XPOST 'localhost:9200/_bulk?pretty' --data-binary "@./test/fixtures/fixture.json"
 after_script:
     - curl -XDELETE 'localhost:9200/fixture'
+env:
+  global:
+    - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
