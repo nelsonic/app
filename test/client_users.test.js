@@ -147,6 +147,39 @@ describe('Create a client user page with authorization with property authorized 
   });
 });
 
+describe('Attempt to create a new email which already exists', function () {
+
+  it('checks status code 200 and the error message', function (done) {
+
+    Server.init(0, function (err, server) {
+
+      var payload = {
+        idClient: '1',
+        email: 'test@gmail.com',
+        password: 'password',
+        authorized: 'on'
+      }
+
+      var options = {
+        method: "POST",
+        url: "/client-users/save",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true, scope: "admin"},
+        payload: payload
+      }
+
+      expect(err).to.not.exist();
+      server.inject(options , function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        expect($('.error-message')[0].children[0].data).to.equal("This email is already used!");
+        server.stop(done);
+      });
+    });
+  });
+});
+
 describe('Create a client user page with authorization with property authorized = false', function () {
 
   it('checks status code 302 of redirection to the client list page', function (done) {
