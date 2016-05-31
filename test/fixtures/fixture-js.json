@@ -225,7 +225,7 @@
   { "index" : { "_index" : "gmcontact", "_type" : "gmclientusers", "_id" : "123" } },
   {"idClient": "1", "email": "test@gmail.com", "password": "123455", "authorized": true},
   { "index" : { "_index" : "gmcontact", "_type" : "gmclientusers", "_id" : "1234" } },
-  {"idClient": "16767", "email": "test@gmail.com", "password": "123455", "authorized": true},
+  {"idClient": "16767", "email": "test2@gmail.com", "password": "123455", "authorized": true},
   { "index" : { "_index" : "gmcontact", "_type" : "analytics", "_id" : "13" } },
     {"idUser":"45",
       "userName": "Anita",
