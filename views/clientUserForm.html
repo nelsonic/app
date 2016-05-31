@@ -3,6 +3,9 @@
 <div class="client-users-wrapper">
   <form action="/client-users/save" method="POST">
     <input type="hidden" name="idClientUser" value="{{clientUser.id}}">
+    {{#if errorMessage}}
+      <p class='error-message'>{{errorMessage}}</p>
+    {{/if}}
     <label>Client: </label>
     <select name="client" required>
       {{#each clients}}
