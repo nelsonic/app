@@ -8,6 +8,7 @@ body {
   height: 100vh;
   background-color: rgba(239, 237, 243, 0.37);
   font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
 }
 
 .logo {
@@ -19,7 +20,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 30em;
-  margin-top: 5%;
+  margin-top: 20px;
 }
 
 .client-login-container {
@@ -32,9 +33,9 @@ body {
   -ms-align-items: center;
   align-items: center;
   justify-content: center;
-
-  width: 50%;
-  height: 50%;
+  /*border: 1px solid black;*/
+  /*width: 50%;
+  height: 50%;*/
   overflow: auto;
   margin: auto;
   position: absolute;
@@ -42,6 +43,7 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+  overflow: hidden;
 }
 
 .client-login-container > form {
@@ -94,6 +96,5 @@ body {
 
   .logo img {
     width: 10em;
-    margin-top: 10%;
   }
 }
