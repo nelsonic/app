@@ -77,6 +77,15 @@ body {
   margin: 5px 0 5px 0;
 }
 
+@media (max-width: 768px) {
+  .logo img {
+    width: 12em;
+  }
+  .client-login-container {
+    width: 60%;
+  }
+}
+
 @media (max-width: 460px) {
   .client-login-container {
     width: 90%;
