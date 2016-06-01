@@ -33,17 +33,11 @@ body {
   -ms-align-items: center;
   align-items: center;
   justify-content: center;
-  /*border: 1px solid black;*/
-  /*width: 50%;
-  height: 50%;*/
-  overflow: auto;
-  margin: auto;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .client-login-container > form {
@@ -81,7 +75,7 @@ body {
 
 @media (max-width: 768px) {
   .logo img {
-    width: 12em;
+    width: 10em;
   }
   .client-login-container {
     width: 60%;
@@ -96,5 +90,6 @@ body {
 
   .logo img {
     width: 10em;
+    margin-top: 40px;
   }
 }
