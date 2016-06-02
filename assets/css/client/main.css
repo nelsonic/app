@@ -1,0 +1,95 @@
+html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: rgba(239, 237, 243, 0.37);
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30em;
+  margin-top: 20px;
+}
+
+.client-login-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.client-login-container > form {
+  max-width: 24em;
+}
+
+.client-login-container > form label,
+.client-login-container > form input,
+.client-login-container >form button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.client-login-container > form input {
+  padding: 5px 0 5px 0;
+}
+
+.client-login-container > form label {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+}
+
+.client-login-container > form button {
+  background-color: rgba(79, 94, 130, 0.58);
+  color: #141546;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.client-login-container > form p {
+  color: #D24F4F;
+  margin: 5px 0 5px 0;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 10em;
+  }
+  .client-login-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 460px) {
+  .client-login-container {
+    width: 90%;
+    height: 90%;
+  }
+
+  .logo img {
+    width: 10em;
+    margin-top: 40px;
+  }
+}

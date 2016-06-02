@@ -3,6 +3,8 @@
 <div class="client-users-wrapper">
   <form action="/client-users/save" method="POST">
     <input type="hidden" name="idClientUser" value="{{clientUser.id}}">
+    <input type="hidden" name="sid" value="{{clientUser.sid}}">
+
     {{#if errorMessage}}
       <p class='error-message'>{{errorMessage}}</p>
     {{/if}}

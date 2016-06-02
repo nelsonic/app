@@ -5,7 +5,7 @@
   "main": "lib/start.js",
   "scripts": {
     "resetdb": "node test/fixtures/initialize.js",
-    "test": "node test/fixtures/initialize.js && node test/fixtures/copy-data.js && node test/fixtures/copy-status.js && ./node_modules/lab/bin/lab ./test/*.test.js ./test/*/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
+    "test": "node test/fixtures/initialize.js && node test/fixtures/copy-data.js && node test/fixtures/copy-status.js && sleep 5 && ./node_modules/lab/bin/lab ./test/*.test.js ./test/*/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
     "coverage": "./node_modules/lab/bin/lab -r html -o ./test/coverage.html",
     "start": "node --max_old_space_size=400 lib/start.js --production",
     "dev": "./node_modules/.bin/nodemon lib/start.js",

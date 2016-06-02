@@ -1,0 +1,10 @@
+<p>Stages</p>
+<br/>
+<form class="" action="/jobs/stages/edit" method="POST">
+  <input type="hidden" name="jobId" value="{{job.id}}">
+  <label for="stages"></label>
+  {{#each stages as |stage idStage|}}
+    {{stagesCheckbox idStage stage}}
+  {{/each}}
+  <button type="submit">Submit</button>
+</form>
