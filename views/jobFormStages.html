@@ -1,10 +1,19 @@
 <p>Stages</p>
 <br/>
-<form class="" action="/jobs/stages/edit" method="POST">
-  <input type="hidden" name="jobId" value="{{job.id}}">
+<form class="" action="" method="">
+  <input type="hidden" name="jobId" value="">
+  <p>{{job}}</p>
   <label for="stages"></label>
   {{#each stages as |stage idStage|}}
-    {{stagesCheckbox idStage stage}}
+    {{#if stage.allowed}}
+      {{#if stage.candidates}}
+        <input type="checkbox" disabled checked name="stages" value="{{idStage}}">{{stage.name}} {{stage.candidates}}<br/>
+      {{else}}
+        <input type="checkbox" checked name="stages" value="{{idStage}}">{{stage.name}} {{stage.candidates}}<br/>
+      {{/if}}
+    {{else}}
+    <input type="checkbox" name="stages" value="{{idStage}}">{{stage.name}} {{stage.candidates}}<br/>
+    {{/if}}
   {{/each}}
   <button type="submit">Submit</button>
 </form>
