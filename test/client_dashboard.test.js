@@ -45,6 +45,7 @@ describe('Access /client-dashboard with authorization', function () {
           method: "GET",
           url: "/client-dashboard",
           headers: { cookie: "token_client=" + token_client },
+          credentials: {idClient: '1'}
         };
 
         server.inject(options, function (res) {
