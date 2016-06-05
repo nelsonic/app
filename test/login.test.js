@@ -1,4 +1,3 @@
-require('env2')('.env');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
