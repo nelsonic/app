@@ -1,3 +1,13 @@
 <p>{{client.name}}</p>
 
 <img src="{{client.logoUrl}}" alt="" />
+
+{{#each jobs as |job idStage|}}
+  <p>{{job.title}}</p>
+  {{#each job.stages as |stage keyStage|}}
+    <p>{{stage.name}}</p>
+    {{#each stage.candidates as |candidate idCandidate|}}
+      <p>{{candidate.name}}</p>
+    {{/each}}
+  {{/each}}
+{{/each}}
