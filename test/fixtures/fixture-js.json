@@ -4,7 +4,7 @@
     "connections": 500,
     "connectedTo": [],
     "notesList": [],
-    "statusCurrent": [{"idJob": "2", "idUser": "12", "idClient": "4", "idStage": "2", "timestamp": "5465465"}],
+    "statusCurrent": [{"idJob": "2", "idUser": "12", "idClient": "4", "idStage": "2", "timestamp": "5465465"},{"idJob": "1", "idUser": "12", "idClient": "1", "idStage": "2", "timestamp": "5465465"} ],
      "fullname": "faKE",
      "headline": "faKE",
      "location": "Argentina",
