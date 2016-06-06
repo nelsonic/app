@@ -44,7 +44,7 @@ describe('Access the stages form of the job 1', function () {
         var options = {
           method: "GET",
           url: "/jobs/1/stages",
-          headers: { cookie: "token_client=" + token_client },
+          headers: { cookie: "token_client=" + token_client }
         };
 
         server.inject(options, function (res) {
