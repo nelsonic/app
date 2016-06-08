@@ -1,12 +1,12 @@
 html {
-  height: 100vh;
+  max-width: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
-  height: 100vh;
-  background-color: rgba(239, 237, 243, 0.37);
+  max-width: 100%;
+  background-color: #EFEFEF;
   font-family: 'Open Sans', sans-serif;
   overflow: hidden;
 }
@@ -83,28 +83,148 @@ body {
 /*==============================
   CLIENT NAVIGATION
 ================================*/
-header.cl-header {
+header {
   position: fixed;
   left: 0;
   right: 0;
   z-index: 1002;
-  background-color: grey !important;
+  background-color: #323232;
 }
 
 .cl-nav {
-  display: inline;
+  display: display-inline;
 }
 
+/*https://dusted.codes/making-font-awesome-awesome-using-icons-without-i-tags*/
+.icon::before {
+  display: inline-block;
+  margin-right: .5em;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+.fa-home, .fa-bars {
+  color: #EFEFEF;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+footer {
+  display: none;
+}
 /*==============================
   END CLIENT NAVIGATION
 ================================*/
 
-
 /*==============================
   CLIENT DASHBOARD
 ================================*/
+.cl-info {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
 
+.cl-info img {
+  width: 100px;
+}
 
+.cl-info p{
+  text-align: center;
+}
+/*job*/
+.cl-container {
+  margin-bottom: 40px;
+}
+
+.cl-job {
+  margin-top: 30px;
+}
+
+.cl-job-info {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.cl-stage-parent {
+  overflow-x: auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.cl-stage-child {
+  height: auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+}
+
+.cl-stage-child {
+  max-width: 300px;
+}
+
+.cl-stage-title {
+  height: 35px;
+  width: 300px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.82);
+  justify-content: center;
+}
+
+.cl-candidate {
+  min-width: 120px;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.cl-candidate img {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
 
 /*==============================
   END CLIENT DASHBOARD
@@ -116,9 +236,26 @@ header.cl-header {
   .client-login-container {
     width: 60%;
   }
+  /*column layout */
+  .cl-stage-parent {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .cl-stage-child {
+    max-width: 100%;
+  }
+
+  .cl-stage-title {
+    width: 100%;
+  }
 }
 
 @media (max-width: 460px) {
+
   .client-login-container {
     width: 90%;
     height: 90%;
@@ -127,5 +264,47 @@ header.cl-header {
   .logo img {
     width: 10em;
     margin-top: 40px;
+  }
+
+  /*client navigation on the mobile devices*/
+  header {
+    display: none;
+  }
+
+  footer {
+    display: block;
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color: #323232;
+  }
+
+  ul.nav {
+    padding: 0;
+    display: table;
+    width:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #323232;
+  }
+
+  ul.nav li {
+    display: table-cell;
+    border: 1px solid #EFEFEF;
+  }
+
+  ul.nav a {
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-right: none;
+    text-align: center;
+    color: #EFEFEF;
+  }
+
+  ul.nav li:last-child {
+    border-right: 1px solid #EFEFEF;
   }
 }
