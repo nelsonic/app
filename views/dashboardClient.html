@@ -4,13 +4,14 @@
 
   <div class="cl-info">
     <p><img src="{{client.logoUrl}}" alt="" /></p>
-    <p>{{client.name}}</p>
+    <p>CLIENT SINCE: {{client.name}}</p>
+    <p>TERMS: </p>
   </div>
+
   {{#each jobs as |job idJob|}}
     <div class="cl-job">
       <div class="cl-job-info">
-        <p>Title: {{job.title}}</p>
-        <p>Salary: {{job.salary}}</p>
+        <p>{{job.title}}</p>
       </div>
 
       <div class="cl-stage-parent">
@@ -21,29 +22,25 @@
             {{#each stage.candidates as |candidate idCandidate|}}
             <div class="cl-candidate">
 
-                  <!-- <div class="action">
-                    <ul>
-                      <li>idCandidate: {{idCandidate}}</li>
-                      <li>idJob: {{idJob}}</li>
-                      <li>currentStage: {{keyStage}}</li>
-                      <li>nextStage: {{candidate.nextStage}}</li>
-                    </ul>
-                  </div>
+              <div>
+                <button class="next-stage hidden-btn" type="submit">Next</button>
+                <input type="hidden" name="idCandidate" value="{{idCandidate}}">
+                <input type="hidden" name="idJob" value="{{idJob}}">
+                <input type="hidden" name="currentStage" value="{{keyStage}}">
+                <input type="hidden" name="nextStage" value="{{candidate.nextStage}}">
+              </div>
 
-                  <div>
-                    <button class="next-stage" type="submit">Next stage</button>
-                    <input type="hidden" name="idCandidate" value="{{idCandidate}}">
-                    <input type="hidden" name="idJob" value="{{idJob}}">
-                    <input type="hidden" name="currentStage" value="{{keyStage}}">
-                    <input type="hidden" name="nextStage" value="{{candidate.nextStage}}">
-                  </div>
+              <div>
+                <input type="hidden" name="idCandidate" value="{{idCandidate}}">
+                <input type="hidden" name="idJob" value="{{idJob}}">
+                <input type="hidden" name="currentStage" value="{{keyStage}}">
+                <button class="reject" type="submit">X</button>
+              </div>
 
-                  <div>
-                    <input type="hidden" name="idCandidate" value="{{idCandidate}}">
-                    <input type="hidden" name="idJob" value="{{idJob}}">
-                    <input type="hidden" name="currentStage" value="{{keyStage}}">
-                    <button type="submit">Reject</button>
-                  </div> -->
+              <div>
+                <button class="li-link hidden-btn"><a href=""></a>Li</button>
+              </div>
+
               <img src='{{picture}}'/><p>{{candidate.name}}</p>
           </div>
         {{/each}}
@@ -52,7 +49,7 @@
       </div>
     </div>
   {{/each}}
-
 </div>
+
 {{>client_navigation_footer}}
 <!-- <script type="text/javascript" src='/assets/js/client_dashboard.js'></script> -->

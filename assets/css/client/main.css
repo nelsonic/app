@@ -129,10 +129,11 @@ footer {
   -ms-flex-direction: column;
   -o-flex-direction: column;
   flex-direction: column;
+  padding-top: 50px;
 }
 
 .cl-info img {
-  width: 100px;
+  width: 50px;
 }
 
 .cl-info p{
@@ -155,6 +156,10 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+}
+
+.cl-job-info > p, .cl-stage-title {
+  text-transform: uppercase;
 }
 
 .cl-stage-parent {
@@ -204,7 +209,8 @@ footer {
   width: 300px;
   font-weight: 800;
   color: rgba(0, 0, 0, 0.82);
-  justify-content: center;
+  /*justify-content: center;*/
+  text-align: center;
 }
 
 .cl-candidate {
@@ -221,10 +227,56 @@ footer {
 }
 
 .cl-candidate img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   text-align: center;
+  border-radius: 50%;
+  border: 2px solid rgba(50, 50, 50, 0.74);
 }
+
+.hidden-btn {
+  z-index: 99999;
+  display: none;
+  border: none;
+  width: 40px;
+  background: #323232;
+  padding: 3px;
+  margin-left: -20px;
+  position: absolute;
+  color: #EFEFEF;
+  cursor: pointer;
+}
+
+.next-stage {
+  margin-top: 20px;
+}
+
+.li-link {
+  margin-top: 46px;
+}
+
+.reject {
+  background: #E86363;
+  display: none;
+  z-index: 99999;
+  border: none;
+  width: 30px;
+  margin-top: -8px;
+  padding: 3px;
+  margin-left: 22px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.cl-candidate:hover img{
+  opacity: 0.3;
+}
+
+.cl-candidate:hover .hidden-btn,
+.cl-candidate:hover .reject {
+  display: block;
+}
+
 
 /*==============================
   END CLIENT DASHBOARD
@@ -237,6 +289,14 @@ footer {
     width: 60%;
   }
   /*column layout */
+  .cl-info {
+    padding-top: 5px;
+  }
+
+  .cl-job-info {
+    justify-content: center;
+  }
+
   .cl-stage-parent {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
@@ -251,6 +311,18 @@ footer {
 
   .cl-stage-title {
     width: 100%;
+  }
+
+}
+
+@media (min-width: 461px) {
+
+  .fa-home {
+    float: left;
+  }
+
+  .fa-bars {
+    float: right;
   }
 }
 
@@ -307,4 +379,5 @@ footer {
   ul.nav li:last-child {
     border-right: 1px solid #EFEFEF;
   }
+
 }
