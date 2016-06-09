@@ -16,6 +16,7 @@ function createPayloadObj(elmts, payload) {
 }
 
 var nextStageButtons = document.querySelectorAll('.next-stage');
+var rejectButtons = document.querySelectorAll('.reject');
 
 for(var i = 0; i < nextStageButtons.length ; i++) {
 
@@ -58,10 +59,46 @@ for(var i = 0; i < nextStageButtons.length ; i++) {
 
           console.log('Ouups');
         }
-
       }
     };
 
     xhr.send(JSON.stringify(payload));
-  })
+  });
+}
+
+
+for(var i = 0; i < rejectButtons.length ; i++) {
+
+  rejectButtons[i].addEventListener('click', function (e) {
+
+    e.preventDefault();
+    //create the payload object
+    var payload = {};
+    var inputs = e.target.parentNode.getElementsByTagName('input');
+
+    createPayloadObj(inputs, payload);
+    var currentCandidateDOM = findAncestor(e.target.parentNode, 'cl-candidate');
+    var currentStageDOM = findAncestor(e.target.parentNode, 'cl-stage-child');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/reject');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+
+        var response = xhr.responseText;
+
+        if (JSON.parse(response).code === 200) {
+          currentStageDOM.removeChild(currentCandidateDOM);
+        }
+
+        if (JSON.parse(response).code === 500) {
+          //add errors TODO
+          console.log('Ouups');
+        }
+      }
+    };
+
+    xhr.send(JSON.stringify(payload));
+  });
 }
