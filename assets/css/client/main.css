@@ -22,28 +22,26 @@ body {
 }
 
 .logo img {
-  display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30em;
-  margin-top: 20px;
+  width: 20em;
+  margin-bottom: 50px;
+}
+
+.client-login-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
 }
 
 .client-login-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  margin-top: -50px;
 }
 
 .client-login-container > form {
