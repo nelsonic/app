@@ -11,7 +11,7 @@
   {{#each jobs as |job idJob|}}
     <div class="cl-job">
       <div class="cl-job-info">
-        <p>{{job.title}}</p>
+        <p><a class="edit-stages" href="/jobs/{{idJob}}/stages">{{job.title}}</a></p>
       </div>
 
       <div class="cl-stage-parent">
@@ -30,7 +30,7 @@
 
               <div class="actions">
                 <div>
-                  <button class="li-link hidden-btn"><a href=""></a>Li</button>
+                  <a href="{{candidate.url}}" target="_blank"><button class="li-link hidden-btn">Li</button></a>
                 </div>
 
                 <div>
@@ -41,7 +41,7 @@
                   <input type="hidden" name="nextStage" value="{{candidate.nextStage}}">
                 </div>
             </div>
-            
+
               <img src='{{picture}}'/><p>{{candidate.name}}</p>
               <p class="error-msg">Please, try again!</p>
           </div>

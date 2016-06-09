@@ -163,6 +163,11 @@ footer {
   text-transform: uppercase;
 }
 
+.edit-stages {
+  text-decoration: underline;
+  color: blue;
+}
+
 .cl-stage-parent {
   overflow-x: auto;
   display: -webkit-flex;
