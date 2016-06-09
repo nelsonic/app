@@ -237,26 +237,40 @@ footer {
 }
 
 .hidden-btn {
+  margin-top: 30px;
+  margin-left: -20px;
+  /*------*/
   z-index: 99999;
   display: none;
   border: none;
-  width: 40px;
+  width: 50px;
   background: #323232;
-  padding: 3px;
-  margin-left: -20px;
+  padding: 8px;
+  /*margin-left: -20px;*/
   color: #EFEFEF;
   cursor: pointer;
   position: absolute;
 }
 
 .next-stage {
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 }
 
 .li-link {
-  margin-top: 46px;
+  /*margin-top: 46px;*/
 }
 
+.actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*position: relative;*/
+  justify-content: space-between;
+  width: 60px;
+  align-items: center;
+}
 .reject {
   background: #E86363;
   display: none;
