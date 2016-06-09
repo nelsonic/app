@@ -140,7 +140,7 @@ footer {
 .cl-info p{
   text-align: center;
 }
-/*job*/
+
 .cl-container {
   margin-bottom: 40px;
 }
@@ -210,7 +210,6 @@ footer {
   width: 300px;
   font-weight: 800;
   color: rgba(0, 0, 0, 0.82);
-  /*justify-content: center;*/
   text-align: center;
 }
 
@@ -239,25 +238,15 @@ footer {
 .hidden-btn {
   margin-top: 30px;
   margin-left: -20px;
-  /*------*/
   z-index: 99999;
   display: none;
   border: none;
   width: 50px;
   background: #323232;
   padding: 8px;
-  /*margin-left: -20px;*/
   color: #EFEFEF;
   cursor: pointer;
   position: absolute;
-}
-
-.next-stage {
-  /*margin-top: 20px;*/
-}
-
-.li-link {
-  /*margin-top: 46px;*/
 }
 
 .actions {
@@ -266,7 +255,6 @@ footer {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  /*position: relative;*/
   justify-content: space-between;
   width: 60px;
   align-items: center;
