@@ -225,6 +225,7 @@ footer {
   align-items: center;
   flex-direction: column;
   padding: 10px;
+  position: relative;
 }
 
 .cl-candidate img {
@@ -243,9 +244,9 @@ footer {
   background: #323232;
   padding: 3px;
   margin-left: -20px;
-  position: absolute;
   color: #EFEFEF;
   cursor: pointer;
+  position: absolute;
 }
 
 .next-stage {
@@ -265,8 +266,8 @@ footer {
   margin-top: -8px;
   padding: 3px;
   margin-left: 22px;
-  position: absolute;
   cursor: pointer;
+  position: absolute;
 }
 
 .cl-candidate:hover img{
