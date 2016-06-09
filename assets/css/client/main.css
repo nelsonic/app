@@ -279,6 +279,10 @@ footer {
   display: block;
 }
 
+.error-msg {
+  display: none;
+  color: #E86363;
+}
 
 /*==============================
   END CLIENT DASHBOARD

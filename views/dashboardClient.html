@@ -18,7 +18,6 @@
         {{#each job.stages as |stage keyStage|}}
         <div class="cl-stage-child">
           <div class="cl-stage-title">{{stage.name}}</div>
-
             {{#each stage.candidates as |candidate idCandidate|}}
             <div class="cl-candidate">
 
@@ -42,6 +41,7 @@
               </div>
 
               <img src='{{picture}}'/><p>{{candidate.name}}</p>
+              <p class="error-msg">Please, try again!</p>
           </div>
         {{/each}}
         </div>

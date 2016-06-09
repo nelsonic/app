@@ -23,6 +23,7 @@ for(var i = 0; i < nextStageButtons.length ; i++) {
   nextStageButtons[i].addEventListener('click', function (e) {
     e.preventDefault();
     //create the payload object
+
     var payload = {};
     var inputs = e.target.parentNode.getElementsByTagName('input');
 
@@ -31,6 +32,7 @@ for(var i = 0; i < nextStageButtons.length ; i++) {
     var currentCandidateDOM = findAncestor(e.target.parentNode, 'cl-candidate');
     var currentStageDOM = findAncestor(e.target.parentNode, 'cl-stage-child')
     var siblingCurrentStage = currentStageDOM.nextElementSibling;
+    currentCandidateDOM.querySelector('.error-msg').style.display = 'none';
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/nextStage');
@@ -56,8 +58,7 @@ for(var i = 0; i < nextStageButtons.length ; i++) {
         }
 
         if (JSON.parse(response).code === 500) {
-
-          console.log('Ouups');
+          currentCandidateDOM.querySelector('.error-msg').style.display = 'block';
         }
       }
     };
@@ -79,6 +80,7 @@ for(var i = 0; i < rejectButtons.length ; i++) {
     createPayloadObj(inputs, payload);
     var currentCandidateDOM = findAncestor(e.target.parentNode, 'cl-candidate');
     var currentStageDOM = findAncestor(e.target.parentNode, 'cl-stage-child');
+    currentCandidateDOM.querySelector('.error-msg').style.display = 'none';
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/reject');
@@ -93,8 +95,7 @@ for(var i = 0; i < rejectButtons.length ; i++) {
         }
 
         if (JSON.parse(response).code === 500) {
-          //add errors TODO
-          console.log('Ouups');
+          currentCandidateDOM.querySelector('.error-msg').style.display = 'block';
         }
       }
     };
