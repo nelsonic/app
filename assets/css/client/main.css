@@ -114,10 +114,19 @@ header {
   transform: translate(0, 0);
 }
 
-.fa-home, .fa-bars {
+.fa-home, .fa-envelope {
   color: #EFEFEF;
-  font-size: 1.2em;
+  font-size: 1.4em;
   padding: 10px;
+}
+
+.cl-nav img {
+  margin: 2px 10px 2px 0;
+  float: right;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid rgba(50, 50, 50, 0.74);
+  width: 40px;
 }
 
 footer {
@@ -136,7 +145,7 @@ footer {
   -ms-flex-direction: column;
   -o-flex-direction: column;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 80px;
 }
 
 .cl-info img {
@@ -301,9 +310,6 @@ footer {
   END CLIENT DASHBOARD
 ================================*/
 @media (max-width: 768px) {
-  /*.logo img {
-    width: 10em;
-  }*/
   .client-login-container {
     width: 60%;
   }
@@ -339,21 +345,12 @@ footer {
   .fa-home {
     float: left;
   }
-
-  .fa-bars {
-    float: right;
-  }
 }
 
 @media (max-width: 460px) {
 
   .client-login-container {
-    /*width: 90%;
-    height: 90%;*/
-    /*margin-top: -200px;*/
-
     width: 90%;
-
   }
 
   .logo img {
