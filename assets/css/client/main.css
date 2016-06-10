@@ -336,14 +336,13 @@ footer {
   STAGES
 ================================*/
 .stages-container {
-  margin-top: 50px;
+  margin-top: 40px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
 
 .stages-container > form {
@@ -479,7 +478,7 @@ footer {
   }
 
   .stages-container {
-    margin-top: 5px;
+    margin: 2px 0 50px 0;
   }
 
   .stages-container > form {
