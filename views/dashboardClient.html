@@ -4,8 +4,12 @@
 
   <div class="cl-info">
     <p><img src="{{client.logoUrl}}" alt="" /></p>
-    <p>CLIENT SINCE: {{client.name}}</p>
-    <p>TERMS: </p>
+    <p>{{client.name}}</p>
+    {{#if client.createdAt}}
+    <p>CLIENT SINCE: {{timestamp_to_date client.createdAt}}</p>
+    {{/if}}
+    <p>TERMS: {{client.terms}} %</p>
+    <p>CONTACT: {{owner.email}}</p>
   </div>
 
   {{#each jobs as |job idJob|}}

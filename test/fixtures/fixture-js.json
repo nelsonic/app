@@ -219,7 +219,7 @@
   { "index" : { "_index" : "gmcontact", "_type" : "gmclients", "_id" : "0" } },
   {"name":"FAC","jobs": ["1"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Founders And Coders"], "accountManager": "5", "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
   { "index" : { "_index" : "gmcontact", "_type" : "gmclients", "_id" : "1" } },
-  {"name":"DWYL","jobs": ["1", "5"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Do WYL"], "accountManager": "5", "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": false},
+  {"name":"DWYL","jobs": ["1", "5"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Do WYL"],"createdAt":1465241341452, "accountManager": "5", "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": false},
   { "index" : { "_index" : "gmcontact", "_type" : "gmclients", "_id" : "4" } },
   {"name":"FacTest","jobs": ["1"], "logoUrl": "/assets/img/square-global-m-logo.png", "possibleNames": ["Founders And Coders"], "accountManager": "12", "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
   { "index" : { "_index" : "gmcontact", "_type" : "gmclientusers", "_id" : "123" } },
