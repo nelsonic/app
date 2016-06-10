@@ -3,8 +3,7 @@
 <div class="cl-container">
 
   <div class="cl-info">
-    <p><img src="{{client.logoUrl}}" alt="" /></p>
-    <p>{{client.name}}</p>
+    <p><img src="{{client.logoUrl}}" alt="{{client.name}}"/></p>
     {{#if client.createdAt}}
     <p>CLIENT SINCE: {{timestamp_to_date client.createdAt}}</p>
     {{/if}}
@@ -46,8 +45,8 @@
                 </div>
             </div>
 
-              <img src='{{picture}}'/><p>{{candidate.name}}</p>
-              <p class="error-msg">Please, try again!</p>
+            <img src='{{picture}}'/><p>{{candidate.name}}</p>
+            <p class="error-msg">Please, try again!</p>
           </div>
         {{/each}}
         </div>

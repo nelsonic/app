@@ -99,7 +99,18 @@ header {
 }
 
 .cl-nav {
-  display: display-inline;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cl-nav p {
+  color: #fff;
+  margin-top: 14px;
+  font-weight: 600;
 }
 
 /*https://dusted.codes/making-font-awesome-awesome-using-icons-without-i-tags*/
@@ -118,6 +129,10 @@ header {
   color: #EFEFEF;
   font-size: 1.4em;
   padding: 10px;
+}
+
+.cl-image {
+  float: left;
 }
 
 .cl-nav img {
@@ -145,7 +160,8 @@ footer {
   -ms-flex-direction: column;
   -o-flex-direction: column;
   flex-direction: column;
-  padding-top: 80px;
+  padding-top: 30px;
+  display: none;
 }
 
 .cl-info img {
@@ -158,6 +174,10 @@ footer {
 
 .cl-container {
   margin-bottom: 40px;
+}
+
+.cl-container:nth-child(2) {
+  margin-top: 100px;
 }
 
 .cl-job {
@@ -279,6 +299,7 @@ footer {
   width: 60px;
   align-items: center;
 }
+
 .reject {
   background: #E86363;
   display: none;
@@ -309,6 +330,51 @@ footer {
 /*==============================
   END CLIENT DASHBOARD
 ================================*/
+
+
+/*==============================
+  STAGES
+================================*/
+.stages-container {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.stages-container > form {
+  width: 30em;
+}
+
+.stages-container > form p {
+  padding: 10px;
+  background-color: #fff;
+  margin-top: 5px;
+}
+
+.stages-container > form button {
+  width: 100%;
+  border: none;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #323232;
+  color: #EFEFEF;
+}
+
+.stages-container span {
+  background: rgba(142, 139, 139, 0.3);
+  padding: 3px 10px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+/*==============================
+  END STAGES
+================================*/
+
 @media (max-width: 768px) {
   .client-login-container {
     width: 60%;
@@ -363,6 +429,14 @@ footer {
     display: none;
   }
 
+  .cl-info {
+    display: block;
+  }
+
+  .cl-job {
+    margin-top: 30px;
+  }
+
   footer {
     display: block;
     position:fixed;
@@ -400,4 +474,15 @@ footer {
     border-right: 1px solid #EFEFEF;
   }
 
+  .cl-container:nth-child(2) {
+    margin-top: 10px;
+  }
+
+  .stages-container {
+    margin-top: 5px;
+  }
+
+  .stages-container > form {
+    width: 100%;
+  }
 }
