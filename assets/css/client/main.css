@@ -370,6 +370,10 @@ footer {
   margin-left: 20px;
   border-radius: 50%;
 }
+
+.hidden {
+  display: none;
+}
 /*==============================
   END STAGES
 ================================*/
