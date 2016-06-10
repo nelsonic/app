@@ -6,7 +6,7 @@
         {{#if stage.allowed}}
           {{#if stage.candidates}}
             <p><input type="checkbox" disabled checked name="" value="{{idStage}}">{{stage.name}} <span>{{stage.candidates}}</span><p>
-            <p class="hidden"><input type="hidden"  name="stages" value="{{idStage}}"><p>
+            <input type="hidden"  name="stages" value="{{idStage}}">
           {{else}}
             <p><input type="checkbox" checked name="stages" value="{{idStage}}">{{stage.name}} <span>{{stage.candidates}}</span></p>
           {{/if}}
