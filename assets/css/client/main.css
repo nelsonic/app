@@ -24,8 +24,8 @@ body {
 .logo img {
   margin-left: auto;
   margin-right: auto;
-  width: 20em;
-  margin-bottom: 50px;
+  width: 8em;
+  margin-bottom: 80px;
 }
 
 .client-login-wrapper {
@@ -38,10 +38,11 @@ body {
   justify-content: center;
   height: 100vh;
   flex-direction: column;
+  background-color: #D1D1D1;
 }
 
 .client-login-container {
-  margin-top: -50px;
+  margin-top: -100px;
 }
 
 .client-login-container > form {
@@ -52,11 +53,11 @@ body {
 .client-login-container > form input,
 .client-login-container >form button {
   width: 100%;
-  margin-bottom: 10px;
+  border: none;
 }
 
 .client-login-container > form input {
-  padding: 5px 0 5px 0;
+  padding: 10px 0 10px 10px;
 }
 
 .client-login-container > form label {
@@ -64,17 +65,27 @@ body {
   margin: 0 0 5px 0;
 }
 
+.client-login-container > form input:focus {
+  outline:none;
+}
+
 .client-login-container > form button {
-  background-color: rgba(79, 94, 130, 0.58);
-  color: #141546;
+  background-color: #3C3C3C;
+  color: #D1D1D1;
   border: none;
   padding: 10px 10px;
   cursor: pointer;
 }
 
+.client-login-container > form > input:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+}
+
 .client-login-container > form p {
   color: #D24F4F;
   margin: 5px 0 5px 0;
+  font-family: Open Sans-serif;
+  text-align: center;
 }
 
 /*==============================
@@ -295,9 +306,9 @@ footer {
   END CLIENT DASHBOARD
 ================================*/
 @media (max-width: 768px) {
-  .logo img {
+  /*.logo img {
     width: 10em;
-  }
+  }*/
   .client-login-container {
     width: 60%;
   }
@@ -347,7 +358,7 @@ footer {
   }
 
   .logo img {
-    width: 10em;
+    width: 7em;
     margin-top: 40px;
   }
 
