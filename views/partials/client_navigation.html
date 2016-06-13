@@ -2,7 +2,7 @@
   <section class="cl-nav">
     <a class="cl-image" href="/client-dashboard"><img src="{{client.logoUrl}}" alt="" /></a>
     <p>CLIENT SINCE: {{#if client.createdAt}}<span>{{timestamp_to_date client.createdAt}}</span>{{/if}}</p>
-    <p>TERMS: <span> {{client.terms}} %</span></p>
+    <p>TERMS: <span> {{client.terms}}</span></p>
     <a href="mailto:{{owner.email}}"><img src="{{owner.image}}" alt="" title="{{owner.email}}" /></a>
   </section>
 </header>
