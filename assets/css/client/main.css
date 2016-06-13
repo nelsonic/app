@@ -3,6 +3,11 @@
   src: url(Myriad-Pro_31655.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Myriad-Pro-Bold';
+  src: url(Myriad-Pro-Bold_31631.ttf) format('truetype');
+}
+
 html {
   max-width: 100%;
   margin: 0;
@@ -117,7 +122,7 @@ header {
   font-weight: 400;
 }
 
-.cl-nav:last-child {
+.cl-nav a:last-of-type img {
   border-radius: 50%;
 }
 
@@ -216,8 +221,8 @@ footer {
 }
 
 .edit-stages {
-  font-weight: 900;
   color: #333;
+  font-family: 'Myriad-Pro-Bold';
 }
 
 .cl-stage-parent {
