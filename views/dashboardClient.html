@@ -2,12 +2,16 @@
 
 <div class="cl-container">
 
+  <div class="cl-info-desktop">
+    <p><img src="/assets/img/globalM-logo.png" alt="Global-{M}"/></p>
+  </div>
   <div class="cl-info">
-    <p><img src="{{client.logoUrl}}" alt="{{client.name}}"/></p>
+    <p><img src="/assets/img/globalM-sm.png" alt="Global-{M}"/></p>
+    <p>Client Name - {{client.name}}</p>
     {{#if client.createdAt}}
-    <p>CLIENT SINCE: {{timestamp_to_date client.createdAt}}</p>
+    <p>Client since - {{timestamp_to_date client.createdAt}}</p>
     {{/if}}
-    <p>TERMS: {{client.terms}}</p>
+    <p>Account Manager - {{owner.names.fullname}}</p>
 
   </div>
 
@@ -33,7 +37,8 @@
 
               <div class="actions">
                 <div>
-                  <a href="{{candidate.url}}" target="_blank"><button class="li-link hidden-btn">Li</button></a>
+                  <a href="{{candidate.url}}" target="_blank"><button class="li-link hidden-btn"><i class="fa fa-linkedin" aria-hidden="true"></i>
+</button></a>
                 </div>
 
                 <div>
