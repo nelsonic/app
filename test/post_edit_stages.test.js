@@ -58,7 +58,7 @@ describe('edit jobs stages with authentication', function () {
         server.inject(options, function (res) {
 
           expect(res.statusCode).to.equal(302);
-          expect(res.headers.location).to.equal('/jobs/1/stages')
+          expect(res.headers.location).to.equal('/client-dashboard')
           server.stop(done);
         });
       });
@@ -91,7 +91,7 @@ describe('edit jobs stages with authentication', function () {
         server.inject(options, function (res) {
 
           expect(res.statusCode).to.equal(302);
-          expect(res.headers.location).to.equal('/jobs/1/stages')
+          expect(res.headers.location).to.equal('/client-dashboard')
           server.stop(done);
         });
       });
@@ -124,7 +124,7 @@ describe('edit jobs stages with authentication', function () {
         server.inject(options, function (res) {
 
           expect(res.statusCode).to.equal(302);
-          expect(res.headers.location).to.equal('/jobs/1/stages')
+          expect(res.headers.location).to.equal('/client-dashboard')
           server.stop(done);
         });
       });
