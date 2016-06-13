@@ -50,7 +50,6 @@ describe('/nextStage page', function () {
 
       server.inject(options, function (res) {
         var parsed = JSON.parse(res.payload);
-        console.log(parsed);
         expect(parsed.code).to.equal(200);
         server.stop(done);
       });

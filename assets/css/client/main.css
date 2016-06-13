@@ -118,7 +118,7 @@ header {
 
 .cl-nav p {
   color: #d1d1d1;
-  margin-top: 18px;
+  margin-top: 22px;
   font-weight: 400;
 }
 
@@ -146,10 +146,11 @@ header {
 
 .cl-image {
   float: left;
+  margin-top: 6px;
 }
 
 .cl-nav img {
-  margin: 8px 10px 2px 0;
+  margin: 8px 10px 6px 0px;
   float: right;
   cursor: pointer;
   border: 2px solid rgba(50, 50, 50, 0.74);

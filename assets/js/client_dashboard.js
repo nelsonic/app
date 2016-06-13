@@ -30,7 +30,7 @@ for(var i = 0; i < nextStageButtons.length ; i++) {
     createPayloadObj(inputs, payload);
 
     var currentCandidateDOM = findAncestor(e.target.parentNode, 'cl-candidate');
-    var currentStageDOM = findAncestor(e.target.parentNode, 'cl-stage-child')
+    var currentStageDOM = findAncestor(e.target.parentNode, 'cl-stage-child');
     var siblingCurrentStage = currentStageDOM.nextElementSibling;
     currentCandidateDOM.querySelector('.error-msg').style.display = 'none';
 
