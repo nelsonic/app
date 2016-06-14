@@ -44,11 +44,11 @@
       {{/if}}
 
       <!-- Rejectd status tag -->
-      <ul>
+      <div class="rejected">
         {{#each rejectedStatus as |status timestamp| }}
-          <li>{{status.nameClient}} - {{status.nameJob}}</li>
+          <span><a href="/jobs/{{status.idJob}}">{{status.nameClient}} - {{status.nameJob}}</a></span>
         {{/each}}
-      </ul>
+      </div>
 
 
       {{#if candidate.statusCurrent}}
