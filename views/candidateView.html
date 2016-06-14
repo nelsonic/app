@@ -43,6 +43,14 @@
         {{emailIndicatorHelper candidate.lastEmail true}}
       {{/if}}
 
+      <!-- Rejectd status tag -->
+      <ul>
+        {{#each rejectedStatus as |status timestamp| }}
+          <li>{{status.nameClient}} - {{status.nameJob}}</li>
+        {{/each}}
+      </ul>
+
+
       {{#if candidate.statusCurrent}}
           {{#each candidate.statusCurrent}}
 
