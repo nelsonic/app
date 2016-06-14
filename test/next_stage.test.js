@@ -56,3 +56,28 @@ describe('/nextStage page', function () {
     });
   });
 });
+
+describe('/nextStage on candidate on already at last stage', function () {
+
+  it('return the status code 200 with authentication ', function (done) {
+
+    var options = {
+      method: "POST",
+      url: "/nextStage",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: {idCandidate: '100', idJob: '1', currentStage: '4', nextStage: '4'}
+    }
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+        var parsed = JSON.parse(res.payload);
+        expect(parsed.code).to.equal(200);
+        server.stop(done);
+      });
+    });
+  });
+});
