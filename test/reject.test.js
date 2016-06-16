@@ -66,7 +66,7 @@ describe('/reject candidate id 1 without rejected property', function () {
       url: "/reject",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {idCandidate: '1', idJob: '2', currentStage: '2'}
+      payload: {idCandidate: '100', idJob: '2', currentStage: '2'}
     }
 
     Server.init(0, function (err, server) {
