@@ -3,6 +3,7 @@
   "connections": 500,
   "fullname": "David Dupont",
   "viewedBy": "Mario Bros",
+  "rejected": [],
   "notesList": [],
   "jobApplications": [{"jobID": 1, "timestamp": 1458213700542, "comments": "some comment", "skillset": "Css"},{"jobID": null, "timestamp": 1458213700542, "comments": "another application", "skillset": "Css, html"} ],
   "location": "London, United Kingdom",

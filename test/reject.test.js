@@ -9,7 +9,7 @@ var it = lab.test;
 var JWT = require('jsonwebtoken');
 var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
-describe('/reject page', function () {
+describe('/reject page wihtout authentication', function () {
 
   it('return the status code 500 without authentication', function (done) {
 
@@ -32,7 +32,7 @@ describe('/reject page', function () {
   });
 });
 
-describe('/reject page', function () {
+describe('/reject candidate 88 on job 2 stage 2', function () {
 
   it('return the status code 200 with authentication', function (done) {
 
@@ -42,131 +42,6 @@ describe('/reject page', function () {
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
       payload: {idCandidate: '88', idJob: '2', currentStage: '2'}
-    }
-
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-
-      server.inject(options, function (res) {
-        var parsed = JSON.parse(res.payload);
-        expect(parsed.code).to.equal(200);
-        server.stop(done);
-      });
-    });
-  });
-});
-
-describe('/reject candidate id 100 without rejected property', function () {
-
-  it('return the status code 200 with authentication', function (done) {
-
-    var options = {
-      method: "POST",
-      url: "/reject",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {idCandidate: '100', idJob: '2', currentStage: '2'}
-    }
-
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-
-      server.inject(options, function (res) {
-        var parsed = JSON.parse(res.payload);
-        expect(parsed.code).to.equal(200);
-        server.stop(done);
-      });
-    });
-  });
-});
-
-describe('/reject candidate id 1 without rejected property', function () {
-
-  it('return the status code 200 with authentication and idStage is different than payload', function (done) {
-
-    var options = {
-      method: "POST",
-      url: "/reject",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {idCandidate: '1', idJob: '1', currentStage: '6'}
-    }
-
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-
-      server.inject(options, function (res) {
-        var parsed = JSON.parse(res.payload);
-        expect(parsed.code).to.equal(200);
-        server.stop(done);
-      });
-    });
-  });
-});
-
-describe('/reject candidate id 1 without rejected property', function () {
-
-  it('return the status code 200 with authentication and currentStage is the same as payload', function (done) {
-
-    var options = {
-      method: "POST",
-      url: "/reject",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {idCandidate: '1', idJob: '1', currentStage: '2'}
-    }
-
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-
-      server.inject(options, function (res) {
-        var parsed = JSON.parse(res.payload);
-        expect(parsed.code).to.equal(200);
-        server.stop(done);
-      });
-    });
-  });
-});
-
-describe('/reject candidate id 1 without rejected property', function () {
-
-  it('return the status code 200 with authentication and the same job and the different stage', function (done) {
-
-    var options = {
-      method: "POST",
-      url: "/reject",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {idCandidate: '1', idJob: '2', currentStage: '7'}
-    }
-
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-
-      server.inject(options, function (res) {
-        var parsed = JSON.parse(res.payload);
-        expect(parsed.code).to.equal(200);
-        server.stop(done);
-      });
-    });
-  });
-});
-
-describe('/reject candidate id 1 without rejected property', function () {
-
-  it('return the status code 200 with authentication and the same job and the same stage', function (done) {
-
-    var options = {
-      method: "POST",
-      url: "/reject",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {idCandidate: '1', idJob: '2', currentStage: '2'}
     }
 
     Server.init(0, function (err, server) {
