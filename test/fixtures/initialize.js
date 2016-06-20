@@ -5,36 +5,33 @@ var client = new ElasticSearch.Client({
 });
 
   var params = {
-        "contacts": {
-          "properties": {
-            "skills": {
-              "properties": {
-                "skill":    { "type": "string" },
-                "level":    { "type": "short"  }
-              }
-            }
-          }
-        },
-        "contacts": {
-          "properties": {
-            "contacts": {
-              "properties":{
-                "emailRaw": {
-                  "type": "string",
-                  "index": "not_analyzed"
-                }
-              }
-            }
-          }
-        },
-        "viewedBy": {
-          "properties": {
-            "id": {"type": "string"},
-            "fullname": {"type": "string"}
+    "properties": {
+      "skills": {
+        "properties": {
+          "skill":    { "type": "string" },
+          "level":    { "type": "short"  }
+        }
+      },
+      "contacts": {
+        "properties":{
+          "emailRaw": {
+            "type": "string",
+            "index": "not_analyzed"
           }
         }
-    };
-
+      },
+      "listNames": {
+          "type": "string",
+          "index": "not_analyzed"
+      },
+      "viewedBy": {
+        "properties": {
+          "id": {"type": "string"},
+          "fullname": {"type": "string"}
+        }
+      }
+    }
+  }
   var paramsGmClientUsers = {
     "properties": {
       "email": {
