@@ -1468,6 +1468,38 @@ Vacancy
   color: red;
   text-align: center;
 }
+
+.label-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+}
+
+.label-list > div{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.label-list button {
+  border: none;
+  background-color: #424A5D;
+  color: #FFD777;
+  padding: 5px;
+  cursor: pointer;
+}
+
 /*==============================
 End Csv
 ================================*/
