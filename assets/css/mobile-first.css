@@ -1141,7 +1141,36 @@ input.custom-file-input {
   -webkit-user-select: none;
   cursor: pointer;
 }
+/*==============================
+ Edit/save LI url
+================================*/
+.edit-li-container, .li-save-container {
+  margin: 0 0 10px 0;
+}
 
+.li-save {
+  display: none;
+}
+
+.error-li-tag {
+  display: none;
+}
+
+.li-save > button {
+  float: right;
+}
+
+.li-save > button, #edit-li {
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/*==============================
+ End Edit/save LI url
+================================*/
 /*==============================
  Email
 ================================*/
