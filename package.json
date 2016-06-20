@@ -37,6 +37,7 @@
     "hoek": "^4.0.1",
     "inert": "^4.0.0",
     "joi": "^8.4.1",
+    "json2csv": "^3.4.3",
     "jsonwebtoken": "^7.0.0",
     "linkedin-canonical-url": "^1.0.5",
     "mime-types": "^2.1.11",
