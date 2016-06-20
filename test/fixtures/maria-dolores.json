@@ -1,6 +1,7 @@
 {
   "url": "https://uk.linkedin.com/in/newprofile",
   "connections": 42,
+  "contacts": {"email": "", "phone": "", "im": [], "address": ""},
   "fullname": "Maria Dolores",
   "viewedBy": "Mario Bros",
   "favourite": ["12"],

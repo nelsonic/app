@@ -15,6 +15,18 @@ var client = new ElasticSearch.Client({
             }
           }
         },
+        "contacts": {
+          "properties": {
+            "contacts": {
+              "properties":{
+                "emailRaw": {
+                  "type": "string",
+                  "index": "not_analyzed"
+                }
+              }
+            }
+          }
+        },
         "viewedBy": {
           "properties": {
             "id": {"type": "string"},

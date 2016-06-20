@@ -2,6 +2,7 @@
     "connections": 142,
     "connectedTo": ["The User"],
     "viewedBy": "Mario Bros",
+    "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "fullname": "Manuel",
     "notesList": [],
     "favourite":[],
