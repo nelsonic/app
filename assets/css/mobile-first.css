@@ -966,7 +966,7 @@ circle {
   margin-top: 20px;
 }
 
-.vacancy-wrapper .description, .client-job-details .description, .job-clear .description{
+.vacancy-wrapper .description, .client-job-details .description, .job-clear .description {
   color: #818182;
   font-weight: bold;
   padding: 5px 0 10px 0;
@@ -1377,6 +1377,18 @@ Vacancy
 /*==============================
  End Vacancy
 ================================*/
+
+/*==============================
+ List
+================================*/
+.csv-list-wrapper {
+  margin-top: 80px;
+}
+
+/*==============================
+ End List
+================================*/
+
 
 /*==============================
  Users Edit/List

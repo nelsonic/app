@@ -41,6 +41,15 @@ var client = new ElasticSearch.Client({
    }
  }
 
+ var paramsList = {
+   "properties": {
+     "listName": {
+       "type": "string",
+       "index": "not_analyzed"
+     }
+   }
+ }
+
 client.indices.exists({index: 'gmcontact'}, function (err, res) {
 
     if(res) {
@@ -53,6 +62,7 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
             client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
               client.indices.putMapping({index:"gmcontact", type:"gmusers", body:paramsGmUsers}, function (err,resp) {
               client.indices.putMapping({index: 'gmcontact', type: "gmclientusers", body: paramsGmClientUsers}, function(errMapping, responseMapping){
+              client.indices.putMapping({index: 'gmcontact', type: "csv-list", body: paramsList}, function(errMappingList, responseMappingList){
                 if(errMapping) {
 
                 console.log('error mapping: ', errMapping);
@@ -64,6 +74,7 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
                 }, function (err, response) {
                     console.log('The index gmcontact is ready to use');
                 });
+              })
               })
 
             });
@@ -79,6 +90,7 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
             client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
               client.indices.putMapping({index:"gmcontact", type:"gmusers", body:paramsGmUsers}, function (err,resp) {
               client.indices.putMapping({index: 'gmcontact', type: "gmclientusers", body: paramsGmClientUsers}, function(errMapping, responseMapping){
+              client.indices.putMapping({index: 'gmcontact', type: "csv-list", body: paramsList}, function(errMappingList, responseMappingList){
 
                 client.bulk({
                     body: require('./fixture-js.json')
@@ -86,6 +98,7 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
                     console.log('The index gmcontact is ready to use');
                 });
 
+              })
               })
               })
 
