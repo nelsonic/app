@@ -1479,7 +1479,7 @@ Vacancy
   width: 60%;
   background-color: white;
   padding: 20px;
-  margin: auto;
+  margin: 0 auto 5px;
 }
 
 .label-list > div{

@@ -1,9 +1,9 @@
 {{>navigation}}
 
 <div class="container">
-  <div class="label-list">
     {{#each lists}}
-      <p>{{this.listName}}</p>
+  <div class="label-list">
+      <p><a href="/csv-list/{{this.listName}}">{{this.listName}}</a></p>
       <div>
         <form class="download-csv" action="/csv-list/download" method="POST">
           <input type="hidden" name="listName" value="{{this.listName}}">
@@ -16,6 +16,6 @@
           <button type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
         </form>
       </div>
-    {{/each}}
   </div>
+  {{/each}}
 </div>
