@@ -1379,18 +1379,6 @@ Vacancy
 ================================*/
 
 /*==============================
- List
-================================*/
-.csv-list-wrapper {
-  margin-top: 80px;
-}
-
-/*==============================
- End List
-================================*/
-
-
-/*==============================
  Users Edit/List
 ================================*/
 .users-list-wrapper, .client-users-wrapper {
@@ -1446,6 +1434,74 @@ Vacancy
 }
 /*==============================
  End Users Edit/List
+================================*/
+
+/*==============================
+ CSV Feature, upload, download /csv-list/create
+================================*/
+.csv-list-wrapper {
+  width: 400px;
+  margin: 100px auto;
+}
+
+.csv-list-wrapper > form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.csv-list-wrapper > form button {
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  width: 100%;
+  margin: 10px 0 0 5px;
+}
+
+.csv-list-wrapper > form::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.error-csv {
+  color: red;
+  text-align: center;
+}
+
+.label-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+}
+
+.label-list > div{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.label-list button {
+  border: none;
+  background-color: #424A5D;
+  color: #FFD777;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/*==============================
+End Csv
 ================================*/
 
 @media (max-width: 768px) {
