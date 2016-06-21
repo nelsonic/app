@@ -6,6 +6,7 @@
     "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "favourite":[],
     "notesList": [],
+    "rejected": [],
     "current": "relax",
     "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
     "summary": "This is the summary of the second profile",

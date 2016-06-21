@@ -1,20 +1,16 @@
 <div class="client-login-wrapper">
 
-  <div class="logo">
-    <img src="/assets/img/website-home-logo.png"  alt="Global M" />
-  </div>
-
   <div class="client-login-container">
-
+    <div class="logo">
+      <img src="/assets/img/squirrel.png"  alt="" />
+    </div>
     <form action="/client-auth" method="post">
 
-      <label for="email">EMAIL ADDRESS </label>
-      <input id="email" type="text" name="email" placeholder="example@email.com" required >
-      <label for="password">PASSWORD </label>
-      <input type="password" name="password" required>
-      <p>{{message}}</p>
-      <button type="submit" >LOGIN</button>
+      <input id="email" type="text" name="email" placeholder="Username" required >
+      <input type="password" name="password" placeholder="Password" required>
 
+      <button type="submit">Login</button>
+      <p>{{message}}</p>
     </form>
   </div>
 </div>

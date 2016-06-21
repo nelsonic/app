@@ -1,4 +1,3 @@
-require('env2')('.env');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
@@ -116,7 +115,7 @@ describe('Attempt to login with a wrong email', function () {
       server.inject(options, function (res) {
         //display the login page with an error message
         expect(res.statusCode).to.equal(200);
-        expect(res.payload.indexOf('Sorry the email or the password is not correct')).to.be.above(-1)
+        expect(res.payload.indexOf('Incorrect username or password!')).to.be.above(-1)
         server.stop(done);
       });
     });
@@ -145,7 +144,7 @@ describe('Attempt to login with a wrong password', function () {
       server.inject(options, function (res) {
         //display the login page with an error message
         expect(res.statusCode).to.equal(200);
-        expect(res.payload.indexOf('Sorry the email or the password is not correct')).to.be.above(-1)
+        expect(res.payload.indexOf('Incorrect username or password!')).to.be.above(-1)
         server.stop(done);
       });
     });
