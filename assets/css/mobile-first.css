@@ -90,7 +90,7 @@ header {
 }
 
 .search-btn {
-  background-color: #E4AD28;
+  background-color:transparent;
   color:white;
   padding: 6px 0px;
   border:0 none;
@@ -98,7 +98,8 @@ header {
   width: 50px;
 }
 .search-btn .fa {
-  color:#424A5D;
+  color:#fff;
+  font-size: medium
 }
 
 #search-box {
@@ -123,7 +124,7 @@ header {
   float: left;
   margin: 8px 5px 10px;
   font-size: 1.5em;
-  color: #E4AD28;
+  color: #fff;
 }
 
 .fa-paper-plane {
@@ -230,7 +231,7 @@ header {
 }
 
 i.fa-star, i.fa-user, i.fa-tachometer {
-  color: #E4AD28;
+  color: #fff;
   border: none;
   float: right;
   margin-top: 10px;
@@ -376,9 +377,17 @@ input[type='checkbox'] {
   -webkit-transform: scale(1.2, 1.2);
   transform:scale(1.2, 1.2);
 }
-
-.anchorTop, .anchorBottom {
+.anchorTop{
+text-align: center;
+  position:fixed;
+  top: 370px;
+  right: 30px;
+}
+.anchorBottom {
   text-align: center;
+  position:fixed;
+  top: 340px;
+  right: 30px;
 }
 
 /*==============================
