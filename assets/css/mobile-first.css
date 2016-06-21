@@ -2,7 +2,7 @@
   #GENERAL
 ================================*/
 html {
-  background-color: #f2f2f2;
+  background-color: #fff;
   font: 100%/1.3 'Helvetica', serif;
   font-family: 'Helvetica', serif;
   max-width: 100%;
@@ -29,7 +29,7 @@ header {
   left: 0;
   right: 0;
   z-index: 1002;
-  background-color: #424A5D;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .highlight {
