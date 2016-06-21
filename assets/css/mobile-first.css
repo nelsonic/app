@@ -202,6 +202,7 @@ header {
   float:left;
   height: auto;
   padding-right: 10px;
+  border-radius:50%;
 }
 
 .headline h1{
