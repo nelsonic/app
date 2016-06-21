@@ -1,6 +1,7 @@
 {{>navigation}}
 
 <div class="container">
+  <a class="create-icon" href="/csv-list/create"><i class="fa fa-plus"> New List</i></a>
     {{#each lists}}
   <div class="label-list">
       <p><a href="/csv-list/{{this.listName}}">{{listName}}</a></p>
