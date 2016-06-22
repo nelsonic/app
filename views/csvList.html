@@ -1,10 +1,18 @@
 {{>navigation}}
 
 <div class="container">
+
   <a class="create-icon" href="/csv-list/create"><i class="fa fa-plus"> New List</i></a>
     {{#each lists}}
   <div class="label-list">
       <p><a href="#">{{listName}}</a><span class="number-candidates">{{numberCandidates}}<span></p>
+
+      <div>
+        <form class="download-csv" action="/csv-list/download" method="POST">
+          <input type="hidden" name="listName" value="{{listName}}">
+          <button type="submit"><i class="fa fa-download" aria-hidden="true"></i></button>
+        </form>
+      </div>
   </div>
   {{/each}}
 </div>
