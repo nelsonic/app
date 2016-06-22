@@ -1,8 +1,8 @@
 {{>search_bar}}
+<div>
+  <a name="goTop"></a>
+</div>
 <section class="container">
-  <div class="anchorBottom">
-    <a name='anchorTop' href="#anchorBottom"><i class="fa fa-arrow-down"></i></a>
-  </div>
   <div class="title-wrapper">
     <article class="main"></article>
     <aside class="aside aside-1">
@@ -20,8 +20,14 @@
   <button id="send-email" type="submit">SEND EMAIL</button>
   </form>
   <input type="hidden" class="keywords" value="{{keywords}}">
+  <div class="anchorBottom">
+    <a name='anchorTop' href="#goDown"><i class="fa fa-arrow-down"></i></a>
+  </div>
   <div class='anchorTop'>
-    <a name='anchorBottom' href="#anchorTop"><i class="fa fa-arrow-up"></i></a>
+    <a name='anchorBottom' href="#goTop"><i class="fa fa-arrow-up"></i></a>
   </div>
   {{>pagination}}
 </section>
+<div>
+  <a name="goDown"></a>
+</div>
