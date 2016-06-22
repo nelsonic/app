@@ -237,15 +237,10 @@ header {
   float: right;
 }
 
-i.fa-star, i.fa-user, i.fa-tachometer {
+i.fa-star, i.fa-user, i.fa-tachometer, i.fa-users, i.fa-plus-circle{
   color: #E4AD28;
   border: none;
   float: right;
-  margin-top: 10px;
-}
-
-i.fa-plus-circle, i.fa-file-excel-o {
-  color: #E4AD28;
 }
 
 .favourite-form button {
