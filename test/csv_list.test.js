@@ -112,6 +112,9 @@ describe('access /csv-list/create attempt to recreate the list js dev', function
       //wait for the previous list to be indexed!
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          var error = $('.error-csv').text();
+          expect(error).to.equal('Sorry the name of the list already exists');
           server.stop(done);
         })
       });
@@ -139,13 +142,16 @@ describe('/csv-list/create Attempt to create the list "list"', function () {
 
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var error = $('.error-csv').text();
+        expect(error).to.equal('Sorry "list" is a reserved keyword');
         server.stop(done);
       });
     });
   });
 });
 
-describe('/csv-list/create Attempt to create a new list with some already existing candidates', function () {
+describe('/csv-list/create Create to create a new list with some already existing candidates', function () {
 
   it('Create a new list and add the list name to the existing candidates', function (done) {
 
