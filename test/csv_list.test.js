@@ -251,3 +251,59 @@ describe('Access /csv-list/dowanload on js dev list', function () {
   },5000);
   });
 });
+
+/*
+* upload a csv to an existing list
+*/
+
+describe('Access /csv-list/upload get the form to upload a csv to the list', function () {
+
+  it('return the form to upload a csv to a list', function (done) {
+
+    Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+
+      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+        var options = {
+          method: "GET",
+          url: "/csv-list/upload/js%20dev",
+          headers: { cookie: "token=" + token },
+          credentials: { id: "12", "name": "Simon", valid: true}
+        };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+    });
+  });
+});
+
+
+describe('Access /csv-list/upload upload the csv to the list', function () {
+
+  it('uplaod the csv to the list "js dev"', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    const csvFile = "Name,Email\nCandidateCSV,candidate@csv.com";
+
+    Server.init(0, function (err, server) {
+        expect(err).to.not.exist();
+        var options = {
+          method: "POST",
+          url: "/csv-list/upload",
+          headers: { cookie: "token=" + token },
+          credentials: { id: "12", "name": "Simon", valid: true},
+          payload: {listName: 'js dev', csvFile: csvFile}
+        };
+
+        server.inject(options, function (res) {
+          expect(res.statusCode).to.equal(302);
+          expect(res.headers.location).to.equal('/csv-list/list');
+          server.stop(done);
+        });
+      });
+    });
+  });
