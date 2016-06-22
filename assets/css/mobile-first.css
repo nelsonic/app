@@ -399,13 +399,13 @@ input[type='checkbox'] {
 .anchorTop{
 text-align: center;
   position:fixed;
-  top: 370px;
+  top: 45%;
   right: 30px;
 }
 .anchorBottom {
   text-align: center;
   position:fixed;
-  top: 340px;
+  top: 50%;
   right: 30px;
 }
 
