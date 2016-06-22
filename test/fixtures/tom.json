@@ -4,6 +4,7 @@
     "location": "New york",
     "viewedBy": "Mario Bros",
     "notesList": [],
+    "rejected": [],
     "favourite":[],
     "current": "it super developer",
     "contacts": {"email": "", "phone": "", "im": [], "address": "" },

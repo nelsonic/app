@@ -187,4 +187,52 @@
       xhr.send(JSON.stringify(infoObject));
     }, false);
 
+    //li url edit/save
+
+    var editLI = document.getElementById('edit-li');
+    editLI.addEventListener('click', function (e) {
+      e.preventDefault();
+      //display and update data
+      var li = document.querySelector('#li').textContent;
+      document.querySelector('.li-input').value = li;
+      document.querySelector('#edit-li').style.display = 'none';
+      document.querySelector('.li-save').style.display = 'block';
+
+    }, false);
+
+    var saveLI = document.querySelector('.li-save button');
+    saveLI.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      //ajax call
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/li/save');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          var response = JSON.parse(xhr.responseText);
+
+          if (response.code === 200) {
+            //display new data
+            document.querySelector('#li').textContent = response.url;
+            document.querySelector('.error-li-tag').style.display = 'none';
+          }
+          if (response.code === 500) {
+            document.querySelector('.error-li-tag').style.display = 'block';
+          }
+
+          document.querySelector('.li-save').style.display = 'none';
+          document.querySelector('#edit-li').style.display = 'block';
+        }
+      };
+
+      var liObject = {
+        idCandidate: document.querySelector('.id-candidate').value,
+        li: document.querySelector('.li-input').value
+      };
+
+      xhr.send(JSON.stringify(liObject));
+    }, false)
+
 })();

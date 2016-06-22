@@ -6,6 +6,7 @@
     "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "fullname": "Sam",
     "notesList": [],
+    "rejected": [],
     "favourite":[],
     "location": "Porto",
     "current": "relax",

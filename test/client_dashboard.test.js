@@ -39,7 +39,8 @@ describe('Access /client-dashboard with authorization', function () {
       expect(err).to.not.exist();
       //create the client in redis
       var redisClient = require('redis-connection')();
-      redisClient.set(4242, JSON.stringify({email: 'theemail@email.com', authorized: true}), function(errRedis, responseRedis){
+      //you need to provide idClient to be able to use it on request.auth.credentials.idClient
+      redisClient.set(4242, JSON.stringify({email: 'theemail@email.com', authorized: true, idClient: '1'}), function(errRedis, responseRedis){
 
         var options = {
           method: "GET",

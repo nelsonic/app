@@ -52,7 +52,7 @@ describe('Attempt to get /jobs/list when authenticated and header accepts applic
 
       server.inject(options, function (res) {
         var payload = JSON.parse(res.payload);
-        expect(payload.length).to.equal(2);
+        expect(payload.length).to.equal(3);
         expect(payload[0].active).to.equal(true);
         expect(payload[0].title).to.equal('Node.js Developer');
         server.stop(done);
