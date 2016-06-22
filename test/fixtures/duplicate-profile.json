@@ -6,6 +6,7 @@
     "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "fullname": "Manuel",
     "notesList": [],
+    "rejected": [],
     "favourite":[],
     "location": "Barcelona, Spain",
     "current": "Fawlty Hotel",

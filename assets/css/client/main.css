@@ -1,95 +1,522 @@
+@font-face {
+  font-family: 'Myriad-Pro';
+  src: url(Myriad-Pro_31655.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Myriad-Pro-Bold';
+  src: url(Myriad-Pro-Bold_31631.ttf) format('truetype');
+}
+
 html {
-  height: 100vh;
+  max-width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  position: relative;
 }
 
 body {
-  height: 100vh;
-  background-color: rgba(239, 237, 243, 0.37);
-  font-family: 'Open Sans', sans-serif;
+  max-width: 100%;
+  background-color: #EFEFEF;
+  font-family: 'Myriad-Pro';
   overflow: hidden;
 }
 
+/*==============================
+  CLIENT LOGIN PAGE
+================================*/
 .logo {
   text-align: center;
 }
 
 .logo img {
-  display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30em;
-  margin-top: 20px;
+  width: 8em;
+  margin-bottom: 80px;
+}
+
+.client-login-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #D1D1D1;
 }
 
 .client-login-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  margin-top: -100px;
 }
 
 .client-login-container > form {
   max-width: 24em;
 }
 
-.client-login-container > form label,
 .client-login-container > form input,
 .client-login-container >form button {
   width: 100%;
-  margin-bottom: 10px;
+  border: none;
 }
 
 .client-login-container > form input {
-  padding: 5px 0 5px 0;
+  padding: 10px 0 10px 10px;
 }
 
-.client-login-container > form label {
-  font-size: 16px;
-  margin: 0 0 5px 0;
+.client-login-container > form input:focus,
+.client-login-container > form button:focus {
+  outline:none;
 }
 
 .client-login-container > form button {
-  background-color: rgba(79, 94, 130, 0.58);
-  color: #141546;
+  background-color: #3C3C3C;
+  color: #D1D1D1;
   border: none;
-  padding: 10px 10px;
+  padding: 12px 12px;
   cursor: pointer;
+}
+
+.client-login-container > form > input:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
 }
 
 .client-login-container > form p {
   color: #D24F4F;
   margin: 5px 0 5px 0;
+  font-family: 'Myriad-Pro';
+  text-align: center;
 }
 
+/*==============================
+  END CLIENT LOGIN PAGE
+================================*/
+
+/*==============================
+  CLIENT NAVIGATION
+================================*/
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  background-color: #323232;
+}
+
+.cl-nav {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cl-nav p {
+  color: #d1d1d1;
+  margin-top: 22px;
+  font-weight: 400;
+}
+
+.cl-nav a:last-of-type img {
+  border-radius: 50%;
+}
+
+/*https://dusted.codes/making-font-awesome-awesome-using-icons-without-i-tags*/
+.icon::before {
+  display: inline-block;
+  margin-right: .5em;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+.fa-home, .fa-envelope {
+  color: #EFEFEF;
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+.cl-image {
+  float: left;
+  margin-top: 6px;
+}
+
+.cl-nav img {
+  margin: 8px 10px 6px 0px;
+  float: right;
+  cursor: pointer;
+  border: 2px solid rgba(50, 50, 50, 0.74);
+  width: 50px;
+}
+
+footer {
+  display: none;
+}
+/*==============================
+  END CLIENT NAVIGATION
+================================*/
+
+/*==============================
+  CLIENT DASHBOARD
+================================*/
+.cl-info {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  display: none;
+}
+
+.cl-info img {
+  width: 50px;
+}
+
+.cl-info p{
+  text-align: center;
+  color: #D1D1D1;
+}
+
+.cl-info-desktop {
+  background-color: #323232;
+  padding: 80px 0 40px 0;
+}
+
+.cl-info-desktop > p {
+  text-align: center;
+}
+
+.cl-container {
+  margin-bottom: 40px;
+}
+
+.cl-container:nth-child(3) {
+  margin-top: 100px;
+}
+
+.cl-job {
+  margin-top: 30px;
+}
+
+.cl-job-info {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.cl-job-info > p, .cl-stage-title {
+  text-transform: uppercase;
+}
+
+.edit-stages {
+  color: #333;
+  font-family: 'Myriad-Pro-Bold';
+}
+
+.cl-stage-parent {
+  overflow-x: auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.cl-stage-child {
+  height: auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  margin-bottom: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 0px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 1px 1px 0px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 1px 1px 0px rgba(51, 51, 51, 0.5);
+}
+
+.cl-stage-child {
+  max-width: 300px;
+}
+
+.cl-stage-title {
+  height: 35px;
+  width: 300px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.82);
+  text-align: center;
+}
+
+.cl-candidate {
+  min-width: 120px;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+}
+
+.cl-candidate img {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid rgba(50, 50, 50, 0.74);
+}
+
+.hidden-btn {
+  margin-top: 30px;
+  margin-left: -20px;
+  z-index: 99999;
+  display: none;
+  border: none;
+  width: 50px;
+  background: #323232;
+  padding: 8px;
+  color: #EFEFEF;
+  cursor: pointer;
+  position: absolute;
+}
+
+.actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  align-items: center;
+}
+
+.next-stage {
+  font-weight: 900;
+}
+
+.reject {
+  background: #E86363;
+  display: none;
+  z-index: 99999;
+  border: none;
+  width: 30px;
+  margin-top: -8px;
+  padding: 3px;
+  margin-left: 22px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.cl-candidate:hover img{
+  opacity: 0.3;
+}
+
+.cl-candidate:hover .hidden-btn,
+.cl-candidate:hover .reject {
+  display: block;
+}
+
+.error-msg {
+  display: none;
+  color: #E86363;
+}
+
+/*==============================
+  END CLIENT DASHBOARD
+================================*/
+
+
+/*==============================
+  STAGES
+================================*/
+.stages-container {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+}
+
+.stages-container > form {
+  width: 30em;
+}
+
+.stages-container > form p {
+  padding: 10px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.16);
+  margin-top: 5px;
+}
+
+.stages-container > form p:last-of-type {
+  border:none;
+}
+
+.stages-container > form button {
+  width: 100%;
+  border: none;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #323232;
+  color: #EFEFEF;
+}
+
+.stages-container span {
+  background: rgba(142, 139, 139, 0.3);
+  padding: 3px 10px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+
+/*==============================
+  END STAGES
+================================*/
+
 @media (max-width: 768px) {
-  .logo img {
-    width: 10em;
-  }
   .client-login-container {
     width: 60%;
+  }
+  /*column layout */
+  .cl-info {
+    padding-top: 5px;
+    background-color: #323232;
+  }
+
+  .cl-job-info {
+    justify-content: center;
+  }
+
+  .cl-stage-parent {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .cl-stage-child {
+    max-width: 100%;
+    box-shadow: 1px 1px 0px rgba(51, 51, 51, 0.5);
+    -webkit-box-shadow: 1px 1px 0px rgba(51, 51, 51, 0.5);
+    -moz-box-shadow: 1px 1px 0px rgba(51, 51, 51, 0.5);
+  }
+
+  .cl-stage-title {
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 461px) {
+
+  .fa-home {
+    float: left;
   }
 }
 
 @media (max-width: 460px) {
+
   .client-login-container {
     width: 90%;
-    height: 90%;
   }
 
   .logo img {
-    width: 10em;
-    margin-top: 40px;
+    width: 7em;
+    margin: 20px 0 20px 0;
+  }
+
+  /*client navigation on the mobile devices*/
+  header {
+    display: none;
+  }
+
+  .cl-info {
+    display: block;
+  }
+
+  .cl-info-desktop {
+    display: none;
+  }
+
+  .cl-job {
+    margin-top: 30px;
+  }
+
+  footer {
+    display: block;
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color: #323232;
+  }
+
+  ul.nav {
+    padding: 0;
+    display: table;
+    width:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #323232;
+  }
+
+  ul.nav li {
+    display: table-cell;
+    border: 1px solid #EFEFEF;
+  }
+
+  ul.nav a {
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-right: none;
+    text-align: center;
+    color: #EFEFEF;
+  }
+
+  ul.nav li:last-child {
+    border-right: 1px solid #EFEFEF;
+  }
+
+  .stages-container {
+    margin: 2px 0 50px 0;
+  }
+
+  .stages-container > form {
+    width: 100%;
   }
 }
