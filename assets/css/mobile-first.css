@@ -378,8 +378,8 @@ span {
   position: fixed;
   bottom: 10px;
   left: 2%;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
   border: none;
   padding: 8px 15px;
   z-index: 2;
@@ -387,8 +387,8 @@ span {
 
 #send-email:hover, .send-email-form > button:hover, .delete-profile-confirmation button:hover,
 .delete-profile:hover {
-  background-color: #FFD777;
-  color: #424A5D;
+  background-color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
