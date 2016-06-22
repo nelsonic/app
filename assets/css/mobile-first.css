@@ -1482,6 +1482,13 @@ Vacancy
   margin: 0 auto 5px;
 }
 
+.number-candidates {
+  background-color: rgba(35, 28, 49, 0.81);
+  color: #FFD777;
+  padding: 3px;
+  margin-left: 10px;
+}
+
 .label-list > div{
   display: -webkit-box;
   display: -moz-box;
