@@ -4,20 +4,7 @@
   <a class="create-icon" href="/csv-list/create"><i class="fa fa-plus"> New List</i></a>
     {{#each lists}}
   <div class="label-list">
-      <p><a href="/csv-list/{{this.listName}}">{{listName}}</a></p>
-      <div>
-        <form class="download-csv" action="/csv-list/download" method="POST">
-          <input type="hidden" name="listName" value="{{this.listName}}">
-          <button type="submit"><i class="fa fa-download" aria-hidden="true"></i></button>
-        </form>
-        <form class="upload-csv" action="/csv-list/upload/{{listName}}" method="GET">
-          <input type="hidden" name="listName" value="{{this.listName}}">
-          <button type="submit"><i class="fa fa-upload" aria-hidden="true"></i></button>
-        </form>
-        <form class="delete-list" action="" method="">
-          <button type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
-        </form>
-      </div>
+      <p><a href="#">{{listName}}</a> {{numberCandidates}}</p>
   </div>
   {{/each}}
 </div>
