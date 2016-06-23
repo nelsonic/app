@@ -62,6 +62,64 @@ describe('access /csv-list/create with authorization', function () {
   });
 });
 
+describe('Attemppt /csv-list/create create a list with wrong csv format column', function () {
+
+  it('Attempt to create a list with the wrong csv format', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    Server.init(0, function (err, server) {
+
+      const csvFile = "NameWrong,EmailWrong\nBob,bob@csv.com\nMatt,matt@csv.com";
+
+      expect(err).to.not.exist();
+      var options = {
+        method: "POST",
+        url: "/csv-list/create",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true},
+        payload: {listName: "js dev", csvFile: csvFile}
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var error = $('.error-csv').text();
+        expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Attemppt /csv-list/create create a list with wrong file format', function () {
+
+  it('Attempt to create a list with the wrong file format', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    Server.init(0, function (err, server) {
+
+      const csvFile = undefined;
+
+      expect(err).to.not.exist();
+      var options = {
+        method: "POST",
+        url: "/csv-list/create",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true},
+        payload: {listName: "js dev", csvFile: csvFile}
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var error = $('.error-csv').text();
+        expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+        server.stop(done);
+      });
+    });
+  });
+});
+
 describe('create /csv-list/create create a list js dev', function () {
 
   it('creates a new list and redirect the list of list', function (done) {
