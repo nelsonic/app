@@ -1,0 +1,23 @@
+{{>navigation}}
+
+<div class="csv-list-wrapper">
+
+  <form action="/csv-list/create" method="POST" enctype="multipart/form-data">
+
+    <p>
+      <label for="title">List name:</label>
+      <input type="text" name="listName" required value="{{listName}}">
+    </p>
+
+    <p>
+      <input type="file" name="csvFile" class="custom-file-input" required accept=".csv">
+    </p>
+    <small>* csv file with Name and Email columns</small>
+    <p class="error-csv">{{errorMessage}}</p>
+    <p>
+      <button class="create-list" type="submit">Create</button>
+    </p>
+
+  </form>
+
+</div>
