@@ -5,14 +5,15 @@
   <form action="/csv-list/upload" method="POST" enctype="multipart/form-data">
 
     <p>
-      Upload a csv file for <b>"{{listName}}"</b> list
+      <label for="listName">Upload a csv file for <b>"{{listName}}"</b> list</label>
       <input type="hidden" name="listName" required value="{{listName}}">
     </p>
 
     <p>
       <input type="file" name="csvFile" class="custom-file-input" required accept=".csv">
     </p>
-
+    <small>* csv file with Name and Email columns</small>
+    <p class="error-csv">{{errorMessage}}</p>
     <p>
       <button class="create-list" type="submit">Upload</button>
     </p>
