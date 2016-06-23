@@ -385,7 +385,7 @@ span {
   position: fixed;
   bottom: 10px;
   left: 2%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: #333;
   color: #fff;
   border: none;
   padding: 8px 15px;
@@ -716,6 +716,7 @@ aside {
   width: 50px;
   height: 50px;
   transform: rotate(-90deg);
+  margin-left: 40px;
 }
 
 svg {
@@ -725,8 +726,8 @@ svg {
 
 circle {
   fill: #fff;
-  stroke: #424A5D;
-  stroke-width: 32;
+  stroke: #333;
+  stroke-width: 4;
 }
 
 /*==============================
