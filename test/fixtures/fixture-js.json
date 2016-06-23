@@ -3,7 +3,7 @@
 { "url": "https://www.linkedin.com/in/fakeprofile100",
     "connections": 500,
     "connectedTo": [],
-    "listNames": [],
+    "listNames": ["FrontEnd"],
     "rejected": [],
     "notesList": [],
     "statusCurrent": [{"idJob": "2", "idUser": "12", "idClient": "4", "idStage": "2", "timestamp": "5465465"},{"idJob": "1", "idUser": "12", "idClient": "1", "idStage": "2", "timestamp": "5465465"},{"idJob": "1", "idUser": "12", "idClient": "1", "idStage": "4", "timestamp": "5465465"}],
@@ -361,5 +361,7 @@
             "role": "User",
             "linkedin": "https://linkedin.com/in/userNoIdGoogle",
             "dev": false
-          }
+          },
+          { "index" : { "_index" : "gmcontact", "_type" : "csv-list", "_id" : "1114" } },
+            { "listName": "Backend"}
   ]

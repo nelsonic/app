@@ -31,7 +31,7 @@ describe('Attempt to access /csv-list/list with authorization', function () {
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
         var lists = $('.label-list p');
-        expect(lists.length).to.equal(0);
+        expect(lists.length).to.equal(1);
         server.stop(done);
       });
 
@@ -307,3 +307,57 @@ describe('Access /csv-list/upload upload the csv to the list', function () {
       });
     });
   });
+
+  /*
+  * delete a list
+  */
+
+  describe('Access /csv-list/delete to delete the list', function () {
+
+    it('delete the "Backend" list', function (done) {
+
+      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+      Server.init(0, function (err, server) {
+          expect(err).to.not.exist();
+          var options = {
+            method: "POST",
+            url: "/csv-list/delete",
+            headers: { cookie: "token=" + token },
+            credentials: { id: "12", "name": "Simon", valid: true},
+            payload: {listName: 'Backend', listId: '1114'}
+          };
+
+          server.inject(options, function (res) {
+            expect(res.statusCode).to.equal(302);
+            expect(res.headers.location).to.equal('/csv-list/list');
+            server.stop(done);
+          });
+        });
+      });
+    });
+
+    describe('Access /csv-list/delete to delete the list', function () {
+
+      it('delete the "FrontEnd" list from candidate profile', function (done) {
+
+        var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+        Server.init(0, function (err, server) {
+            expect(err).to.not.exist();
+            var options = {
+              method: "POST",
+              url: "/csv-list/delete",
+              headers: { cookie: "token=" + token },
+              credentials: { id: "12", "name": "Simon", valid: true},
+              payload: {listName: 'FrontEnd'}
+            };
+
+            server.inject(options, function (res) {
+              expect(res.statusCode).to.equal(302);
+              expect(res.headers.location).to.equal('/csv-list/list');
+              server.stop(done);
+            });
+          });
+        });
+      });
