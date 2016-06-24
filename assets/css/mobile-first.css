@@ -101,10 +101,15 @@ header {
 
 .search-form input {
   padding: 5px 0;
-  width: 170px;
+  width: 210px;
+  font-family: 'Myriad-Pro';
+  border-radius: 10px;
+  border: none;
+  text-indent: 10px;
+
 }
 
-.search-form > a > i.fa-star, .search-form > a > i.fa-user, .search-form > a > i.fa-tachometer {
+.search-form > a > i.fa-star, .search-form > a > i.fa-user, .search-form > a > i.fa-refresh {
   margin-top: 0px !important;
 }
 
@@ -178,14 +183,6 @@ header {
   margin-top:50px;
 }
 
-.curly-left {
-  color: #B2C463;
-}
-
-.curly-right {
-  color: #90D2CC;
-}
-
 .container{
   margin-bottom:40px;
   padding: 5px;
@@ -256,7 +253,7 @@ hr.horizontal-profile {
   float: right;
 }
 
-i.fa-star, i.fa-user, i.fa-tachometer {
+i.fa-star, i.fa-user, i.fa-refresh {
   color: #fff;
   border: none;
   float: right;
@@ -264,7 +261,7 @@ i.fa-star, i.fa-user, i.fa-tachometer {
 }
 
 i.fa-plus-circle {
-  color: #E4AD28;
+  color: #fff;
 }
 
 .favourite-form button {
