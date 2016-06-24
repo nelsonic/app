@@ -300,7 +300,7 @@ describe('Access /csv-list/dowanload on js dev list', function () {
         const Converter = require("csvtojson").Converter;
         const converter = new Converter({});
         converter.fromString(res.payload, function(err,csvJson){
-          expect(csvJson.length).to.equal(2);
+          expect(csvJson.length).to.equal(4);
           server.stop(done);
         })
       });
