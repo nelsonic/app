@@ -101,7 +101,7 @@ header {
 
 .search-form input {
   padding: 5px 0;
-  width: 210px;
+  width: 180px;
   font-family: 'Myriad-Pro';
   border-radius: 10px;
   border: none;
@@ -370,7 +370,7 @@ span {
 }
 
 .title-wrapper .aside-1 {
-  padding-right: 60px;
+  padding-right: 30px;
   position: fixed;
   z-index: 2;
 }
