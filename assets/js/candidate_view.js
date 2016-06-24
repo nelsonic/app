@@ -216,6 +216,7 @@
           if (response.code === 200) {
             //display new data
             document.querySelector('#li').textContent = response.url;
+            document.querySelector('#li').setAttribute('href', response.url);
             document.querySelector('.error-li-tag').style.display = 'none';
           }
           if (response.code === 500) {
