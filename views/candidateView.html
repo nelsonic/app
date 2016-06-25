@@ -253,6 +253,20 @@
         {{>application}}
       {{/each}}
       <hr>
+
+      <h1><i class="fa fa-bars"></i> LIST NAMES</h1>
+      {{#each candidate.listNames}}
+        <div class="list-names-wrapper">
+          <p class="error-list-name">Please, try again!</p>
+          <div>
+            <span>{{this}}</span>
+            <button class="delete-list-names">X</button>
+          </div>
+          <input type="hidden" name="listName" value="{{this}}">
+          <input type="hidden" name="idCandidate" value="{{../candidate.id}}">
+        </div>
+      {{/each}}
+      <hr>
     </div>
 
     <input type="hidden" class="keywords" value="{{candidate.keywords}}">
