@@ -457,7 +457,7 @@ describe('Access /csv-list/upload upload the csv to the list', function () {
     * get caniddates who belongs to specific list
     */
 
-    describe('Access /csv-list/js dev to see all candidates from that list', function () {
+    describe('Access /csv-list/js dev to see all candidates from the list "js dev"', function () {
 
       it('return list of candidates', function (done) {
 
