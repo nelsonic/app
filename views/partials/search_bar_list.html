@@ -2,7 +2,7 @@
   <section class="search">
     <div class="search-form">
     {{>search_links}}
-      <form action="" method="GET">
+      <form action="/query-list/{{listName}}" method="GET">
         <input name="skills" placeholder="Skills" value="{{skillsValue}}">
         <input id="currentPage" type="hidden" name="page" value="{{page}}"/>
         <input id="totalPages" type="hidden" name="totalPages" value="{{pages}}"/>
