@@ -31,7 +31,7 @@ describe('Attempt to access /csv-list/list with authorization', function () {
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
         var lists = $('.label-list p');
-        expect(lists.length).to.equal(0);
+        expect(lists.length).to.equal(1);
         server.stop(done);
       });
 
@@ -267,3 +267,188 @@ describe('Access /csv-list/list (list not empty)', function () {
   },5000);
   });
 });
+
+/*
+* download csv test
+*/
+
+describe('Access /csv-list/dowanload on js dev list', function () {
+
+  it('download the csv for the list js dev', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    //wait for the node list to be indexed
+    setTimeout(function(){
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var options = {
+        method: "POST",
+        url: "/csv-list/download",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true},
+        payload: {listName: "js dev"}
+      };
+
+      server.inject(options, function (res) {
+
+        expect(res.headers["content-type"]).to.equal('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        expect(res.headers["content-disposition"]).to.equal('attachment; filename="js dev.csv"');
+
+        const Converter = require("csvtojson").Converter;
+        const converter = new Converter({});
+        converter.fromString(res.payload, function(err,csvJson){
+          expect(csvJson.length).to.equal(2);
+          server.stop(done);
+        })
+      });
+
+    });
+  },5000);
+  });
+});
+
+/*
+* upload a csv to an existing list
+*/
+
+describe('Access /csv-list/upload get the form to upload a csv to the list', function () {
+
+  it('return the form to upload a csv to a list', function (done) {
+
+    Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+
+      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+        var options = {
+          method: "GET",
+          url: "/csv-list/upload/js%20dev",
+          headers: { cookie: "token=" + token },
+          credentials: { id: "12", "name": "Simon", valid: true}
+        };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+    });
+  });
+});
+
+
+describe('Access /csv-list/upload upload the csv to the list', function () {
+
+  it('uplaod the csv to the list "js dev"', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    const csvFile = "Name,Email\nCandidateCSV,candidate@csv.com";
+
+    Server.init(0, function (err, server) {
+        expect(err).to.not.exist();
+        var options = {
+          method: "POST",
+          url: "/csv-list/upload",
+          headers: { cookie: "token=" + token },
+          credentials: { id: "12", "name": "Simon", valid: true},
+          payload: {listName: 'js dev', csvFile: csvFile}
+        };
+
+        server.inject(options, function (res) {
+          expect(res.statusCode).to.equal(302);
+          expect(res.headers.location).to.equal('/csv-list/list');
+          server.stop(done);
+        });
+      });
+    });
+  });
+
+  describe('Attemppt /csv-list/upalod wrong csv format', function () {
+
+    it('Attempt to create a list with the wrong csv format', function (done) {
+
+      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+      Server.init(0, function (err, server) {
+
+        const csvFile = "NameWrong,EmailWrong\nBob,bob@csv.com\nMatt,matt@csv.com";
+
+        expect(err).to.not.exist();
+        var options = {
+          method: "POST",
+          url: "/csv-list/upload",
+          headers: { cookie: "token=" + token },
+          credentials: { id: "12", "name": "Simon", valid: true},
+          payload: {listName: "js dev", csvFile: csvFile}
+        };
+
+        server.inject(options, function (res) {
+          expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          var error = $('.error-csv').text();
+          expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+          server.stop(done);
+        });
+      });
+    });
+  });
+
+  describe('Attemppt /csv-list/upalod wrong file format', function () {
+
+    it('Attempt to create a list with the wrong file format', function (done) {
+
+      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+      Server.init(0, function (err, server) {
+
+        const csvFile = undefined;
+
+        expect(err).to.not.exist();
+        var options = {
+          method: "POST",
+          url: "/csv-list/upload",
+          headers: { cookie: "token=" + token },
+          credentials: { id: "12", "name": "Simon", valid: true},
+          payload: {listName: "js dev", csvFile: csvFile}
+        };
+
+        server.inject(options, function (res) {
+          expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          var error = $('.error-csv').text();
+          expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+          server.stop(done);
+        });
+      });
+    });
+  });
+
+  /*
+  * delete a list
+  */
+
+  describe('Access /csv-list/delete to delete the list', function () {
+
+    it('delete the "Backend" list', function (done) {
+
+      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+      Server.init(0, function (err, server) {
+          expect(err).to.not.exist();
+          var options = {
+            method: "POST",
+            url: "/csv-list/delete",
+            headers: { cookie: "token=" + token },
+            credentials: { id: "12", "name": "Simon", valid: true},
+            payload: {listName: 'Backend', listId: '1114'}
+          };
+
+          server.inject(options, function (res) {
+            expect(res.statusCode).to.equal(302);
+            expect(res.headers.location).to.equal('/csv-list/list');
+            server.stop(done);
+          });
+        });
+      });
+    });
