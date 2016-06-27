@@ -3,6 +3,7 @@
     "fullname": "Tom",
     "location": "New york",
     "viewedBy": "Mario Bros",
+    "listNames": [],
     "notesList": [],
     "rejected": [],
     "favourite":[],

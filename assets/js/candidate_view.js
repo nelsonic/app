@@ -216,6 +216,7 @@
           if (response.code === 200) {
             //display new data
             document.querySelector('#li').textContent = response.url;
+            document.querySelector('#li').setAttribute('href', response.url);
             document.querySelector('.error-li-tag').style.display = 'none';
           }
           if (response.code === 500) {
@@ -235,4 +236,38 @@
       xhr.send(JSON.stringify(liObject));
     }, false)
 
+    //delete the listNames from the candidate profile
+    var deleteListName = document.querySelectorAll('.delete-list-names');
+    for (var i = 0; i < deleteListName.length; i++) {
+      deleteListName[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        var parent = e.target.parentNode.parentNode;
+
+        var child = parent.getElementsByTagName('div')[0];
+        var listName = parent.querySelector('input[name="listName"]').value;
+        var idCandidate = parent.querySelector('input[name="idCandidate"]').value;
+        var payload = {listName: listName, idCandidate:idCandidate};
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/candidates/delete-list');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+
+            var response = xhr.responseText;
+
+            if (JSON.parse(response).code === 200) {
+              //remove element
+              parent.removeChild(child);
+            }
+
+            if (JSON.parse(response).code === 500) {
+              //error message
+              document.querySelector('.error-list-name').style.display = 'block';
+            }
+          }
+        }
+        xhr.send(JSON.stringify(payload));
+      });
+    }
 })();
