@@ -43,6 +43,14 @@
         {{emailIndicatorHelper candidate.lastEmail true}}
       {{/if}}
 
+      <!-- Rejectd status tag -->
+      <div class="rejected">
+        {{#each rejectedStatus as |status timestamp| }}
+          <span><a href="/jobs/{{status.idJob}}">{{status.nameClient}} - {{status.nameJob}} - Rejected</a></span>
+        {{/each}}
+      </div>
+
+
       {{#if candidate.statusCurrent}}
           {{#each candidate.statusCurrent}}
 
@@ -125,7 +133,19 @@
           <input type="hidden" name="idCandidate" value="{{candidate.id}}">
           <button type="submit">Upload</button>
         </form>
-        <p><span>Linkedin: </span><a class="check-highlight" href="{{candidate.url}}" target="_blank">{{candidate.url}}</a></p>
+        <p><span>Linkedin: </span><a id="li" class="check-highlight" href="{{candidate.url}}" target="_blank">{{candidate.url}}</a></p>
+        <p class="error-li-tag">Please try again.</p>
+        <div class="edit-li-container">
+          <button id="edit-li">Edit</button>
+        </div>
+        <div class="li-save-container">
+          <form class="li-save">
+            <input type="hidden" name="id" class="id-candidate" value="{{candidate.id}}">
+            <input type="text" name="li" class="li-input" value="{{candidate.url}}">
+            <button type="submit">Save</button>
+          </form>
+        </div>
+
         <p><span>Email: </span><span class="check-highlight">{{candidate.contacts.email}}</span></p>
         <p><span>Phone: </span><span class="check-highlight">{{candidate.contacts.phone}}</span></p>
           {{#each candidate.contacts.im}}
@@ -231,6 +251,20 @@
       <h1><i class="fa fa-file"></i> JOB APPLICATIONS</h1>
       {{#each candidate.jobApplications}}
         {{>application}}
+      {{/each}}
+      <hr>
+
+      <h1><i class="fa fa-bars"></i> LIST NAMES</h1>
+      {{#each candidate.listNames}}
+        <div class="list-names-wrapper">
+          <p class="error-list-name">Please, try again!</p>
+          <div>
+            <span>{{this}}</span>
+            <button class="delete-list-names">X</button>
+          </div>
+          <input type="hidden" name="listName" value="{{this}}">
+          <input type="hidden" name="idCandidate" value="{{../candidate.id}}">
+        </div>
       {{/each}}
       <hr>
     </div>

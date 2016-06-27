@@ -187,4 +187,87 @@
       xhr.send(JSON.stringify(infoObject));
     }, false);
 
+    //li url edit/save
+
+    var editLI = document.getElementById('edit-li');
+    editLI.addEventListener('click', function (e) {
+      e.preventDefault();
+      //display and update data
+      var li = document.querySelector('#li').textContent;
+      document.querySelector('.li-input').value = li;
+      document.querySelector('#edit-li').style.display = 'none';
+      document.querySelector('.li-save').style.display = 'block';
+
+    }, false);
+
+    var saveLI = document.querySelector('.li-save button');
+    saveLI.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      //ajax call
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/li/save');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          var response = JSON.parse(xhr.responseText);
+
+          if (response.code === 200) {
+            //display new data
+            document.querySelector('#li').textContent = response.url;
+            document.querySelector('#li').setAttribute('href', response.url);
+            document.querySelector('.error-li-tag').style.display = 'none';
+          }
+          if (response.code === 500) {
+            document.querySelector('.error-li-tag').style.display = 'block';
+          }
+
+          document.querySelector('.li-save').style.display = 'none';
+          document.querySelector('#edit-li').style.display = 'block';
+        }
+      };
+
+      var liObject = {
+        idCandidate: document.querySelector('.id-candidate').value,
+        li: document.querySelector('.li-input').value
+      };
+
+      xhr.send(JSON.stringify(liObject));
+    }, false)
+
+    //delete the listNames from the candidate profile
+    var deleteListName = document.querySelectorAll('.delete-list-names');
+    for (var i = 0; i < deleteListName.length; i++) {
+      deleteListName[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        var parent = e.target.parentNode.parentNode;
+
+        var child = parent.getElementsByTagName('div')[0];
+        var listName = parent.querySelector('input[name="listName"]').value;
+        var idCandidate = parent.querySelector('input[name="idCandidate"]').value;
+        var payload = {listName: listName, idCandidate:idCandidate};
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/candidates/delete-list');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+
+            var response = xhr.responseText;
+
+            if (JSON.parse(response).code === 200) {
+              //remove element
+              parent.removeChild(child);
+            }
+
+            if (JSON.parse(response).code === 500) {
+              //error message
+              document.querySelector('.error-list-name').style.display = 'block';
+            }
+          }
+        }
+        xhr.send(JSON.stringify(payload));
+      });
+    }
 })();

@@ -53,6 +53,15 @@ header {
   margin: 5px 0 0 0;
 }
 
+.rejected {
+  margin-top: 20px;
+}
+
+.rejected span a{
+  border: 1px solid rgba(255, 0, 0, 0.22);
+  background-color: rgba(255, 0, 0, 0.58);
+  color: #fff !important;
+}
 /*.headline p:first-of-type {
   margin-top: 15px;
 }*/
@@ -228,15 +237,10 @@ header {
   float: right;
 }
 
-i.fa-star, i.fa-user, i.fa-tachometer {
+i.fa-star, i.fa-user, i.fa-tachometer, i.fa-users, i.fa-plus-circle{
   color: #E4AD28;
   border: none;
   float: right;
-  margin-top: 10px;
-}
-
-i.fa-plus-circle {
-  color: #E4AD28;
 }
 
 .favourite-form button {
@@ -547,7 +551,7 @@ ul.lang li span {
   padding: 20px 0 20px;
 }
 
-.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, i.fa-file, i.fa-linkedin,
+.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, i.fa-file, i.fa-linkedin,i.fa-bars,
 #sidebar > h1 > i.fa-envelope,
 #sidebar > h1 > i.fa-pencil,
 #sidebar > h1 > i.fa-comments,
@@ -966,7 +970,7 @@ circle {
   margin-top: 20px;
 }
 
-.vacancy-wrapper .description, .client-job-details .description, .job-clear .description{
+.vacancy-wrapper .description, .client-job-details .description, .job-clear .description {
   color: #818182;
   font-weight: bold;
   padding: 5px 0 10px 0;
@@ -1141,7 +1145,36 @@ input.custom-file-input {
   -webkit-user-select: none;
   cursor: pointer;
 }
+/*==============================
+ Edit/save LI url
+================================*/
+.edit-li-container, .li-save-container {
+  margin: 0 0 10px 0;
+}
 
+.li-save {
+  display: none;
+}
+
+.error-li-tag {
+  display: none;
+}
+
+.li-save > button {
+  float: right;
+}
+
+.li-save > button, #edit-li {
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/*==============================
+ End Edit/save LI url
+================================*/
 /*==============================
  Email
 ================================*/
@@ -1434,6 +1467,81 @@ Vacancy
 }
 /*==============================
  End Users Edit/List
+================================*/
+
+/*==============================
+ CSV Feature, upload, download /csv-list/create
+================================*/
+.csv-list-wrapper {
+  width: 400px;
+  margin: 100px auto;
+}
+
+.csv-list-wrapper > form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.csv-list-wrapper > form button {
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  width: 100%;
+  margin: 10px 0 0 5px;
+}
+
+.csv-list-wrapper > form::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.error-csv {
+  color: red;
+  text-align: center;
+}
+
+.label-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  background-color: white;
+  padding: 20px;
+  margin: 0 auto 5px;
+}
+
+.number-candidates {
+  background-color: rgba(35, 28, 49, 0.81);
+  color: #FFD777;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+.label-list > div{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.label-list button {
+  border: none;
+  background-color: #424A5D;
+  color: #FFD777;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/*==============================
+End Csv
 ================================*/
 
 @media (max-width: 768px) {

@@ -12,7 +12,7 @@ describe('Exist email for a client user', function () {
 
   it('returns true if the email already exists', function (done) {
     //test@gmail.com is defined on fixture-js.json
-    existEmail("test@gmail.com", function(exists) {
+    existEmail("test2@gmail.com", function(exists) {
       expect(exists).to.equal(true);
       done();
     });

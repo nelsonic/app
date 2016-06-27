@@ -1,0 +1,21 @@
+<div class="stages-container">
+    <form class="" action="/jobs/stages/edit" method="POST">
+      <input type="hidden" name="jobId" value="{{job.id}}">
+      <p> JOB TITLE: {{job.title}}</p>
+      {{#each stages as |stage idStage|}}
+        {{#if stage.allowed}}
+          {{#if stage.candidates}}
+            <p><input type="checkbox" disabled checked name="" value="{{idStage}}">{{stage.name}} <span>{{stage.candidates}}</span></p>
+            <input type="hidden"  name="stages" value="{{idStage}}">
+          {{else}}
+            <p><input type="checkbox" checked name="stages" value="{{idStage}}">{{stage.name}} <span>{{stage.candidates}}</span></p>
+          {{/if}}
+        {{else}}
+        <p><input type="checkbox" name="stages" value="{{idStage}}">{{stage.name}} <span>{{stage.candidates}}</span></p>
+        {{/if}}
+      {{/each}}
+      <button type="submit">Submit</button>
+    </form>
+</div>
+
+{{>client_navigation_footer}}

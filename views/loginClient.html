@@ -1,0 +1,16 @@
+<div class="client-login-wrapper">
+
+  <div class="client-login-container">
+    <div class="logo">
+      <img src="/assets/img/squirrel.png"  alt="" />
+    </div>
+    <form action="/client-auth" method="post">
+
+      <input id="email" type="text" name="email" placeholder="Username" required >
+      <input type="password" name="password" placeholder="Password" required>
+
+      <button type="submit">Login</button>
+      <p>{{message}}</p>
+    </form>
+  </div>
+</div>

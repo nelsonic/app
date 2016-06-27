@@ -5,24 +5,33 @@ var client = new ElasticSearch.Client({
 });
 
   var params = {
-        "contacts": {
-          "properties": {
-            "skills": {
-              "properties": {
-                "skill":    { "type": "string" },
-                "level":    { "type": "short"  }
-              }
-            }
-          }
-        },
-        "viewedBy": {
-          "properties": {
-            "id": {"type": "string"},
-            "fullname": {"type": "string"}
+    "properties": {
+      "skills": {
+        "properties": {
+          "skill":    { "type": "string" },
+          "level":    { "type": "short"  }
+        }
+      },
+      "contacts": {
+        "properties":{
+          "emailRaw": {
+            "type": "string",
+            "index": "not_analyzed"
           }
         }
-    };
-
+      },
+      "listNames": {
+          "type": "string",
+          "index": "not_analyzed"
+      },
+      "viewedBy": {
+        "properties": {
+          "id": {"type": "string"},
+          "fullname": {"type": "string"}
+        }
+      }
+    }
+  }
   var paramsGmClientUsers = {
     "properties": {
       "email": {
@@ -32,6 +41,24 @@ var client = new ElasticSearch.Client({
     }
   }
 
+ var paramsGmUsers = {
+   "properties": {
+     "email": {
+       "type": "string",
+       "index": "not_analyzed"
+     }
+   }
+ }
+
+ var paramsList = {
+   "properties": {
+     "listName": {
+       "type": "string",
+       "index": "not_analyzed"
+     }
+   }
+ }
+
 client.indices.exists({index: 'gmcontact'}, function (err, res) {
 
     if(res) {
@@ -40,26 +67,28 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
           index: 'gmcontact'
         }, function (error, response) {
 
+        client.indices.create({index: 'gmcontact'}, function (res, err) {
+            client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
+              client.indices.putMapping({index:"gmcontact", type:"gmusers", body:paramsGmUsers}, function (err,resp) {
+              client.indices.putMapping({index: 'gmcontact', type: "gmclientusers", body: paramsGmClientUsers}, function(errMapping, responseMapping){
+              client.indices.putMapping({index: 'gmcontact', type: "csv-list", body: paramsList}, function(errMappingList, responseMappingList){
+                if(errMapping) {
 
+                console.log('error mapping: ', errMapping);
+                }
+                console.log('mapping for client users is defined');
+                console.log('### Err ###:', err);
+                client.bulk({
+                    body: require('./fixture-js.json')
+                }, function (err, response) {
+                    console.log('The index gmcontact is ready to use');
+                });
+              })
+              })
 
-              client.indices.create({index: 'gmcontact'}, function (res, err) {
-                  client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
-                    client.indices.putMapping({index: 'gmcontact', type: "gmclientusers", body: paramsGmClientUsers}, function(errMapping, responseMapping){
-                      if(errMapping) {
-
-                      console.log('error mapping: ', errMapping);
-                      }
-                      console.log('mapping for client users is defined');
-                      console.log('### Err ###:', err);
-                      client.bulk({
-                          body: require('./fixture-js.json')
-                      }, function (err, response) {
-                          console.log('The index gmcontact is ready to use');
-                      });
-                    })
-
-                  });
-              });
+            });
+            });
+        });
 
 
         });
@@ -68,7 +97,9 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
         //create
         client.indices.create({index: 'gmcontact'}, function (res, err) {
             client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
+              client.indices.putMapping({index:"gmcontact", type:"gmusers", body:paramsGmUsers}, function (err,resp) {
               client.indices.putMapping({index: 'gmcontact', type: "gmclientusers", body: paramsGmClientUsers}, function(errMapping, responseMapping){
+              client.indices.putMapping({index: 'gmcontact', type: "csv-list", body: paramsList}, function(errMappingList, responseMappingList){
 
                 client.bulk({
                     body: require('./fixture-js.json')
@@ -76,6 +107,8 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
                     console.log('The index gmcontact is ready to use');
                 });
 
+              })
+              })
               })
 
            });

@@ -500,6 +500,38 @@ span.close > i.fa-times {
   font-weight: 800;
   padding-right: 5px;
 }
+/*==============================
+ ListNAmes
+================================*/
+
+.list-names-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.list-names-wrapper > div {
+  border: 1px solid #424A5D;
+  padding: 5px;
+  margin-top: 4px;
+}
+
+.delete-list-names {
+  border: none;
+  background-color: #424A5D;
+  color: #FFD777;
+  cursor: pointer;
+}
+
+.error-list-name {
+  display: none;
+}
+
+/*==============================
+ End ListNAmes
+================================*/
 
 /*==============================
  End Status dropdowns
