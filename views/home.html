@@ -1,4 +1,13 @@
-{{>search_bar}}
+{{#if listSearchBar}}
+
+  {{>search_bar_list}}
+
+{{else}}
+
+  {{>search_bar}}
+
+{{/if}}
+
 <section class="container">
   <div class="anchorBottom">
     <a name='anchorTop' href="#anchorBottom"><i class="fa fa-arrow-down"></i></a>

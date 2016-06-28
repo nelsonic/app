@@ -1,17 +1,13 @@
 <header>
   <section class="search">
     <div class="search-form">
-      {{>search_links}}
-      <form action="/query" method="GET">
-        <input name="job" placeholder="Job Title" value="{{headlineValue}}">
-        <input name="fullname" placeholder="Name" value="{{fullnameValue}}">
-        <input name="location" placeholder="Location" value="{{locationValue}}">
-        <input name="current" placeholder="Company" value="{{currentValue}}">
+    {{>search_links}}
+      <!-- <form action="" method="GET">
         <input name="skills" placeholder="Skills" value="{{skillsValue}}">
         <input id="currentPage" type="hidden" name="page" value="{{page}}"/>
         <input id="totalPages" type="hidden" name="totalPages" value="{{pages}}"/>
         <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-      </form>
+      </form> -->
     </div>
   </section>
 </header>
