@@ -253,22 +253,14 @@ hr.horizontal-profile {
   float: right;
 }
 
-<<<<<<< HEAD
-i.fa-star, i.fa-user, i.fa-refresh {
-  color: #fff;
-  border: none;
-  float: right;
-  margin-top: 10px;
-}
-
 i.fa-plus-circle {
   color: #fff;
-=======
-i.fa-star, i.fa-user, i.fa-tachometer, i.fa-users, i.fa-plus-circle{
-  color: #E4AD28;
+}
+
+i.fa-star, i.fa-user, i.fa-refresh, i.fa-users, i.fa-plus-circle {
+  color: #fff;
   border: none;
   float: right;
->>>>>>> master
 }
 
 .favourite-form button {
@@ -895,7 +887,7 @@ circle {
 .client-job-info > img, .client-job-main-content > ul >img {
   float: left;
   width: 140px;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .client-job-info p {
