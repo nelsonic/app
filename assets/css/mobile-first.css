@@ -120,6 +120,11 @@ header {
   border:0 none;
   width: 50px;
 }
+
+.search-btn:focus {
+  outline: none;
+}
+
 .search-btn .fa {
   color:#fff;
   font-size: 1.5em;
