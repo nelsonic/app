@@ -13,8 +13,8 @@
 
 html {
   background-color: #fff;
-  font: 100%/1.3 'Myriad-Pro';
-  font-family: 'Myriad-Pro';
+  font: 100%/1.3 'Myriad-Pro', sans-serif;
+  font-family: 'Myriad-Pro', sans-serif;
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
@@ -101,7 +101,7 @@ header {
 
 .search-form input {
   padding: 5px 0;
-  width: 180px;
+  width: 16em;
   font-family: 'Myriad-Pro';
   border-radius: 10px;
   border: none;
@@ -114,16 +114,15 @@ header {
 }
 
 .search-btn {
-  background-color:transparent;
+  background-color: #333;
   color:white;
-  padding: 6px 0px;
+  padding: 5px 0px;
   border:0 none;
-  font-weight:bold;
   width: 50px;
 }
 .search-btn .fa {
   color:#fff;
-  font-size: medium
+  font-size: 1.5em;
 }
 
 #search-box {
@@ -196,13 +195,12 @@ header {
 .candidate-box, .client-user-box {
   margin-bottom: 5px;
   padding: 10px;
-  background-color: #transparent;
   border: none;
   border-radius: 0;
 }
 
 hr.horizontal-profile {
-  width: 950px;
+  width: 59.375em;
   border: 0;
   height: 2px;
   background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
@@ -372,12 +370,16 @@ span {
   padding-right: 30px;
   position: fixed;
   z-index: 2;
+
+}
+.squirrel-logo {
+  width:22px;
+  height:20px;
+  margin: 10px 0 0 48px;
+  position:fixed;
+  z-index:1;
 }
 
-.title-wrapper .aside-2 {
-  font-size: 1.5em;
-  color: #424A5D;
-}
 
 #send-email {
   position: fixed;
@@ -405,13 +407,13 @@ input[type='checkbox'] {
 text-align: center;
   position:fixed;
   top: 45%;
-  right: 30px;
+  right: 2.5%;
 }
 .anchorBottom {
   text-align: center;
   position:fixed;
   top: 50%;
-  right: 30px;
+  right: 2.5%;
 }
 
 /*==============================
@@ -725,7 +727,7 @@ svg {
 circle {
   fill: #fff;
   stroke: #333;
-  stroke-width: 4;
+  stroke-width: 32;
 }
 
 /*==============================
