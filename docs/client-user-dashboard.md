@@ -108,4 +108,4 @@ Endpoint which define the current stage of a candidate to the next one. A client
 
 # LI
 
-The client has the possibility to see the LI candidate profile. We are just creating for each candidate a link to their LI profile
+The client has the possibility to see the LI candidate profile.

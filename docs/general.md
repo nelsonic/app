@@ -17,7 +17,6 @@ Steps to how to run a project, please go to [README](https://github.com/FAC-GM/a
 ## Directory structure
 
 ```
-.
 ├── assets                   # Public resources css, js files
 ├── lib                      # API routes
 |    ├── database-helpers    # ElasticSearch and Redis helpers
@@ -29,63 +28,130 @@ Steps to how to run a project, please go to [README](https://github.com/FAC-GM/a
 
 ## Database structure
 
-- index: **globalm**, type: **contacts** - all candidates
-- index: **globalm**, type: **gmusers** - globalm users
+- index: **globalm** types:
+  - **contacts** (candidates)
+  - **gmusers**  (platform users)
+  - **analitics** (analitics of activity)
+  - **categories** (categories for jobs e.g Backend Development)
+  - **countries** (countries for specific jobs)
+  - **sectors** (business sector e.g FinTech)
+  - **cv** (candidate's cv)
+  - **toad** ()
+  - **gmclients** (clients who owns the job)
+  - **gmclientusers** (clients who can access the application - squirrel)
+  - **status** (stages for the job e.g Interview)
+  - **csv-list** (lists from csv files)
 
-  ```
-  {
-  "url": string,
-  "connections": number,
-  "connectedTo": array of strings (users fullname),
-  "fullname": string,
-  "location": string,
-  "favourite": array of strings (users id),
-  "current": string,
-  "picture": string,
-  "contacts": {
-      "email": string,
-      "phone": string,
-      "im": array of strings,
-      "address": string
-    },
-  "summary": string,
-  "skills": [{"level": number, "skill": string}],
-  "languages":[{"lang": string, "fluency": string}],
-  "experience": {
-      "current": [{"title": string, "org": string, "date" : string, "desc": string, "location": string}],
-      "past": [{"title": string, "org": string, "date" : string, "desc": string, "location": string}]
-    },
-   "notes": [{createdAt: string, author: string, notes: string, status: string, company: string}]
-  }
+To check mapping of each type, you can use this command in your browser url:
 
-  ```
+```
+databaseurl/index/type/_mapping
+```
 
-  ### Example:
+Prettify version:
 
-  ```
-  { "url": "https://uk.linkedin.com/in/fakeprofile1",
-      "connections": 500,
-      "connectedTo": ["Bob"],
-       "fullname": "Maria Dolores",
-       "location": "London, United Kingdom",
-       "favourite": ["12"],
-       "current": "The best company ever",
-       "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
-       "contacts": {
-           "email": "fakecontact1@gmail.com",
-           "phone":"+44777777777 (Mobile)",
-           "im": [ "contactskype (SKYPE)", "ircContact (IRC)"],
-           "address": "London" },
-      "summary": "This is the summary of the first profile",
-      "skills":[{ "level": 0, "skill": "Agile Methodologies" },{ "level": 0,"skill": "JavaScript" },{ "level": 0, "skill": "Node.js" }],
-      "languages":[{"lang": "English", "fluency": "Native or bilingual proficiency"},{"lang" : "French" , "fluency": "Elementary proficiency" } ],
-      "experience":{
-          "current": [{"title": "JS developer","org": "the best company","date": "October 2014 – Present (1 year 2 months)","desc": "I work as a developer and I'm creating some cool stuff","location": "London, United Kingdom"},{   "title": "Gardener","org": "The lovely tree","date": "October 2013 – Present (2 years 2 months)","desc": "I work as a gardener on my spare time","location": "London, United Kingdom"}],
-          "past":[{  "title": "Guitar player","org": "Pink Floyd","date": "October 1984 – October 1985 (1 year)","desc": "I was a guitar hero","location": "The world"},{   "title": "Tennis player","org": "National French Team","date": "October 2010 – October 2013 (3 years)","desc": "I was the number 1","location": "Paris, France"}]}
-  }
-  ```
+```
+databaseurl/index/type/_mapping?pretty
+```
 
-## Env file
+To check example of the each type, you can use this command in your browser url:
+
+```
+databseurl/index/type/_search?pretty
+```
+
 ## List of API's
-## Basic explanation how the features works
-## Github flow - list of labels
+
+- ```GET /{page*}```
+- ```GET /assets/{params*}```
+- ```GET /activities```
+- ```GET /analytics```
+- ```GET /candidate/{id}```
+- ```GET /candidate/{id}/{keywords?}```
+- ```POST /candidates/create```
+- ```POST /delete```
+- ```POST /favourite```
+- ```POST /info/save```
+- ```POST /li/save```
+- ```POST /notes/save```
+- ```POST /candidates/delete-list```
+- ```GET /client-dashboard```
+- ```POST /nextStage```
+- ```POST /reject```
+- ```GET /connected/{fullname}/{page?}```
+- ```GET /owners/list```
+
+- ```GET /users/list```
+- ```GET /users/edit/{id}```
+- ```GET /users/create```
+- ```POST /users/save```
+
+- ```GET /query/{page?}```
+
+  Query parameters:
+
+  | Name     |      Type     | Required | Description                                     |
+  |----------|:-------------:|---------:|-------------------------------------------------|
+  | job      |    string     |    No    | Search term                                     |
+  | fullname |    string     |    No    | Search term                                     |
+  | location |    string     |    No    | Search term                                     |
+  | current  |    string     |    No    | Search term                                     |
+  | skills   |    string     |    No    | Search term                                     |
+  | page     |    integer    |    No    | Zero indexed pagination page number to retrieve |
+  |totalPages|    integer    |    No    | Total found results                             |
+
+
+  Example:
+
+  ```
+   GET /query?job=developer&fullname=anita&location=london&current=Dwyl&skills=css%2C+js&page=1&totalPages=1348
+  ```
+
+- ```POST /status/save```
+- ```POST /status/delete```
+- ```POST /status/edit```
+
+- ```GET /dashboard```
+- ```POST /dashboard/client/{idClient}```
+- ```POST /dashboard/user```
+
+- ```GET /jobs/list```
+- ```GET /jobs/create```
+- ```GET /jobs/{id}```
+- ```GET /jobs/edit/{id}```
+- ```GET /jobs/{id}/stages```
+- ```POST /jobs/stages/edit```
+- ```POST /jobs/create```
+- ```GET /countries/list```
+- ```GET /sectors/list```
+
+- ```GET /clients/list```
+- ```GET /clients/create```
+- ```GET /clients/edit/{id}```
+- ```GET /clients/{id}```
+- ```POST /clients/save```
+
+- ```GET /client-login```
+- ```POST /client-auth```
+- ```GET /client-users/list```
+- ```GET /client-users/edit/{id}```
+- ```GET /client-users/create```
+- ```POST /client-users/save```
+
+- ```POST /profile``` save data received from extension
+
+- ```POST /email```
+- ```POST /sendemail```
+
+- ```GET /permission```
+- ```GET /login```
+
+
+## Basic explanation of the selected features
+
+- [Authentication]('./Authentication.md')
+- [Client Dashboard]('./client-user-dashboard.md')
+- User Dashboard
+- Stages
+- Email
+- Csv-list

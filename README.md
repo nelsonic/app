@@ -99,9 +99,6 @@ npm start
 
 Now visit http://localhost:8000 in your browser to view the site.
 
-### Allowing new team members access to the app
-Ask the **dev team** to update the variable that restricts access.
-
 
 ## Functionality
 
