@@ -55,8 +55,8 @@
 
 .headline .initials {
   margin: 8px 8px 0 0;
-  font-size: 0.9em;
-  margin-top: -20px;
+  font-size: 1em;
+  margin-top: -1.563em;
 }
 
 .headline p.mobile {
@@ -530,7 +530,7 @@ span.close > i.fa-times {
 }
 
 .search-form input {
-    width: 12em;
+    width: 15em;
 }
 /*==============================
  End ListNAmes
