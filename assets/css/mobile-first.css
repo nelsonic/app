@@ -101,7 +101,7 @@ header {
 
 .search-form input {
   padding: 5px 0;
-  width: 16em;
+  /*width: 12em;*/
   font-family: 'Myriad-Pro';
   border-radius: 10px;
   border: none;

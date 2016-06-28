@@ -529,6 +529,9 @@ span.close > i.fa-times {
   display: none;
 }
 
+.search-form input {
+    width: 12em;
+}
 /*==============================
  End ListNAmes
 ================================*/
@@ -536,14 +539,6 @@ span.close > i.fa-times {
 /*==============================
  End Status dropdowns
 ================================*/
-@media (min-width: 1440px) {
-
-  .search-form input {
-    width: 200px;
-  }
-
-}
-
 @media (max-width: 1440px) {
 
   .curly-left {
@@ -591,10 +586,6 @@ span.close > i.fa-times {
   .candidate_view img {
     width: 80px;
   }
-
-/* .notes textarea {
-    width: 150px;
-  }*/
 
 	.list-wrapper {
 		width:80%;
