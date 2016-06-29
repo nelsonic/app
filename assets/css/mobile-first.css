@@ -409,12 +409,14 @@ input[type='checkbox'] {
   -webkit-transform: scale(1.2, 1.2);
   transform:scale(1.2, 1.2);
 }
+
 .anchorTop{
-text-align: center;
+  text-align: center;
   position:fixed;
   top: 45%;
   right: 2.5%;
 }
+
 .anchorBottom {
   text-align: center;
   position:fixed;
