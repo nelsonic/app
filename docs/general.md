@@ -150,6 +150,7 @@ databseurl/index/type/_search?pretty
 ## Basic explanation of the selected features
 
 - [Authentication]('./Authentication.md')
+- [Home](./home.md)
 - [Client Dashboard]('./client-user-dashboard.md')
 - User Dashboard
 - Stages
