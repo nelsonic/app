@@ -543,9 +543,9 @@ span.close > i.fa-times {
 
   .search-form input {
     width: 15em;
- }
+  }
 
- }
+}
 @media (max-width: 1440px) {
 
   .curly-left {
