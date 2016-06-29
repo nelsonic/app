@@ -110,9 +110,10 @@ aside {
 
 .delete-profile, .delete-profile-confirmation button{
   padding: 5px 10px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border:0 none;
+  border-radius: 10px;
 }
 
 /*==============================
@@ -176,15 +177,16 @@ select:focus{
 
 .notes input[type=submit]{
   float: right;
-  background: #424A5D;
+  background: #333;
   padding: 5px 10px;
   border: none;
-  color: #FFD777;
+  border-radius: 10px;
+  color: #fff;
 }
 
 .notes input[type=submit]:hover{
-  background: #FFD777;
-  color: #424A5D;
+  background: #fff;
+  color: #333;
   box-shadow:none;
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
@@ -430,8 +432,8 @@ span.close > i.fa-times {
 }
 
 .dropbtn, #add-status {
-  background-color: #424A5D;
-  color: white;
+  background-color: #333;
+  color: #fff;
   padding: 10px;
   font-size: 14px;
   min-width: 160px;

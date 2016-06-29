@@ -316,10 +316,6 @@ ul.nav li:last-child {
   border-right: 1px solid #FFD777;
 }
 
-span {
-  color: #FFD777;
-}
-
 /*.headline h3*/
 .headline h3.email-indicator {
   color: red;
@@ -396,6 +392,7 @@ span {
   background-color: #333;
   color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 8px 15px;
   z-index: 2;
 }
@@ -438,7 +435,7 @@ text-align: center;
 .candidate_view h1 {
   font-size: 1.1em;
   padding: 5px 0;
-  color:rgb(52, 52, 80);
+  color: #333;
 }
 
 .candidate_view h2 {
@@ -503,15 +500,16 @@ text-align: center;
 
 #edit-info, #save-info {
   padding: 6px 15px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: 0 none;
+  border-radius: 10px;
   cursor: pointer;
   margin-left: 7px;
 }
 #edit-info:hover, #save-info:hover {
-  background-color: #FFD777;
-  color: #424A5D;
+  background-color: #fff;
+  color: #333;
 }
 
 /*==============================
@@ -538,6 +536,7 @@ ul.skills-inline {
 
 ul.viewedBy-inline {
   padding: 2px 1px 2px 8px;
+  border-radius: 10px;
 }
 
 ul.skills-inline li, ul.viewedBy-inline li {
@@ -629,8 +628,8 @@ ul.lang li span {
 
 .each, .viewed-each {
   float: left;
-  background-color: #B6C4F3;
-  color: #fff;
+  background-color: #620d96;
+  color: #fff!important;
   padding: 5px;
   margin: 1px;
   border-radius:5px;
@@ -638,10 +637,6 @@ ul.lang li span {
 /*==============================
  End Skills
 ================================*/
-.details span {
-  color: #313848;
-}
-
 hr {
   border: none;
   height: 1px;
@@ -1159,9 +1154,10 @@ Upload Cv
 
 .upload-cv-form > button {
   float: right;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 5px 10px;
   margin-top: -5px;
   cursor: pointer;
@@ -1178,9 +1174,10 @@ input.custom-file-input {
 .custom-file-input::before {
   content: 'Browse';
   display: inline-block;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 5px 8px;
   outline: none;
   -webkit-user-select: none;
@@ -1206,9 +1203,10 @@ input.custom-file-input {
 }
 
 .li-save > button, #edit-li {
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -1222,9 +1220,10 @@ input.custom-file-input {
 .send-email-form > button {
   float: right;
   margin-top: -35px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 5px 10px;
 }
 
