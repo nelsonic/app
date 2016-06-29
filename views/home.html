@@ -9,16 +9,13 @@
 {{/if}}
 
 <section class="container">
-  <div class="anchorBottom">
-    <a name='anchorTop' href="#anchorBottom"><i class="fa fa-arrow-down"></i></a>
-  </div>
   <div class="title-wrapper">
     <article class="main"></article>
     <aside class="aside aside-1">
-      <input type="checkbox" id="select-all">Select all
+      <input type="checkbox" id="select-all">Select All
     </aside>
     <aside class="aside aside-2">
-      <span class="curly-left">{</span>M<span class="curly-right">}</span>
+      <img class="squirrel-logo" src="https://cloud.githubusercontent.com/assets/15364186/16412922/ad2e31a2-3d26-11e6-88df-3ef4b9ad4685.png" alt="githubusercontent.com">
     </aside>
   </div>
   <form action="/email" method="POST">
@@ -29,8 +26,14 @@
   <button id="send-email" type="submit">SEND EMAIL</button>
   </form>
   <input type="hidden" class="keywords" value="{{keywords}}">
+  <div class="anchorBottom">
+    <a name='anchorTop' href="#down"><i class="fa fa-angle-down fa-lg"></i></a>
+  </div>
   <div class='anchorTop'>
-    <a name='anchorBottom' href="#anchorTop"><i class="fa fa-arrow-up"></i></a>
+    <a name='anchorBottom' href="#top"><i class="fa fa-angle-up fa-lg"></i></a>
   </div>
   {{>pagination}}
 </section>
+<div>
+  <a name="down"></a>
+</div>

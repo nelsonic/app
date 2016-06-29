@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Myriad-Pro';
-  src: url(Myriad-Pro_31655.ttf) format('truetype');
+  src: url('/assets/fonts/Myriad-Pro_31655.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Myriad-Pro-Bold';
-  src: url(Myriad-Pro-Bold_31631.ttf) format('truetype');
+  src: url('/assets/fonts/Myriad-Pro-Bold_31631.ttf') format('truetype');
 }
 
 html {
