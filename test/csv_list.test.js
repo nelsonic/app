@@ -300,7 +300,7 @@ describe('Access /csv-list/dowanload on js dev list', function () {
         const Converter = require("csvtojson").Converter;
         const converter = new Converter({});
         converter.fromString(res.payload, function(err,csvJson){
-          expect(csvJson.length).to.equal(2);
+          expect(csvJson.length).to.equal(4);
           server.stop(done);
         })
       });
@@ -452,3 +452,89 @@ describe('Access /csv-list/upload upload the csv to the list', function () {
         });
       });
     });
+
+    /*
+    * get caniddates who belongs to specific list
+    */
+
+    describe('Access /csv-list/js dev to see all candidates from the list "js dev"', function () {
+
+      it('return list of candidates', function (done) {
+
+        var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+        Server.init(0, function (err, server) {
+            expect(err).to.not.exist();
+            var options = {
+              method: "GET",
+              url: "/csv-list/js%20dev",
+              headers: { cookie: "token=" + token }
+            };
+
+            server.inject(options, function (res) {
+              expect(res.statusCode).to.equal(200);
+              var $ = cheerio.load(res.payload);
+              var numberCandidates = $('.candidate-box').children().length;
+              expect(numberCandidates).to.be.above(1);
+              server.stop(done);
+            });
+          });
+        });
+      });
+
+      describe('Access /csv-list/js dev/2', function () {
+
+        it('returns the specific page number 2', function (done) {
+
+          var nubersPerPage = process.env.RESULTS_PER_PAGE;
+          process.env.RESULTS_PER_PAGE = 1;
+
+          var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+          var options = {
+            method: "GET",
+            url: "/csv-list/js%20dev/2",
+            headers: { cookie: "token=" + token }
+          };
+
+          Server.init(0, function (err, server) {
+
+            expect(err).to.not.exist();
+
+            server.inject(options, function (res) {
+
+              expect(res.statusCode).to.equal(200);
+              process.env.RESULTS_PER_PAGE = nubersPerPage;
+              server.stop(done);
+            });
+          });
+        });
+      });
+
+      describe('Attemp to access negative number page /csv-list/js dev/-10', function () {
+
+        it('returns the status code 200', function (done) {
+
+          var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+          var options = {
+            method: "GET",
+            url: "/csv-list/js%20dev/-10",
+            headers: { cookie: "token=" + token }
+          };
+
+          Server.init(0, function (err, server) {
+
+            expect(err).to.not.exist();
+
+            server.inject(options, function (res) {
+
+              expect(res.statusCode).to.equal(200);
+              var $ = cheerio.load(res.payload);
+              var numberCandidates = $('.candidate-box').children().length;
+              expect(numberCandidates).to.be.above(1);
+              server.stop(done);
+            });
+          });
+        });
+      });

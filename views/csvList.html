@@ -5,7 +5,7 @@
   <a class="create-icon" href="/csv-list/create"><i class="fa fa-plus"> New List</i></a>
     {{#each lists}}
   <div class="label-list">
-      <p><a href="#">{{listName}}</a><span class="number-candidates">{{numberCandidates}}<span></p>
+      <p><a href="/csv-list/{{listName}}">{{listName}}</a><span class="number-candidates">{{numberCandidates}}<span></p>
 
       <div>
         <form class="download-csv" action="/csv-list/download" method="POST">
@@ -23,7 +23,7 @@
          <input type="hidden" name="listId" value="{{id}}">
          <button type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
        </form>
-       
+
       </div>
   </div>
   {{/each}}

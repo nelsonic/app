@@ -1,7 +1,13 @@
-{{>search_bar}}
-<div>
-  <a name="goTop"></a>
-</div>
+{{#if listSearchBar}}
+
+  {{>search_bar_list}}
+
+{{else}}
+
+  {{>search_bar}}
+
+{{/if}}
+
 <section class="container">
   <div class="title-wrapper">
     <article class="main"></article>
