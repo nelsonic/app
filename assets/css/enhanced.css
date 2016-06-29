@@ -438,6 +438,7 @@ span.close > i.fa-times {
   font-size: 14px;
   min-width: 160px;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
 }
 
