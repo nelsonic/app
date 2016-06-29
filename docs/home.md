@@ -27,12 +27,12 @@ Display basic overview of the candidate
   ```js
   [ { listFavourite: [],
       favourite: false,
-      id: 'AVWbmH-OdKdSHABTyV_X',
+      id: 'some id',
       fullname: 'CandidateCSV',
       firstName: 'CandidateCSV',
       headline: '',
       current: '',
-      picture: '/assets/img/square-global-m-logo.png',
+      picture: '/assets/img/pic.png',
       location: '',
       connectedTo: [],
       viewedBy: [],
@@ -66,8 +66,8 @@ Display basic overview of the candidate
 
     ```js
     [{ name: 'DWYL',
-        jobs: [ '5', 'AVWbmMJmdKdSHABTyV_c', '1' ],
-        logoUrl: '/assets/img/square-global-m-logo.png',
+        jobs: [ '5', 'some id', '1' ],
+        logoUrl: '/assets/img/logo.png',
         possibleNames: [ 'Do WYL' ],
         createdAt: 1465241341452,
         accountManager: '5',
