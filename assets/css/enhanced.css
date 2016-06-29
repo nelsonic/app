@@ -1,5 +1,5 @@
 .search-btn {
-  width: 100px;
+  width: 60px;
 }
 
 #search-box {
@@ -55,8 +55,8 @@
 
 .headline .initials {
   margin: 8px 8px 0 0;
-  font-size: 0.9em;
-  margin-top: -20px;
+  font-size: 1em;
+  margin-top: -1.563em;
 }
 
 .headline p.mobile {
@@ -529,6 +529,9 @@ span.close > i.fa-times {
   display: none;
 }
 
+.search-form input {
+    width: 12em;
+}
 /*==============================
  End ListNAmes
 ================================*/
@@ -539,11 +542,10 @@ span.close > i.fa-times {
 @media (min-width: 1440px) {
 
   .search-form input {
-    width: 200px;
+    width: 15em;
   }
 
 }
-
 @media (max-width: 1440px) {
 
   .curly-left {
@@ -591,10 +593,6 @@ span.close > i.fa-times {
   .candidate_view img {
     width: 80px;
   }
-
-/* .notes textarea {
-    width: 150px;
-  }*/
 
 	.list-wrapper {
 		width:80%;
