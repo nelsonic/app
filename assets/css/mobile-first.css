@@ -48,15 +48,17 @@ header {
 }
 .status-client {
   color: #fff !important;
-  background-color: #ef7b6b;
-  padding: 2px 5px;
+  background-color: #e01919;
+  padding: 2px 6px 2px 6px;
+  border-radius: 10px;
 }
 
 .status {
   color: #fff !important;
-  background-color: #424A5D;
-  padding: 2px 5px;
+  background-color: #620d96;
+  padding: 2px 6px 2px 6px;
   margin-top: 10px;
+  border-radius: 10px;
 }
 
 .st-profile {
