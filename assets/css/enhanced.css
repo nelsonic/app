@@ -530,7 +530,7 @@ span.close > i.fa-times {
 }
 
 .search-form input {
-    width: 15em;
+    width: 12em;
 }
 /*==============================
  End ListNAmes
@@ -539,6 +539,13 @@ span.close > i.fa-times {
 /*==============================
  End Status dropdowns
 ================================*/
+@media (min-width: 1440px) {
+
+  .search-form input {
+    width: 15em;
+  }
+
+}
 @media (max-width: 1440px) {
 
   .curly-left {
