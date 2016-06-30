@@ -676,6 +676,17 @@ aside {
 /*==============================
  Login page
 ================================*/
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  margin-bottom: 80px;
+}
+
 .container-login , .container-error-page{
   margin: 35% auto 0;
   width: 300px;
@@ -686,6 +697,7 @@ aside {
 .container-login > h1, .container-error-page > h2{
   font-size: 25px;
 }
+
 
 /*==============================
  End Login page
