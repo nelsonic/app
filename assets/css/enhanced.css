@@ -234,6 +234,7 @@ span.close > i.fa-times {
 }
 .container-login > h1 {
   font-size: 40px;
+  margin-bottom: 20px;
 }
 /*==============================
  End Login page
