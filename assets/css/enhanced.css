@@ -334,6 +334,7 @@ span.close > i.fa-times {
 .client-parent {
   height: 150px;
   align-items: center;
+  overflow-y: hidden;
 }
 
 .stage-child, .client-child {
