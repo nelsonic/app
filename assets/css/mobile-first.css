@@ -1526,9 +1526,10 @@ Vacancy
 }
 
 .csv-list-wrapper > form button {
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 10px 10px;
   cursor: pointer;
   width: 100%;
@@ -1558,9 +1559,10 @@ Vacancy
 }
 
 .number-candidates {
-  background-color: rgba(35, 28, 49, 0.81);
-  color: #FFD777;
-  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
   margin-left: 10px;
 }
 
@@ -1576,8 +1578,8 @@ Vacancy
 
 .label-list button {
   border: none;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #fff;
+  color: #333;
   padding: 5px;
   cursor: pointer;
 }
