@@ -936,9 +936,8 @@ circle {
 }
 
 .create-icon {
-  background-color: #333;
   padding: 10px;
-  color: #fff;
+  color: #333;
   position: fixed;
   right: 5%;
   top: 80px;
@@ -956,8 +955,8 @@ circle {
 }
 
 .create-icon:hover, .edit-client:hover, .submit-client:hover {
-  background-color: #E4AD28;
-  color: #424A5D;
+  background-color: #333;
+  color: #fff;
 }
 
 .edit-client {
