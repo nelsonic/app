@@ -515,15 +515,15 @@ span.close > i.fa-times {
 }
 
 .list-names-wrapper > div {
-  border: 1px solid #424A5D;
+  border: none;
   padding: 5px;
   margin-top: 4px;
 }
 
 .delete-list-names {
   border: none;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
