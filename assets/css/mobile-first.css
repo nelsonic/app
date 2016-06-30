@@ -1097,7 +1097,8 @@ circle {
   top: 0;
   padding: 3px 6px;
   color: #fff;
-  background-color: #424A5D;
+  background-color: #333;
+  border-radius: 10px;
 }
 
 .skill-job {
