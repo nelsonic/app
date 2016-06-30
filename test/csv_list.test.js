@@ -366,175 +366,236 @@ describe('Access /csv-list/upload upload the csv to the list', function () {
     });
   });
 
-  describe('Attemppt /csv-list/upalod wrong csv format', function () {
+describe('Attemppt /csv-list/upalod wrong csv format', function () {
 
-    it('Attempt to create a list with the wrong csv format', function (done) {
+  it('Attempt to create a list with the wrong csv format', function (done) {
 
-      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
-      Server.init(0, function (err, server) {
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    Server.init(0, function (err, server) {
 
-        const csvFile = "NameWrong,EmailWrong\nBob,bob@csv.com\nMatt,matt@csv.com";
+      const csvFile = "NameWrong,EmailWrong\nBob,bob@csv.com\nMatt,matt@csv.com";
 
+      expect(err).to.not.exist();
+      var options = {
+        method: "POST",
+        url: "/csv-list/upload",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true},
+        payload: {listName: "js dev", csvFile: csvFile}
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var error = $('.error-csv').text();
+        expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Attemppt /csv-list/upalod wrong file format', function () {
+
+  it('Attempt to create a list with the wrong file format', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    Server.init(0, function (err, server) {
+
+      const csvFile = undefined;
+
+      expect(err).to.not.exist();
+      var options = {
+        method: "POST",
+        url: "/csv-list/upload",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true},
+        payload: {listName: "js dev", csvFile: csvFile}
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var error = $('.error-csv').text();
+        expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+        server.stop(done);
+      });
+    });
+  });
+});
+
+/*
+* delete a list
+*/
+
+describe('Access /csv-list/delete to delete the list', function () {
+
+  it('delete the "Backend" list', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    Server.init(0, function (err, server) {
         expect(err).to.not.exist();
         var options = {
           method: "POST",
-          url: "/csv-list/upload",
+          url: "/csv-list/delete",
           headers: { cookie: "token=" + token },
           credentials: { id: "12", "name": "Simon", valid: true},
-          payload: {listName: "js dev", csvFile: csvFile}
+          payload: {listName: 'Backend', listId: '1114'}
         };
 
         server.inject(options, function (res) {
-          expect(res.statusCode).to.equal(200);
-          var $ = cheerio.load(res.payload);
-          var error = $('.error-csv').text();
-          expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+          expect(res.statusCode).to.equal(302);
+          expect(res.headers.location).to.equal('/csv-list/list');
           server.stop(done);
         });
       });
     });
   });
 
-  describe('Attemppt /csv-list/upalod wrong file format', function () {
+/*
+* get caniddates who belongs to specific list
+*/
 
-    it('Attempt to create a list with the wrong file format', function (done) {
+describe('Access /csv-list/js dev to see all candidates from the list "js dev"', function () {
 
-      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
-      Server.init(0, function (err, server) {
+  it('return list of candidates', function (done) {
 
-        const csvFile = undefined;
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
+    Server.init(0, function (err, server) {
         expect(err).to.not.exist();
         var options = {
-          method: "POST",
-          url: "/csv-list/upload",
-          headers: { cookie: "token=" + token },
-          credentials: { id: "12", "name": "Simon", valid: true},
-          payload: {listName: "js dev", csvFile: csvFile}
+          method: "GET",
+          url: "/csv-list/js%20dev",
+          headers: { cookie: "token=" + token }
         };
 
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var error = $('.error-csv').text();
-          expect(error).to.equal('Sorry wrong format of the file. Is it a csv file? Does it have Name and Email columns?');
+          var numberCandidates = $('.candidate-box').children().length;
+          expect(numberCandidates).to.be.above(1);
           server.stop(done);
         });
       });
     });
   });
 
-  /*
-  * delete a list
-  */
+describe('Access /csv-list/js dev/2', function () {
 
-  describe('Access /csv-list/delete to delete the list', function () {
+  it('returns the specific page number 2', function (done) {
 
-    it('delete the "Backend" list', function (done) {
+    var nubersPerPage = process.env.RESULTS_PER_PAGE;
+    process.env.RESULTS_PER_PAGE = 1;
 
-      var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
-      Server.init(0, function (err, server) {
-          expect(err).to.not.exist();
-          var options = {
-            method: "POST",
-            url: "/csv-list/delete",
-            headers: { cookie: "token=" + token },
-            credentials: { id: "12", "name": "Simon", valid: true},
-            payload: {listName: 'Backend', listId: '1114'}
-          };
+    var options = {
+      method: "GET",
+      url: "/csv-list/js%20dev/2",
+      headers: { cookie: "token=" + token }
+    };
 
-          server.inject(options, function (res) {
-            expect(res.statusCode).to.equal(302);
-            expect(res.headers.location).to.equal('/csv-list/list');
-            server.stop(done);
-          });
-        });
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        process.env.RESULTS_PER_PAGE = nubersPerPage;
+        server.stop(done);
       });
     });
+  });
+});
 
-    /*
-    * get caniddates who belongs to specific list
-    */
+describe('Attemp to access negative number page /csv-list/js dev/-10', function () {
 
-    describe('Access /csv-list/js dev to see all candidates from the list "js dev"', function () {
+  it('returns the status code 200', function (done) {
 
-      it('return list of candidates', function (done) {
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
-        var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    var options = {
+      method: "GET",
+      url: "/csv-list/js%20dev/-10",
+      headers: { cookie: "token=" + token }
+    };
 
-        Server.init(0, function (err, server) {
-            expect(err).to.not.exist();
-            var options = {
-              method: "GET",
-              url: "/csv-list/js%20dev",
-              headers: { cookie: "token=" + token }
-            };
+    Server.init(0, function (err, server) {
 
-            server.inject(options, function (res) {
-              expect(res.statusCode).to.equal(200);
-              var $ = cheerio.load(res.payload);
-              var numberCandidates = $('.candidate-box').children().length;
-              expect(numberCandidates).to.be.above(1);
-              server.stop(done);
-            });
-          });
-        });
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var numberCandidates = $('.candidate-box').children().length;
+        expect(numberCandidates).to.be.above(1);
+        server.stop(done);
       });
+    });
+  });
+});
 
-      describe('Access /csv-list/js dev/2', function () {
+/**
+* Search by skills
+*/
 
-        it('returns the specific page number 2', function (done) {
+describe('Search by skills on js dev list', function () {
 
-          var nubersPerPage = process.env.RESULTS_PER_PAGE;
-          process.env.RESULTS_PER_PAGE = 1;
+  it('returns one candidate', function (done) {
 
-          var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
-          var options = {
-            method: "GET",
-            url: "/csv-list/js%20dev/2",
-            headers: { cookie: "token=" + token }
-          };
+    var options = {
+      method: "GET",
+      url: "/query-list/js%20dev?skills=javascript",
+      headers: { cookie: "token=" + token }
+    };
 
-          Server.init(0, function (err, server) {
+    Server.init(0, function (err, server) {
 
-            expect(err).to.not.exist();
+      expect(err).to.not.exist();
 
-            server.inject(options, function (res) {
+      server.inject(options, function (res) {
 
-              expect(res.statusCode).to.equal(200);
-              process.env.RESULTS_PER_PAGE = nubersPerPage;
-              server.stop(done);
-            });
-          });
-        });
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var numberCandidates = $('.candidate-box').children().length;
+        expect(numberCandidates).to.equal(1);
+        server.stop(done);
       });
+    });
+  });
+});
 
-      describe('Attemp to access negative number page /csv-list/js dev/-10', function () {
 
-        it('returns the status code 200', function (done) {
+describe('Search by skills on haskell list', function () {
 
-          var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+  it('returns one candidate', function (done) {
 
-          var options = {
-            method: "GET",
-            url: "/csv-list/js%20dev/-10",
-            headers: { cookie: "token=" + token }
-          };
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
-          Server.init(0, function (err, server) {
+    var options = {
+      method: "GET",
+      url: "/query-list/haskell?skills=haskell",
+      headers: { cookie: "token=" + token }
+    };
 
-            expect(err).to.not.exist();
+    Server.init(0, function (err, server) {
 
-            server.inject(options, function (res) {
+      expect(err).to.not.exist();
 
-              expect(res.statusCode).to.equal(200);
-              var $ = cheerio.load(res.payload);
-              var numberCandidates = $('.candidate-box').children().length;
-              expect(numberCandidates).to.be.above(1);
-              server.stop(done);
-            });
-          });
-        });
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var numberCandidates = $('.candidate-box').children().length;
+        expect(numberCandidates).to.equal(1);
+        server.stop(done);
       });
+    });
+  });
+});
