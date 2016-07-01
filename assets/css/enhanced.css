@@ -113,7 +113,7 @@ aside {
   background-color: #333;
   color: #fff;
   border:0 none;
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 /*==============================
@@ -180,7 +180,7 @@ select:focus{
   background: #333;
   padding: 5px 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625em;
   color: #fff;
 }
 
@@ -233,8 +233,8 @@ span.close > i.fa-times {
   width: 450px;
 }
 .container-login > h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 5%;
 }
 /*==============================
  End Login page
@@ -267,8 +267,7 @@ span.close > i.fa-times {
 .horizontal-dash {
   border: 0;
   height: 1px;
-  background: #333;
-  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  background: #666;
 }
 
 .new-dash-wrapper {
@@ -290,7 +289,7 @@ span.close > i.fa-times {
   padding: 8px;
   margin-top: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625em;
   background-color: #333;
   color: #fff;
   cursor: pointer;
@@ -372,7 +371,7 @@ span.close > i.fa-times {
 
 .client-child img {
   width: 120px;
-  border-radius: 10px;
+  border-radius: 0.625em;
   height: 120px;
 }
 
@@ -446,7 +445,7 @@ span.close > i.fa-times {
   font-size: 14px;
   min-width: 160px;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625em;
   cursor: pointer;
 }
 
