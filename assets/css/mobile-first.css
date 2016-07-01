@@ -632,7 +632,7 @@ ul.lang li span {
 .each, .viewed-each {
   float: left;
   background-color: #620d96;
-  color: #fff!important;
+  color: #fff;
   padding: 5px;
   margin: 1px;
   border-radius: 10px;
