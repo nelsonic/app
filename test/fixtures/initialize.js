@@ -85,6 +85,9 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
 
         client.indices.create({index: 'gmcontact'}, function (res, err) {
             client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
+              console.log('##################');
+              console.log('error mapping contact', err);
+              console.log('###################');
               client.indices.putMapping({index:"gmcontact", type:"gmusers", body:paramsGmUsers}, function (err,resp) {
               client.indices.putMapping({index: 'gmcontact', type: "gmclientusers", body: paramsGmClientUsers}, function(errMapping, responseMapping){
               client.indices.putMapping({index: 'gmcontact', type: "csv-list", body: paramsList}, function(errMappingList, responseMappingList){
