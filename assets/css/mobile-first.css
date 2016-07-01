@@ -50,7 +50,7 @@ header {
   color: #fff !important;
   background-color: #e01919;
   padding: 2px 6px 2px 6px;
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 .status {
@@ -58,7 +58,7 @@ header {
   background-color: #620d96;
   padding: 2px 6px 2px 6px;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 .st-profile {
@@ -105,13 +105,13 @@ header {
   padding: 5px 0;
   /*width: 12em;*/
   font-family: 'Myriad-Pro';
-  border-radius: 10px;
+  border-radius: 0.625em;
   border: none;
   text-indent: 10px;
 
 }
 
-.search-form > a > i.fa-star, .search-form > a > i.fa-user, .search-form > a > i.fa-refresh {
+.search-form > a > i.fa-star, .search-form > a > i.fa-tachometer, .search-form > a > i.fa-tachometer {
   margin-top: 0px !important;
 }
 
@@ -148,6 +148,7 @@ header {
   float:right;
   margin: 8px 5px 10px;
   font-size: 1.5em;
+  color: #fff;
 }
 
 .home-link {
@@ -262,7 +263,7 @@ i.fa-plus-circle {
   color: #fff;
 }
 
-i.fa-star, i.fa-user, i.fa-refresh, i.fa-users, i.fa-plus-circle {
+i.fa-star, i.fa-tachometer, i.fa-users, i.fa-plus-circle {
   color: #fff;
   border: none;
   float: right;
@@ -316,10 +317,6 @@ ul.nav li:last-child {
   border-right: 1px solid #FFD777;
 }
 
-span {
-  color: #FFD777;
-}
-
 /*.headline h3*/
 .headline h3.email-indicator {
   color: red;
@@ -330,7 +327,7 @@ span {
   float: right;
   margin: 0 10px 0 0 !important;
   padding: 2px 5px !important;
-  border-radius: 10px;
+  border-radius: 0.625em;
   background-color: #333;
   color: #fff !important;
   font-weight: 600;
@@ -396,6 +393,7 @@ span {
   background-color: #333;
   color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 8px 15px;
   z-index: 2;
 }
@@ -440,7 +438,7 @@ input[type='checkbox'] {
 .candidate_view h1 {
   font-size: 1.1em;
   padding: 5px 0;
-  color:rgb(52, 52, 80);
+  color: #333;
 }
 
 .candidate_view h2 {
@@ -505,15 +503,16 @@ input[type='checkbox'] {
 
 #edit-info, #save-info {
   padding: 6px 15px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: 0 none;
+  border-radius: 0.625em;
   cursor: pointer;
   margin-left: 7px;
 }
 #edit-info:hover, #save-info:hover {
-  background-color: #FFD777;
-  color: #424A5D;
+  background-color: #fff;
+  color: #333;
 }
 
 /*==============================
@@ -535,11 +534,12 @@ ul.skills-inline, ul.viewedBy-inline {
 ul.skills-inline {
   padding: 2px 10px 2px 2px;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 ul.viewedBy-inline {
   padding: 2px 1px 2px 8px;
+  border-radius: 0.625em;
 }
 
 ul.skills-inline li, ul.viewedBy-inline li {
@@ -631,19 +631,15 @@ ul.lang li span {
 
 .each, .viewed-each {
   float: left;
-  background-color: #B6C4F3;
+  background-color: #620d96;
   color: #fff;
   padding: 5px;
   margin: 1px;
-  border-radius:5px;
+  border-radius: 0.625em;
 }
 /*==============================
  End Skills
 ================================*/
-.details span {
-  color: #313848;
-}
-
 hr {
   border: none;
   height: 1px;
@@ -681,6 +677,17 @@ aside {
 /*==============================
  Login page
 ================================*/
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  margin-bottom: 30px;
+}
+
 .container-login , .container-error-page{
   margin: 35% auto 0;
   width: 300px;
@@ -691,6 +698,7 @@ aside {
 .container-login > h1, .container-error-page > h2{
   font-size: 25px;
 }
+
 
 /*==============================
  End Login page
@@ -929,9 +937,8 @@ circle {
 }
 
 .create-icon {
-  background-color: #333;
   padding: 10px;
-  color: #fff;
+  color: #333;
   position: fixed;
   right: 5%;
   top: 80px;
@@ -949,8 +956,8 @@ circle {
 }
 
 .create-icon:hover, .edit-client:hover, .submit-client:hover {
-  background-color: #E4AD28;
-  color: #424A5D;
+  background-color: #333;
+  color: #fff;
 }
 
 .edit-client {
@@ -1091,7 +1098,8 @@ circle {
   top: 0;
   padding: 3px 6px;
   color: #fff;
-  background-color: #424A5D;
+  background-color: #333;
+  border-radius: 0.625em;
 }
 
 .skill-job {
@@ -1161,9 +1169,10 @@ Upload Cv
 
 .upload-cv-form > button {
   float: right;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 10px;
   margin-top: -5px;
   cursor: pointer;
@@ -1180,9 +1189,10 @@ input.custom-file-input {
 .custom-file-input::before {
   content: 'Browse';
   display: inline-block;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 8px;
   outline: none;
   -webkit-user-select: none;
@@ -1208,9 +1218,10 @@ input.custom-file-input {
 }
 
 .li-save > button, #edit-li {
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -1224,9 +1235,10 @@ input.custom-file-input {
 .send-email-form > button {
   float: right;
   margin-top: -35px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 10px;
 }
 
@@ -1527,9 +1539,10 @@ Vacancy
 }
 
 .csv-list-wrapper > form button {
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 10px 10px;
   cursor: pointer;
   width: 100%;
@@ -1559,9 +1572,10 @@ Vacancy
 }
 
 .number-candidates {
-  background-color: rgba(35, 28, 49, 0.81);
-  color: #FFD777;
-  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 0.625em;
   margin-left: 10px;
 }
 
@@ -1577,8 +1591,8 @@ Vacancy
 
 .label-list button {
   border: none;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #fff;
+  color: #333;
   padding: 5px;
   cursor: pointer;
 }

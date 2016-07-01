@@ -2,7 +2,7 @@
 
 <div class="container">
 
-  <a class="create-icon" href="/csv-list/create"><i class="fa fa-plus"> New List</i></a>
+  <a class="create-icon" href="/csv-list/create"><i class="fa fa-plus"></i></a>
     {{#each lists}}
   <div class="label-list">
       <p><a href="/csv-list/{{encodedListName}}">{{listName}}</a><span class="number-candidates">{{numberCandidates}}<span></p>
@@ -10,21 +10,22 @@
       <div>
         <form class="download-csv" action="/csv-list/download" method="POST">
           <input type="hidden" name="listName" value="{{listName}}">
-          <button type="submit"><i class="fa fa-download" aria-hidden="true"></i></button>
+          <button type="submit"><i class="fa fa-download fa-lg" aria-hidden="true"></i></button>
         </form>
 
         <form class="upload-csv" action="/csv-list/upload/{{listName}}" method="GET">
           <input type="hidden" name="listName" value="{{this.listName}}">
-          <button type="submit"><i class="fa fa-upload" aria-hidden="true"></i></button>
+          <button type="submit"><i class="fa fa-upload fa-lg" aria-hidden="true"></i></button>
         </form>
 
         <form class="delete-list" action="/csv-list/delete" method="POST">
          <input type="hidden" name="listName" value="{{listName}}">
          <input type="hidden" name="listId" value="{{id}}">
-         <button type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
+         <button type="submit"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
        </form>
 
       </div>
   </div>
+    <hr class="horizontal-profile">
   {{/each}}
 </div>
