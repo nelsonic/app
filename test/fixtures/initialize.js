@@ -17,6 +17,15 @@ var client = new ElasticSearch.Client({
           "emailRaw": {
             "type": "string",
             "index": "not_analyzed"
+          },
+          "email": {
+            "type": "string",
+            "fields": {
+              "original": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
           }
         }
       },

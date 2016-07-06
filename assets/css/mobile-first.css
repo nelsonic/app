@@ -30,6 +30,15 @@ body {
     -moz-box-sizing: border-box;
       box-sizing: border-box;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+}
 /*==============================
   END GENERAL
 ================================*/
@@ -257,16 +266,6 @@ hr.horizontal-profile {
   letter-spacing: 1px;
   font-size: 0.6em;
   float: right;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  border: 0;
 }
 
 i.fa-plus-circle {
