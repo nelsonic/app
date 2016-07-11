@@ -7,23 +7,28 @@
 
 ## What?
 
-This application allows specified members of a team to search through
-contacts stored in an ElasticSearch database.
+This application allows specific members of a team to search through
+contacts stored in an ElasticSearch database. Further functionality is [described below](#functionality).
 
 # How?
 
-### We use following technologies:
+#### The following technologies are used:
 
 * HTML5, CSS3, Javascript
 * [Nodejs](https://nodejs.org/en/)
 * [Hapijs](http://hapijs.com/)
-  * Main packages: env2, Handlebars, Inert, Vision
+  * Main packages: [env2](https://github.com/dwyl/env2), Handlebars, Inert, Vision
   * Testing: Lab, Code
 * Databases:
   * [ElasticSearch](https://www.elastic.co/)
   * [Redis](http://redis.io/)
+  
+#### Build tools
++ [Travis CI](http://travis-ci.org) runs on every pull request
++ [codecov](https://codecov.io/) runs test coverage on every pull request
 
-#### Database structure with example [here](https://github.com/FAC-GM/app/blob/master/DATA.md)
+#### Database structure
+The [database schema can be found here](https://github.com/FAC-GM/app/blob/master/DATA.md) along with an example.
 
 ## Running the App *Locally*
 
@@ -55,29 +60,49 @@ vagrant up
 
 ### `.env` file
 
-you will also need to have a `.env` file in the root of your project
-with the following variables:
+You will also need to have a `.env` file in the root of your project
+with the following environment variables:
 
 ```sh
-# SEARCHBOX_URL=http://paas:password@eu-west-1.searchly.com # # Ask dev team for this
-SEARCHBOX_URL=http://localhost:9200
-PORT=8000
-ES_INDEX=gmcontact
-ES_TYPE=contacts
-RESULTS_PER_PAGE=10
-JWT_SECRET= # Ask dev team for this
-BASE_URL=http://localhost:8000
-# Variable with authorised emails
-#Gm app
-GOOGLE_CLIENT_ID= # Ask dev team for this
-GOOGLE_CLIENT_SECRET= # Ask dev team for this
-MAP_ID_USER= # Ask dev team for this
-```
-Ask a member of the dev team for the `SEARCHBOX_URL` variable if you
-want to access the *hosted* ElasticSearch Database.
-There are a number of other variables missing from example above which are available to the dev team.
+SEARCHBOX_URL #This is changed depending on whether you're running the app with the live database or a local one
+PORT
+ES_INDEX
+ES_TYPE
+ES_TYPE_ANALYTICS
+RESULTS_PER_PAGE
+RESULTS_PER_PAGE_CSV
+ES_TYPE_CATEGORIES
+JWT_SECRET
+JWT_SECRET_CLIENT
+BASE_URL
+GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET
+ES_INDEX_DELETED
+ES_TYPE_TOAD=toad
+ES_TYPE_COUNTRIES
+ES_TYPE_SECTORS
+ES_TYPE_CV
+CV_ACCESS_TOKEN
+CV_ID_TOKEN
+CV_REFRESH_TOKEN
+CV_EXPIRY_DATE
+CV_TOKEN_TYPE
+FOLDER_ID
+SEARCHBOX_URL_FIXTURES
+ES_INDEX_FIXTURES
+ES_TYPE_CURRENT_USERS
+ES_TYPE_GM_USERS
+ES_TYPE_GM_CLIENTS
+ES_TYPE_GM_JOBS
+ES_TYPE_STATUS
+ES_TYPE_GM_CLIENT_USERS
+ES_TYPE_CSV_LIST
 
-The MAP_ID_USER environment variable is used to map the id from the user to their first name. We are using the ids to know who creates notes and who is the "owner" of a candidate. However the application shouldn't display the id of the user but the first name and it's where MAP_ID_USER is useful. see the discussion on Github for more details: [issue 215](https://github.com/FAC-GM/app/issues/215) and [issue 238](https://github.com/FAC-GM/app/issues/238)
+```
+
+All of the variable values are missing from the example above, but these are available from the dev team.
+
+The MAP_ID_USER environment variable is used to map the id from the user to their first name. We are using the ids to identify users, however, the application shouldn't display the id of the user but the first name and this is where MAP_ID_USER is useful. see the discussion on Github for more details: [issue 215](https://github.com/FAC-GM/app/issues/215) and [issue 238](https://github.com/FAC-GM/app/issues/238)
 
 ### Install *node.js* dependencies
 
@@ -102,7 +127,7 @@ Now visit http://localhost:8000 in your browser to view the site.
 
 ## Functionality
 
-A running list of the of the functionality in the app as it becomes available.
+A running list of the functionality in the app as it becomes available.
 
 + [Login via Google](https://github.com/dwyl/hapi-auth-github), access restricted to specific team members
 

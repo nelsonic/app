@@ -22,7 +22,8 @@ Steps to how to run a project, please go to [README](https://github.com/FAC-GM/a
 |    ├── database-helpers    # ElasticSearch and Redis helpers
 |    ├── handlers            # Handlers
 |    ├── helpers             # Helpers for handlers
-├── views                    # Handlebars templates - layouts, pages, partials and helpers
+├── views                    # Handlebars templates: layouts, pages, partials
+                             # and helpers
 └── test                     # Unit and integration tests
 ```
 
@@ -31,18 +32,18 @@ Steps to how to run a project, please go to [README](https://github.com/FAC-GM/a
 - index: **globalm** types:
   - **contacts** (candidates)
   - **gmusers**  (platform users)
-  - **analitics** (analitics of activity)
+  - **analytics** (analytics of activity)
   - **categories** (categories for jobs e.g Backend Development)
   - **countries** (countries for specific jobs)
   - **sectors** (business sector e.g FinTech)
   - **cv** (candidate's cv)
   - **toad** ()
-  - **gmclients** (clients who owns the job)
-  - **gmclientusers** (clients who can access the application - squirrel)
+  - **gmclients** (clients who own the job)
+  - **gmclientusers** (clients who can access the squirrelhr client dashboard)
   - **status** (stages for the job e.g Interview)
   - **csv-list** (lists from csv files)
 
-To check mapping of each type, you can use this command in your browser url:
+To check the mapping of each type, you can use this command in your browser url:
 
 ```
 databaseurl/index/type/_mapping
@@ -54,13 +55,13 @@ Prettify version:
 databaseurl/index/type/_mapping?pretty
 ```
 
-To check example of the each type, you can use this command in your browser url:
+To check an example of the each type, you can use this command in your browser url:
 
 ```
-databseurl/index/type/_search?pretty
+databaseurl/index/type/_search?pretty
 ```
 
-## List of API's
+## API
 
 - ```GET /{page*}```
 - ```GET /assets/{params*}```
@@ -138,7 +139,7 @@ databseurl/index/type/_search?pretty
 - ```GET /client-users/create```
 - ```POST /client-users/save```
 
-- ```POST /profile``` save data received from extension
+- ```POST /profile``` saves data received from extension
 
 - ```POST /email```
 - ```POST /sendemail```
@@ -147,7 +148,7 @@ databseurl/index/type/_search?pretty
 - ```GET /login```
 
 
-## Basic explanation of the selected features
+## Basic technical explanations of the selected features
 
 - [Authentication]('./Authentication.md')
 - [Home](./home.md)
