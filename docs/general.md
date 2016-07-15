@@ -156,5 +156,5 @@ databaseurl/index/type/_search?pretty
 - [User Dashboard](./user-dashboard.md)
 - [Customise stages by client](./customise-stages.md)
 - [Email](./email.md)
-- Csv-list
+- [Extension]('./extension.md')
 - [Test](./test.md)
