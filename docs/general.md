@@ -150,10 +150,11 @@ databaseurl/index/type/_search?pretty
 
 ## Basic technical explanations of the selected features
 
-- [Authentication]('./Authentication.md')
+- [Authentication](./Authentication.md)
 - [Home](./home.md)
+- [Client-User]('./client-user.md')
 - [Client Dashboard]('./client-user-dashboard.md')
-- User Dashboard
-- Stages
-- Email
+- [User Dashboard](./user-dashboard.md)
+- [Customise stages by client](./customise-stages.md)
+- [Email](./email.md)
 - Csv-list
