@@ -149,10 +149,10 @@ databseurl/index/type/_search?pretty
 
 ## Basic explanation of the selected features
 
-- [Authentication]('./Authentication.md')
+- [Authentication](./Authentication.md)
 - [Home](./home.md)
 - [Client Dashboard]('./client-user-dashboard.md')
 - User Dashboard
 - Stages
-- Email
+- [Email](./email.md)
 - Csv-list
