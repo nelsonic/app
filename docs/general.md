@@ -151,8 +151,9 @@ databseurl/index/type/_search?pretty
 
 - [Authentication](./Authentication.md)
 - [Home](./home.md)
+- [Client-User]('./client-user.md')
 - [Client Dashboard]('./client-user-dashboard.md')
-- User Dashboard
+- [User Dashboard](./user-dashboard.md)
 - Stages
 - [Email](./email.md)
 - Csv-list

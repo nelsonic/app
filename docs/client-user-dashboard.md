@@ -5,6 +5,46 @@ The dashboard display:
 - For each jobs the list of stages
 - For each stages of a jobs the list of candidates on the stage
 
+The dashboard context object (view):
+
+```js
+{ client:
+   { name: 'DWYL',
+     jobs: [ '5', 'AVXuK5DDzX7K12nNn-mp', '1' ],
+     logoUrl: '/assets/img/square-global-m-logo.png',
+     possibleNames: [ 'Do WYL' ],
+     createdAt: 1465241341452,
+     accountManager: '5',
+     terms: 18,
+     contactName: 'Bob',
+     contactEmail: 'bob@gmail.com',
+     contactPhone: '000001',
+     active: false,
+     id: '1' },
+  owner:
+   { email: 'bob@something.com',
+     active: false,
+     admin: false,
+     idGoogle: '123',
+     image: 'https://image.com',
+     idWebsite: '44',
+     names:
+      { firstname: 'Mario',
+        fullname: 'Mario Bros',
+        lastname: 'Bros',
+        linkedinName: 'nameLI' },
+     phones: { office: '0207 000 000', mobile: '079 777 777' },
+     role: 'Director',
+     linkedin: 'https://linkedin.com/bob',
+     dev: false,
+     id: '5' },
+  title: 'Dashboard',
+  jobs:
+   { '4': { title: 'Node.js Developer', salary: '50000', stages: [Object] },
+     'AVXuK5DDzX7K12nNn-mp': { title: 'Test job', salary: '', stages: [Object] } } }
+
+```
+
 
 But before displaying the dashboard the clients can define the stages of the jobs processes
 
