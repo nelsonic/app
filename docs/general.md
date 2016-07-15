@@ -1,6 +1,6 @@
 ### General information
 
-## Tech choices:
+## Tech stack:
 
 - Hapi (http://hapijs.com/)
 - Node.js (https://nodejs.org/en/)
