@@ -154,6 +154,6 @@ databseurl/index/type/_search?pretty
 - [Client-User]('./client-user.md')
 - [Client Dashboard]('./client-user-dashboard.md')
 - [User Dashboard](./user-dashboard.md)
-- Stages
+- [Customise stages by client](./customise-stages.md)
 - [Email](./email.md)
 - Csv-list
