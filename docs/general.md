@@ -36,7 +36,6 @@ Steps to how to run a project, please go to [README](https://github.com/FAC-GM/a
   - **countries** (countries for specific jobs)
   - **sectors** (business sector e.g FinTech)
   - **cv** (candidate's cv)
-  - **toad** ()
   - **gmclients** (clients who owns the job)
   - **gmclientusers** (clients who can access the application - squirrel)
   - **status** (stages for the job e.g Interview)
@@ -157,3 +156,4 @@ databseurl/index/type/_search?pretty
 - [Customise stages by client](./customise-stages.md)
 - [Email](./email.md)
 - Csv-list
+- [Test](./test.md)
