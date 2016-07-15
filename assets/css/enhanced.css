@@ -1,5 +1,5 @@
 .search-btn {
-  width: 100px;
+  width: 60px;
 }
 
 #search-box {
@@ -55,8 +55,8 @@
 
 .headline .initials {
   margin: 8px 8px 0 0;
-  font-size: 0.9em;
-  margin-top: -20px;
+  font-size: 1em;
+  margin-top: -1.563em;
 }
 
 .headline p.mobile {
@@ -110,9 +110,10 @@ aside {
 
 .delete-profile, .delete-profile-confirmation button{
   padding: 5px 10px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border:0 none;
+  border-radius: 0.625em;
 }
 
 /*==============================
@@ -176,15 +177,16 @@ select:focus{
 
 .notes input[type=submit]{
   float: right;
-  background: #424A5D;
+  background: #333;
   padding: 5px 10px;
   border: none;
-  color: #FFD777;
+  border-radius: 0.625em;
+  color: #fff;
 }
 
 .notes input[type=submit]:hover{
-  background: #FFD777;
-  color: #424A5D;
+  background: #fff;
+  color: #333;
   box-shadow:none;
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
@@ -227,11 +229,12 @@ span.close > i.fa-times {
  Login page
 ================================*/
 .container-login {
-  margin-top: 20%;
+  margin-top: 10%;
   width: 450px;
 }
 .container-login > h1 {
-  font-size: 40px;
+  font-size: 2em;
+  margin-bottom: 5%;
 }
 /*==============================
  End Login page
@@ -261,6 +264,12 @@ span.close > i.fa-times {
 /*==============================
  new dashboard
 ================================*/
+.horizontal-dash {
+  border: 0;
+  height: 1px;
+  background: #666;
+}
+
 .new-dash-wrapper {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -279,8 +288,9 @@ span.close > i.fa-times {
   width: 100%;
   padding: 8px;
   margin-top: 10px;
-  border: 1px solid #424A5D;
-  background-color: #424A5D;
+  border: none;
+  border-radius: 0.625em;
+  background-color: #333;
   color: #fff;
   cursor: pointer;
 }
@@ -297,11 +307,11 @@ span.close > i.fa-times {
 
 .pre-section {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
   padding: 20px;
   font-weight: 800;
   font-size: 20px;
-  color: rgba(0, 0, 0, 0.7);
+  color: #333;
 }
 
 .pre-section span {
@@ -330,6 +340,7 @@ span.close > i.fa-times {
 .client-parent {
   height: 150px;
   align-items: center;
+  overflow-y: hidden;
 }
 
 .stage-child, .client-child {
@@ -351,9 +362,6 @@ span.close > i.fa-times {
   background-color: #fff;
   border: none;
   border-radius: 0;
-  box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
-  -webkit-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
-  -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
 }
 
 .client-child {
@@ -362,9 +370,9 @@ span.close > i.fa-times {
 }
 
 .client-child img {
-  width: 80px;
-  border-radius: 50%;
-  height: 80px;
+  width: 120px;
+  border-radius: 0.625em;
+  height: 120px;
 }
 
 .client-child > form > button {
@@ -391,16 +399,17 @@ span.close > i.fa-times {
 }
 
 .candidate img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   text-align: center;
 }
 
 .delete-status-dash > button {
   margin-left: 80px;
-  border: 1px solid #424A5D;
-  background-color: #424A5D;
-  color: #fff;
+  border: none;
+  background-color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
@@ -430,12 +439,13 @@ span.close > i.fa-times {
 }
 
 .dropbtn, #add-status {
-  background-color: #424A5D;
-  color: white;
+  background-color: #333;
+  color: #fff;
   padding: 10px;
   font-size: 14px;
   min-width: 160px;
   border: none;
+  border-radius: 0.625em;
   cursor: pointer;
 }
 
@@ -513,15 +523,15 @@ span.close > i.fa-times {
 }
 
 .list-names-wrapper > div {
-  border: 1px solid #424A5D;
+  border: none;
   padding: 5px;
   margin-top: 4px;
 }
 
 .delete-list-names {
   border: none;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
@@ -529,6 +539,9 @@ span.close > i.fa-times {
   display: none;
 }
 
+.search-form input {
+    width: 12em;
+}
 /*==============================
  End ListNAmes
 ================================*/
@@ -539,11 +552,10 @@ span.close > i.fa-times {
 @media (min-width: 1440px) {
 
   .search-form input {
-    width: 200px;
+    width: 15em;
   }
 
 }
-
 @media (max-width: 1440px) {
 
   .curly-left {
@@ -591,10 +603,6 @@ span.close > i.fa-times {
   .candidate_view img {
     width: 80px;
   }
-
-/* .notes textarea {
-    width: 150px;
-  }*/
 
 	.list-wrapper {
 		width:80%;

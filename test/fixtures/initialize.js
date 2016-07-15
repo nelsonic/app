@@ -17,6 +17,15 @@ var client = new ElasticSearch.Client({
           "emailRaw": {
             "type": "string",
             "index": "not_analyzed"
+          },
+          "email": {
+            "type": "string",
+            "fields": {
+              "original": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
           }
         }
       },
@@ -29,9 +38,16 @@ var client = new ElasticSearch.Client({
           "id": {"type": "string"},
           "fullname": {"type": "string"}
         }
+      },
+      "fullname": {
+        "type": "string",
+         "fields": {
+            "raw": { "type": "string", "index": "not_analyzed"}
+          }
       }
     }
   }
+
   var paramsGmClientUsers = {
     "properties": {
       "email": {

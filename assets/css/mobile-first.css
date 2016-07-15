@@ -1,10 +1,20 @@
 /*==============================
   #GENERAL
 ================================*/
+@font-face {
+  font-family: 'Myriad-Pro';
+  src: url('/assets/fonts/Myriad-Pro_31655.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Myriad-Pro-Bold';
+  src: url('/assets/fonts/Myriad-Pro-Bold_31631.ttf') format('truetype');
+}
+
 html {
-  background-color: #f2f2f2;
-  font: 100%/1.3 'Helvetica', serif;
-  font-family: 'Helvetica', serif;
+  background-color: #fff;
+  font: 100%/1.3 'Myriad-Pro', sans-serif;
+  font-family: 'Myriad-Pro', sans-serif;
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
@@ -29,7 +39,7 @@ header {
   left: 0;
   right: 0;
   z-index: 1002;
-  background-color: #424A5D;
+  background-color: #333;
 }
 
 .highlight {
@@ -38,15 +48,17 @@ header {
 }
 .status-client {
   color: #fff !important;
-  background-color: #ef7b6b;
-  padding: 2px 5px;
+  background-color: #e01919;
+  padding: 2px 6px 2px 6px;
+  border-radius: 0.625em;
 }
 
 .status {
   color: #fff !important;
-  background-color: #424A5D;
-  padding: 2px 5px;
+  background-color: #620d96;
+  padding: 2px 6px 2px 6px;
   margin-top: 10px;
+  border-radius: 0.625em;
 }
 
 .st-profile {
@@ -91,23 +103,33 @@ header {
 
 .search-form input {
   padding: 5px 0;
-  width: 170px;
+  /*width: 12em;*/
+  font-family: 'Myriad-Pro';
+  border-radius: 0.625em;
+  border: none;
+  text-indent: 10px;
+
 }
 
-.search-form > a > i.fa-star, .search-form > a > i.fa-user, .search-form > a > i.fa-tachometer {
+.search-form > a > i.fa-star, .search-form > a > i.fa-tachometer, .search-form > a > i.fa-tachometer {
   margin-top: 0px !important;
 }
 
 .search-btn {
-  background-color: #E4AD28;
+  background-color: #333;
   color:white;
-  padding: 6px 0px;
+  padding: 5px 0px;
   border:0 none;
-  font-weight:bold;
   width: 50px;
 }
+
+.search-btn:focus {
+  outline: none;
+}
+
 .search-btn .fa {
-  color:#424A5D;
+  color:#fff;
+  font-size: 1.5em;
 }
 
 #search-box {
@@ -126,13 +148,14 @@ header {
   float:right;
   margin: 8px 5px 10px;
   font-size: 1.5em;
+  color: #fff;
 }
 
 .home-link {
   float: left;
   margin: 8px 5px 10px;
   font-size: 1.5em;
-  color: #E4AD28;
+  color: #fff;
 }
 
 .fa-paper-plane {
@@ -167,14 +190,6 @@ header {
   margin-top:50px;
 }
 
-.curly-left {
-  color: #B2C463;
-}
-
-.curly-right {
-  color: #90D2CC;
-}
-
 .container{
   margin-bottom:40px;
   padding: 5px;
@@ -188,12 +203,18 @@ header {
 .candidate-box, .client-user-box {
   margin-bottom: 5px;
   padding: 10px;
-  background-color: #fff;
   border: none;
   border-radius: 0;
-  box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
-  -webkit-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
-  -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+}
+
+hr.horizontal-profile {
+  width: 59.375em;
+  border: 0;
+  height: 2px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
 
 .candidate-box .headline, .client-user-box .headline {
@@ -210,7 +231,9 @@ header {
   height: 70px;
   float:left;
   height: auto;
+  margin-right: 10px;
   padding-right: 10px;
+  border-radius:50%;
 }
 
 .headline h1{
@@ -230,15 +253,18 @@ header {
 .headline .initials {
   margin: 4px 4px 0 0;
   padding: 3px 6px;
-  color: #fff;
-  background-color: #424A5D;
+  color: #333;
   letter-spacing: 1px;
   font-size: 0.6em;
   float: right;
 }
 
-i.fa-star, i.fa-user, i.fa-tachometer, i.fa-users, i.fa-plus-circle{
-  color: #E4AD28;
+i.fa-plus-circle {
+  color: #fff;
+}
+
+i.fa-star, i.fa-tachometer, i.fa-users, i.fa-plus-circle {
+  color: #fff;
   border: none;
   float: right;
 }
@@ -291,10 +317,6 @@ ul.nav li:last-child {
   border-right: 1px solid #FFD777;
 }
 
-span {
-  color: #FFD777;
-}
-
 /*.headline h3*/
 .headline h3.email-indicator {
   color: red;
@@ -305,7 +327,8 @@ span {
   float: right;
   margin: 0 10px 0 0 !important;
   padding: 2px 5px !important;
-  background-color: #b2c462;
+  border-radius: 0.625em;
+  background-color: #333;
   color: #fff !important;
   font-weight: 600;
 }
@@ -349,29 +372,36 @@ span {
 }
 
 .title-wrapper .aside-1 {
-  padding-left: 62px;
+  padding-right: 30px;
+  position: fixed;
+  z-index: 2;
+
+}
+.squirrel-logo {
+  width:22px;
+  height:20px;
+  margin: 10px 0 0 48px;
+  position:fixed;
+  z-index:1;
 }
 
-.title-wrapper .aside-2 {
-  font-size: 1.5em;
-  color: #424A5D;
-}
 
 #send-email {
   position: fixed;
   bottom: 10px;
   left: 2%;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 8px 15px;
   z-index: 2;
 }
 
 #send-email:hover, .send-email-form > button:hover, .delete-profile-confirmation button:hover,
 .delete-profile:hover {
-  background-color: #FFD777;
-  color: #424A5D;
+  background-color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
@@ -380,8 +410,18 @@ input[type='checkbox'] {
   transform:scale(1.2, 1.2);
 }
 
-.anchorTop, .anchorBottom {
+.anchorTop{
   text-align: center;
+  position:fixed;
+  top: 45%;
+  right: 2.5%;
+}
+
+.anchorBottom {
+  text-align: center;
+  position:fixed;
+  top: 50%;
+  right: 2.5%;
 }
 
 /*==============================
@@ -398,7 +438,7 @@ input[type='checkbox'] {
 .candidate_view h1 {
   font-size: 1.1em;
   padding: 5px 0;
-  color:rgb(52, 52, 80);
+  color: #333;
 }
 
 .candidate_view h2 {
@@ -463,15 +503,16 @@ input[type='checkbox'] {
 
 #edit-info, #save-info {
   padding: 6px 15px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: 0 none;
+  border-radius: 0.625em;
   cursor: pointer;
   margin-left: 7px;
 }
 #edit-info:hover, #save-info:hover {
-  background-color: #FFD777;
-  color: #424A5D;
+  background-color: #fff;
+  color: #333;
 }
 
 /*==============================
@@ -487,34 +528,36 @@ input[type='checkbox'] {
 
 ul.skills-inline, ul.viewedBy-inline {
   display: inline-block;
-  background-color: #b2c462;
+  background-color: #620d96;
 }
 
 ul.skills-inline {
   padding: 2px 10px 2px 2px;
+  margin-top: 10px;
+  border-radius: 0.625em;
 }
 
 ul.viewedBy-inline {
   padding: 2px 1px 2px 8px;
+  border-radius: 0.625em;
 }
 
 ul.skills-inline li, ul.viewedBy-inline li {
   color: #fff;
+  padding: 3px;
 }
 
 .viewedBy-number {
-  background-color: #FFF;
   margin: 0 6px 0 5px;
-  color: #606C2B !important;
+  color: #fff !important;
   text-align: center;
   font-weight: 600;
   padding: 0 3px;
 }
 
 .skill-level {
-  background-color: #FFF;
-  margin-right: 10px;
-  color: #606C2B!important;
+  margin: 6px;
+  color: #fff!important;
   width: 30px;
   text-align: center;
   font-weight: 600;
@@ -588,19 +631,15 @@ ul.lang li span {
 
 .each, .viewed-each {
   float: left;
-  background-color: #B6C4F3;
+  background-color: #620d96;
   color: #fff;
   padding: 5px;
   margin: 1px;
-  border-radius:5px;
+  border-radius: 0.625em;
 }
 /*==============================
  End Skills
 ================================*/
-.details span {
-  color: #313848;
-}
-
 hr {
   border: none;
   height: 1px;
@@ -629,8 +668,7 @@ aside {
   margin-right: 10px;
   padding: 1px 30px 1px;
   margin-top: 10px;
-  background: #424A5D;
-  color: orange;
+  color: #333;
 }
 
 .page-number {
@@ -639,6 +677,17 @@ aside {
 /*==============================
  Login page
 ================================*/
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  margin-bottom: 30px;
+}
+
 .container-login , .container-error-page{
   margin: 35% auto 0;
   width: 300px;
@@ -649,6 +698,7 @@ aside {
 .container-login > h1, .container-error-page > h2{
   font-size: 25px;
 }
+
 
 /*==============================
  End Login page
@@ -684,6 +734,7 @@ aside {
   width: 50px;
   height: 50px;
   transform: rotate(-90deg);
+  margin-left: 40px;
 }
 
 svg {
@@ -693,7 +744,7 @@ svg {
 
 circle {
   fill: #fff;
-  stroke: #424A5D;
+  stroke: #333;
   stroke-width: 32;
 }
 
@@ -856,7 +907,7 @@ circle {
 .client-job-info > img, .client-job-main-content > ul >img {
   float: left;
   width: 140px;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .client-job-info p {
@@ -886,9 +937,8 @@ circle {
 }
 
 .create-icon {
-  background-color: #424A5D;
   padding: 10px;
-  color: #E4AD28;
+  color: #333;
   position: fixed;
   right: 5%;
   top: 80px;
@@ -906,8 +956,8 @@ circle {
 }
 
 .create-icon:hover, .edit-client:hover, .submit-client:hover {
-  background-color: #E4AD28;
-  color: #424A5D;
+  background-color: #333;
+  color: #fff;
 }
 
 .edit-client {
@@ -1031,14 +1081,14 @@ circle {
 }
 
 .tabs > ul > li:hover{
-  background-color: #E4AD28;
+  background-color: #333;
 	cursor:pointer;
-	color: #424A5D;
+	color: #fff;
 }
 
 .tabs > ul > li.tabActiveHeader{
-  background-color: #424A5D;
-  color: #E4AD28;
+  background-color: #333;
+  color: #fff;
 	cursor:pointer;
 }
 
@@ -1048,7 +1098,8 @@ circle {
   top: 0;
   padding: 3px 6px;
   color: #fff;
-  background-color: #424A5D;
+  background-color: #333;
+  border-radius: 0.625em;
 }
 
 .skill-job {
@@ -1056,7 +1107,7 @@ circle {
   padding: 3px 8px;
   margin: 1px;
   border-radius: 2px;
-  background-color: #b2c462;
+  background-color: #620d96;
 }
 
 .job-image {
@@ -1118,9 +1169,10 @@ Upload Cv
 
 .upload-cv-form > button {
   float: right;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 10px;
   margin-top: -5px;
   cursor: pointer;
@@ -1137,9 +1189,10 @@ input.custom-file-input {
 .custom-file-input::before {
   content: 'Browse';
   display: inline-block;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 8px;
   outline: none;
   -webkit-user-select: none;
@@ -1165,9 +1218,10 @@ input.custom-file-input {
 }
 
 .li-save > button, #edit-li {
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -1181,9 +1235,10 @@ input.custom-file-input {
 .send-email-form > button {
   float: right;
   margin-top: -35px;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 5px 10px;
 }
 
@@ -1484,9 +1539,10 @@ Vacancy
 }
 
 .csv-list-wrapper > form button {
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #333;
+  color: #fff;
   border: none;
+  border-radius: 0.625em;
   padding: 10px 10px;
   cursor: pointer;
   width: 100%;
@@ -1516,9 +1572,10 @@ Vacancy
 }
 
 .number-candidates {
-  background-color: rgba(35, 28, 49, 0.81);
-  color: #FFD777;
-  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 0.625em;
   margin-left: 10px;
 }
 
@@ -1534,8 +1591,8 @@ Vacancy
 
 .label-list button {
   border: none;
-  background-color: #424A5D;
-  color: #FFD777;
+  background-color: #fff;
+  color: #333;
   padding: 5px;
   cursor: pointer;
 }
