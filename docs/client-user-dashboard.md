@@ -1,18 +1,22 @@
-# Overview
+# Client Dashboard - Technical Overview
 
-The dashboard display:
-- A list of jobs
-- For each jobs the list of stages
-- For each stages of a jobs the list of candidates on the stage
+The client dashboard can be accessed as a client user. For more information on this access, please see the [client user documentation](/client-user.md).
+
+In addition to the dashboard, the account manager's contact details are displayed.
+
+The dashboard displays:
+- A list of jobs assigned to that client
+- For each job, a list of stages
+- For each stage of a job, the list of candidates in that stage
 
 The dashboard context object (view):
 
 ```js
 { client:
-   { name: 'DWYL',
+   { name: 'client-name', 
      jobs: [ '5', 'AVXuK5DDzX7K12nNn-mp', '1' ],
      logoUrl: '/assets/img/square-global-m-logo.png',
-     possibleNames: [ 'Do WYL' ],
+     possibleNames: [ 'client-name-ltd' ],
      createdAt: 1465241341452,
      accountManager: '5',
      terms: 18,
@@ -45,22 +49,25 @@ The dashboard context object (view):
 
 ```
 
+## Stages
 
-But before displaying the dashboard the clients can define the stages of the jobs processes
+A client can also define the stages for each job individually.
 
-# Define the stages
+### Defining the stages
 
-A client has the possibility to define the stages for each of her job opportunity from a pre-selected list of stages. **By default all the stages are selected**
+A client is able to define the stages for each of their job opportunities from a pre-selected list of stages. **By default all the stages are selected**.
 
-So we need to add a property to our job objects to define which stages are allowed on the jobs
+A property is added to the job objects to define which stages are allowed in each of the jobs.
 
-The stage object must have an order property which define what is the order of the list of the stages. This order property will help us to define "next" stage of a stage. The order value must be unique!
+The stage object must have an order property which defines what the order of the stages is. This order property will help define the "next" stage of a stage. The order value must be *unique*.
 
 ```
 job.stagesAllowed = [idStage1, idStage2, ...]
 ```
 
-## Display the stages
+Further information on customising the stages can be found in the [documentation here](./client-customise-stages).
+
+### Displaying the stages
 
 ```
 POST /job/stages
@@ -70,18 +77,18 @@ POST /job/stages
 }
 ```
 
-The endpoint reply a page which looks like:
+The endpoint replies with a page that looks like:
 
 - [x] Stage1
 - [x] Stage2
 - [ ] Stage3
-- [x] Stage4 (2 candiates)
+- [x] Stage4 (2 candidates)
 
 save
 
-**A stage can't be unchecked if there are any candidates on this stage!**
+**A stage can't be unchecked if there are any candidates on this stage!** The stage is greyed out to ensure a client is unable to do so.
 
-## Update the stages
+### Updating the stages
 
 ```
 POST /job/stages/endpoint
@@ -92,11 +99,11 @@ POST /job/stages/endpoint
 }
 ```
 
-The endpoint save the new stagesAllowed on the job object
+The endpoint saves the new `stagesAllowed` to the job object.
 
-# Data Structure
+## Data Structure
 
-To display easily the dashboard information with Handlebars we have created the following data structure:
+To easily display the dashboard information with Handlebars, the data structure is as follows:
 
 ```
 {
@@ -109,27 +116,27 @@ To display easily the dashboard information with Handlebars we have created the 
 }
 ```
 
-We then just need to loop of the this main object to display the information:
- - For each jobs
-   - For each stages
-     - Display the candidate
+A loop of this main object displays the following information:
+ - For each job,
+   - For each stage,
+     - Display the candidate.
 
-# Actions on the candidate
+## Actions on the candidate
 
-On the client dashboard, the client has the possibility to update the current stage of a candidate:
-- reject
-- next stage
+On the client dashboard, the client is able to update the stage a candidate is in:
+- Reject
+- Move to next stage
 
-## Reject
+### Reject
 
-Endpoint which define the currentStatus of a candidate for a specific job to reject.For an ajax call the endpoint returns:
+Endpoint which defines the `currentStatus` of a candidate as 'reject' for a specific job. For an ajax call the endpoint returns:
 - 200 if ok
 - 401 if not authorized
 - 404 if the candidate hasn't been found
 
-Otherwise the endpoint change the status to reject and redirect to the client-dasboard endpoint which will refresh the dasboard view.
+Otherwise the endpoint changes the status to `reject` and redirects to the client-dasboard endpoint which will refresh the dashboard view.
 
-A client can't click on the reject button if the candidate is already on the reject stage. The endpoint doesn't have to redefine the reject stage if the candidate is already on this stage
+A client can't click on the reject button if the candidate is already in the reject stage. The endpoint doesn't have to redefine the reject stage if the candidate is already in this stage.
 
 ```
 POST /client-dashboard/reject
@@ -141,11 +148,11 @@ POST /client-dashboard/reject
 }
 ```
 
-## Next stage
+### Next stage
 
-Endpoint which define the current stage of a candidate to the next one. A client can't click on the next button if the candidate is already on the last stage and if the endpoint is called without a next stage defined it must not change the current stage of the candidate
+Endpoint which alters the current stage of a candidate to the next one. A client can't click on the next button if the candidate is already in the last stage - if the endpoint is called without a next stage defined it must not change the current stage of the candidate.
 
 
-# LI
+## LI
 
-The client has the possibility to see the LI candidate profile.
+The client is able to see the candidate's LinkedIn profile by clicking 'LI'.

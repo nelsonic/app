@@ -1,10 +1,12 @@
-## Overview
+## User Dashboard - Technical Overview
 
-The dashboard display:
+The standard user dashboard displays:
 
 - A list of jobs
-- For each jobs the list of the stages
-- For each stages of a jobs the list of candidates
+  + 'Owned' by the logged in user
+  + Where the logged in user has added a candidate to a stage of that job 
+- For each job, the list of the stages in that job
+- For each stage of a job, the list of candidates in that stage
 
 
 Dashboard context object:
@@ -12,7 +14,7 @@ Dashboard context object:
 ```js
 { admin: true,
   clients:
-   [ { name: 'FacTest',
+   [ { name: 'client-name',
        jobs: [Object],
        logoUrl: '/assets/img/square-global-m-logo.png',
        possibleNames: [Object],
@@ -32,7 +34,7 @@ Dashboard context object:
        names: [Object],
        phones: [Object],
        role: 'Developer',
-       linkedin: 'https://www.linkedin.com/in/simonlab',
+       linkedin: 'https://www.linkedin.com/in/candidateUserUrl',
        active: true,
        admin: true,
        dev: false,
@@ -69,10 +71,11 @@ Dashboard context object:
 
 ```
 
-List of endpoints, please go to [dashboard](https://github.com/FAC-GM/app/blob/master/lib/dashboard.js)
+For the list of endpoints, see [`dashboard.js`](https://github.com/FAC-GM/app/blob/master/lib/dashboard.js).
 
 
 Main features:
-
+- user can view all of their jobs and the candidates that are at the various stages within them
+- user can view any jobs for which they have updated a candidate's status (from one stage to another)
 - user can move the candidate from stage to stage
 - user can delete the candidate from specific job

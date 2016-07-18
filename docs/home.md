@@ -1,26 +1,31 @@
-## Overview (home.js)
+# Home - Technical Overview (home.js)
 
 Display basic overview of the candidate
 
 ## Features:
 
-- basic information about the candidate: fullname, picture, job title, location, company
-- initials of who on the team a candidate is connected to are displayed
-- number of the team memebers who looked at the candidate
-- checkboxes on the left indicate that this candidate has email address or the candidate has been contacted by the team memeber within the last month or the candidate is the client employee
-- email indicator (green, amber, red)
-  - green - email sent over three months ago
-  - amber - email send within three months
-  - red - email send within a month
-- possibility to send email to all of the candidates by clicking Select all - at the top
-- progress stages (client name and stage title), e.g DWYL at Interview
-- rejected status (client name and stage title) e.g DWYL at Interview Rejected
-- client employee indicator  
-- star indicator (favourite candidate)
-- search bar at the top: (fullname, location, company, job title, skills)
-  - multiple search on skills, e.g css, javascript
+- Search bar at the top, allowing for targeted searches on each of 5 fields: fullname, location, company, job title, skills
+  - Multiple skills can be searched for using a comma-delimited query, e.g `css, javascript`
 
-## Example of the data context:
++ For each candidate in the application:
+  - Basic information about the candidate: full name, picture, job title, location, company
+  - Initials of who on the team a candidate is connected 
+  - Number of team members who looked at the candidate on LI using the extension
+  - Progress status (client name and stage title), e.g COMPANY at Interview
+  - Rejected status (client name and stage title) e.g COMPANY at Rejected
+  - Client employee indicator - denotes whether candidate is employee of a client (also prevents them from being emailed)
+  - Star indicator - denotes if a candidate has been favourited
+  - Email indicator (green, amber, red paper aeroplane)
+    - green - email sent over three months ago
+    - amber - email send within three months
+    - red - email send within a month
+
++ Checkboxes to the left of a candidate's image indicate that this candidate has email address and can be contacted throught he application 
+  + If this is missing, a candidate either: has no email address, has been contacted by a team member within the last month or  is the employee of a client
++ Ability to send email to all of the candidates by clicking Select all and then sending an email
++ Up and down arrows to the right are 'jump to top' and 'jump to bottom' shortcuts
+
+## Examples of the data context:
 
 - Candidates:
 
@@ -65,10 +70,10 @@ Display basic overview of the candidate
   - Clients
 
     ```js
-    [{ name: 'DWYL',
+    [{ name: 'client-name',
         jobs: [ '5', 'some id', '1' ],
         logoUrl: '/assets/img/logo.png',
-        possibleNames: [ 'Do WYL' ],
+        possibleNames: [ 'client-name-ltd' ],
         createdAt: 1465241341452,
         accountManager: '5',
         terms: 18,

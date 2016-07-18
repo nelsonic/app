@@ -1,10 +1,23 @@
-### General information
+# General Technical Overview
+
+This document provides a general technical overview of the application. For more information on selected features of import, see:
+- [Authentication](./authentication.md)
+- [Home](./home.md)
+- [Client-User]('./client-user.md')
+- [Client Dashboard]('./client-user-dashboard.md')
+- [User Dashboard](./user-dashboard.md)
+- [Customise stages by client](./customise-stages.md)
+- [Email](./email.md)
+- [Extension]('./extension.md')
+- [Test](./test.md)
+
 
 ## Tech stack:
 
 - Hapi (http://hapijs.com/)
 - Node.js (https://nodejs.org/en/)
 - Handlebars (http://handlebarsjs.com/)
+- CSS (no pre-processors used)
 - Redis database (http://redis.io/)
 - ElasticSearch (https://www.elastic.co/)
 - lab (https://github.com/hapijs/lab)
@@ -12,7 +25,9 @@
 - codecov (https://codecov.io/)
 - nodemon (https://github.com/remy/nodemon)
 
-Steps to how to run a project, please go to [README](https://github.com/FAC-GM/app/blob/master/README.md)
+Note: the preference here has been to use npm scripts over build tools.
+
+Steps on how to run the application: [README](https://github.com/FAC-GM/app/blob/master/README.md)
 
 ## Directory structure
 
@@ -145,16 +160,3 @@ databaseurl/index/type/_search?pretty
 
 - ```GET /permission```
 - ```GET /login```
-
-
-## Basic technical explanations of the selected features
-
-- [Authentication](./Authentication.md)
-- [Home](./home.md)
-- [Client-User]('./client-user.md')
-- [Client Dashboard]('./client-user-dashboard.md')
-- [User Dashboard](./user-dashboard.md)
-- [Customise stages by client](./customise-stages.md)
-- [Email](./email.md)
-- [Extension]('./extension.md')
-- [Test](./test.md)
