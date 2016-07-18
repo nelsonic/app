@@ -599,3 +599,30 @@ describe('Search by skills on haskell list', function () {
     });
   });
 });
+
+describe('create /csv-list/create create a list react-dev', function () {
+
+  it('creates a new list react-dev and redirect the list of list', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+    Server.init(0, function (err, server) {
+
+      const csvFile = "Name,Email\nAla,react@example.com\nMatt,matt@csv.com";
+
+      expect(err).to.not.exist();
+      var options = {
+        method: "POST",
+        url: "/csv-list/create",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true},
+        payload: {listName: "react-dev", csvFile: csvFile}
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(302);
+        expect(res.headers.location).to.equal('/csv-list/list')
+        server.stop(done);
+      });
+    });
+  });
+});
