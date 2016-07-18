@@ -1,11 +1,11 @@
-## Overview
+# Email functionality - Technical Overview
 
-Email functionality allows the gm user sends emails from the platform. User can send multiple emails from the home page by selecting checkboxes next to candidate image or can send individual email.
+Email functionality allows the gm user to send emails from the platform. Users can send multiple emails from the homepage and search page by selecting checkboxes next to candidate images or can send individual email from the candidate's profile pages.
 
-Each of the candidate object has emails property, e.g:
+Each of the candidate objects has an `emails` property, e.g:
 
 ```json
-emails": {
+emails: {
     "properties": {
         "message": {
             "type": "string"
@@ -31,24 +31,18 @@ emails": {
     }
 
 }
-
 ```
 
-Saving above information allow us to track sent emails to the specific candidate and generate following features:
+Saving the above information allows us to track emails sent to specific candidates and generate the following features:
 
 - Three different sent email indicators:
+  + if an email has been sent within a month, a red 'sent icon' is displayed - in the individual's profile this will appear with the text: `Emailed within a month`
+  + if an email has been sent within 3 months time, an amber 'sent icon' is displayed- in the individual's profile this will appear with the text: `Emailed in less than 3 months`
+  + if email has been sent more than 3 months ago, a green 'sent icon' is displayed - in the individual's profile this will appear with the text: `Emailed over 3 months ago`
 
-  - if an email has been sent within a month, we display red 'sent icon' with text: Emailed within a month
-
-  - if an email has been sent within 3 months time, we display amber'sent icon' with text: Emailed in less than 3 months
-
-  - if email has been sent more than 3 months ago: we display green 'sent icon' with text: Emailed over 3 months ago
-
-- Disabled checkbox next to the candidate if the email has been sent within 1 month
+- The email checkbox next to the candidate image is disabled in the homepage and search pages if they have been emailed through the application in the last month.
 
 
 Other features:
-
-- Dynamically populating candidates first names and text ```Hi {name}``` when sending an email in a message area.
-
-- Personal signatures match to all the users are included in the email
+- Dynamically populates candidate's first names and text in the ```Hi {name}``` placeholder text in the email message area when sending an email through the application
+- Personal signatures matching all the users have been coded into the application and are automatically included in the emails sent, based on which gm user is logged into the application when the emails are sent
