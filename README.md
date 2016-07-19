@@ -22,7 +22,7 @@ contacts stored in an ElasticSearch database. Further functionality is [describe
 * Databases:
   * [ElasticSearch](https://www.elastic.co/)
   * [Redis](http://redis.io/)
-  
+
 #### Build tools
 + [Travis CI](http://travis-ci.org) runs on every pull request
 + [codecov](https://codecov.io/) runs test coverage on every pull request
@@ -131,6 +131,8 @@ A running list of the functionality in the app as it becomes available.
 
 + [Login via Google](https://github.com/dwyl/hapi-auth-github), access restricted to specific team members
 
+![google-auth](google-auth.png)
+
 + Initials of who on the team a contact is connected to are displayed
  _(in the example below, David Dupont is connected to our current dev team - Simon L and Anita C)_
 
@@ -160,7 +162,7 @@ A running list of the functionality in the app as it becomes available.
 
 You can search for multiple skills if you separate the each skill with a comma:
 
-![query-skills](wireframes/search_skills_multiple.png)
+![query-skills](wireframes/multiple-skills.png)
 
 + Adding notes to a profile: status, company and note.
 
@@ -205,7 +207,7 @@ You can search for multiple skills if you separate the each skill with a comma:
 
   - if an email has been sent within a month, we display red 'sent icon' with text: Emailed within a month
 
-  ![email-indicator-red](wireframes/email_within_month.png)
+  ![email-indicator-red](wireframes/email-within-month.png)
 
   - if an email has been sent within 3 months time, we display amber'sent icon' with text: Emailed in less than 3 months
 
