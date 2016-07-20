@@ -28,6 +28,7 @@ describe('Complete a profile with all the properties required', function () {
     expect(result.hasOwnProperty('headline')).to.be.equal(true);
     expect(result.hasOwnProperty('contacts')).to.be.equal(true);
     expect(result.hasOwnProperty('experience')).to.be.equal(true);
+    expect(result.hasOwnProperty('listNames')).to.be.equal(true);
     done();
   });
 });
