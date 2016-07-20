@@ -1,4 +1,4 @@
-# GM Contact Management
+# GM Contact Management App
 
 [![Build Status](https://travis-ci.org/FAC-GM/app.svg?branch=master)](https://travis-ci.org/FAC-GM/app)
 [![Code Climate](https://codeclimate.com/github/FAC-GM/app/badges/gpa.svg)](https://codeclimate.com/github/FAC-GM/app)
@@ -7,10 +7,10 @@
 
 ## What?
 
-This application allows specific members of a team to search through
+This desktop application which allows specific members of a team to search through
 contacts stored in an ElasticSearch database. Further functionality is [described below](#functionality).
 
-# How?
+## How?
 
 #### The following technologies are used:
 
@@ -27,11 +27,9 @@ contacts stored in an ElasticSearch database. Further functionality is [describe
 + [Travis CI](http://travis-ci.org) runs on every pull request
 + [codecov](https://codecov.io/) runs test coverage on every pull request
 
-#### Database structure
-The [database schema can be found here](https://github.com/FAC-GM/app/blob/master/DATA.md) along with an example.
+More technical information on the app can be found in the [`technical-docs` folder](./technical-docs), the guide to which is [`general.md`](./technical-docs/general.md).
 
 ## Running the App *Locally*
-
 
 Clone the Git repository from GitHub:
 
@@ -129,95 +127,67 @@ Now visit http://localhost:8000 in your browser to view the site.
 
 A running list of the functionality in the app as it becomes available.
 
+#TODO NAV BAR RUNDOWN
+
 + [Login via Google](https://github.com/dwyl/hapi-auth-github), access restricted to specific team members
 
 ![google-auth](google-auth.png)
 
-+ Initials of who on the team a contact is connected to are displayed
- _(in the example below, David Dupont is connected to our current dev team - Simon L and Anita C)_
++ #TODO This access is restricted via a users page which allows admin users the right to create or remove users
 
-![Initials-of-who-contact-is-connected-to](wireframes/initials.png)
+### Homepage/search page
+Logging in takes the user to a page that displays a list of the candidates in the application, with the *most recent candidates* that have been added to the application *at the top*. 
 
-* 'Favourite' contact profiles by clicking the grey star in the corner of the profile page
++ The navigation bar across the top allows for targeted searching of candidates through job, full name, location, company and/or skills
 
-![favouriting-a-contact-functionality](wireframes/star2.png)
+#TODO
+![query-search-field](wireframes/search.png)
 
-+ Quickly visualise who has been favourited in the search results (denoted by a yellow star) and see a full list by clicking on the yellow star in the top right hand corner of the app
++ A user can search for multiple skills if they separate the each skill with a comma:
 
-![how-favourites-appear-in-search-results](wireframes/favourite1.png)
+![query-skills](wireframes/multiple-skills.png)
 
-+ Search keywords are highlighted in the search results and profile pages to facilitate quick scanning of the information
++ Search keywords are highlighted in the search results to facilitate quick scanning of the information
+  + This carries through to the profile pages so that the search terms can be found quickly and easily
 
+#TODO
 ![search-keyword-highlighted-in-search](wireframes/keywords.png)
 
 ![search-keyword-highlighted-in-profile](wireframes/candidateProfile.png)
 
-+ Symbol in search results to quickly identify if an email address is available for contact
++ Initials of who on the team a candidate is connected to are displayed within the candidate blocks #TODO
+ _(in the example below, David Dupont is connected to 'Simon L' and 'Anita C')_
+  + Clicking on these initials will return all of the candidates connected to the user whose initials have been clicked  
 
-![email-indicator-screenshot](wireframes/email-indicator-screenshot.png)
+![Initials-of-who-contact-is-connected-to](wireframes/initials.png)
 
-+ Searching query in following fields such as: job, fullname, location, company and skills
-
-![query-search-field](wireframes/search.png)
-
-You can search for multiple skills if you separate the each skill with a comma:
-
-![query-skills](wireframes/multiple-skills.png)
-
-+ Adding notes to a profile: status, company and note.
-
-![query-skills](wireframes/note.png)
-
-+ Status-label display on main page as well as on candidate page
-
++ If a user has been put forward for a role, this will also be displayed in the candidate blocks as well as the candidate's profile
 ![display-status](wireframes/status.png)
 
 ![display-status-candidate-view](wireframes/candidate-view-status.png)
 
+### Searching 
 + Display pie-chart to indicate match-score for search results
 
 - 75% match is shown as below:
 
 ![match-score](wireframes/match-score.png)
 
-+ Display all connection to each user when clicking on initials
-
-- by clicking on initials (top right corner) as shown under:
-
-![initials](wireframes/initials-right.png)
-
-- list of user connections
-
-![all-connections](wireframes/all-connections.png)
-
-+ Dashboard for user's candidate's statuses
-
-![dashboard](wireframes/dash-final.png)
-
-+ Home button at the top of each page
-
-![home](wireframes/home-button.png)
-
-+ Sending emails through the application
-
-  - send emails to multiple candidates by clicking on relevant checkboxes
-  - send email to candidate from candidate view page
-
-+ Email indicator on home page and candidate detailed view page (this feature replaces the basic email indicator)
-
-  - if an email has been sent within a month, we display red 'sent icon' with text: Emailed within a month
-
-  ![email-indicator-red](wireframes/email-within-month.png)
-
-  - if an email has been sent within 3 months time, we display amber'sent icon' with text: Emailed in less than 3 months
-
+### Sending emails through the application
+Emails can be sent either to individuals or to multiple candidates by clicking on relevant checkboxes next to the candidate blocks in the home/search pages
+  - Emails can also be sent to all 'emailable' candidates *on the current page* by using the 'Select all' checkbox at the top
+  - Note emails can also be sent from the candidate's profile page
+  
++ Within the home/search page, email indicators have been added to facilitate a quick at-a-glance understanding of when the candidate was last emailed by *any* user of the application:
+  + if an email has been sent within a month, a red 'sent icon' is displayed - in the individual's profile this will appear with the text: `Emailed within a month`
+    ![email-indicator-red](wireframes/email-within-month.png)
+  + if an email has been sent within 3 months time, an amber 'sent icon' is displayed- in the individual's profile this will appear with the text: `Emailed in less than 3 months`
   ![email-indicator-amber](wireframes/email_within_3months.png)
-
-  - if email has been sent more than 3 months ago: we display green 'sent icon' with text: Emailed over 3 months ago
-
+  + if email has been sent more than 3 months ago, a green 'sent icon' is displayed - in the individual's profile this will appear with the text: `Emailed over 3 months ago`
   ![email-indicator-green](wireframes/email_over_3months.png)
 
-+ Personal signatures match to all the users are included in the email
+
++ Each email will carry the personal signature hard-coded into the app
 
   ![email-dash-signature](wireframes/email-dash.png)
 
@@ -230,6 +200,35 @@ You can search for multiple skills if you separate the each skill with a comma:
   ![client-employee-indicator](wireframes/kayak.png)
 
   - disabled email checkbox for client employee and candidate with status prevents accidently sending email
+
+
+
+* #TODO 'Favourite' contact profiles by clicking the grey star in the corner of the profile page
+
+![favouriting-a-contact-functionality](wireframes/star2.png)
+
++ Quickly visualise who has been favourited in the search results (denoted by a yellow star) and see a full list by clicking on the yellow star in the top right hand corner of the app
+
+![how-favourites-appear-in-search-results](wireframes/favourite1.png)
+
+### Candidate profiles
+
+
++ Adding notes to a profile: status, company and note.
+
+![query-skills](wireframes/note.png)
+
+
+## User dashboard
+
++ Dashboard for user's candidate's statuses
+
+![dashboard](wireframes/dash-final.png)
+
++ Home button at the top of each page
+
+![home](wireframes/home-button.png)
+
 
 + Merging candidates coming from the website
 
