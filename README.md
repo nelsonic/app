@@ -127,33 +127,40 @@ Now visit http://localhost:8000 in your browser to view the site.
 
 A running list of the functionality in the app as it becomes available.
 
-#TODO NAV BAR RUNDOWN
-
 + [Login via Google](https://github.com/dwyl/hapi-auth-github), access restricted to specific team members
 
 ![google-auth](google-auth.png)
 
 + #TODO This access is restricted via a users page which allows admin users the right to create or remove users
 
-### Homepage/search page
+### Homepage/search page navigation
 Logging in takes the user to a page that displays a list of the candidates in the application, with the *most recent candidates* that have been added to the application *at the top*. 
 
-+ The navigation bar across the top allows for targeted searching of candidates through job, full name, location, company and/or skills
++ The navigation bar across the top allows for quick access to the most used functionality, including:
+  + `Home`, a shortcut across all pages ensuring the users can get to the home page quickly
+  + `Clients`, where users can access the full client list as well as add new clients 
+  + `Roles`, where users can access current roles (both active and inactive) and add new roles - these contain a lot of information as [this information will also appear on the website](#linking-to-the-website)
+  + `Organisation's lists`, where lists of candidates can be uploaded, downloaded and kept in one location - this was born from a concept of having 'hot lists'
+  + `Dashboard`, where a user can see all of their clients, roles and candidates who are in certain stages of role applications
+  + `Favourites list`, where as opposed to in the 'organisation's lists', a user can see their own individual favourited candidates
 
-#TODO
-![query-search-field](wireframes/search.png)
+![navigation-bar](wireframes/nav-bar-descriptions.png)
 
-+ A user can search for multiple skills if they separate the each skill with a comma:
+### Searching
+
++ The navigation bar across the top allows for **targeted searching** of candidates through job, full name, location, company and/or skills
+  + A user can search for multiple skills if they separate the each skill with a comma:
 
 ![query-skills](wireframes/multiple-skills.png)
 
 + Search keywords are highlighted in the search results to facilitate quick scanning of the information
   + This carries through to the profile pages so that the search terms can be found quickly and easily
 
-#TODO
 ![search-keyword-highlighted-in-search](wireframes/keywords.png)
 
 ![search-keyword-highlighted-in-profile](wireframes/candidateProfile.png)
+
+### Homepage/search page candidate list
 
 + Initials of who on the team a candidate is connected to are displayed within the candidate blocks #TODO
  _(in the example below, David Dupont is connected to 'Simon L' and 'Anita C')_
@@ -219,7 +226,7 @@ Emails can be sent either to individuals or to multiple candidates by clicking o
 ![query-skills](wireframes/note.png)
 
 
-## User dashboard
+### User dashboard
 
 + Dashboard for user's candidate's statuses
 
@@ -232,13 +239,21 @@ Emails can be sent either to individuals or to multiple candidates by clicking o
 
 + Merging candidates coming from the website
 
-  - following image on teh home page indicates the new candidate coming from the website
+  - following image on the home page indicates the new candidate coming from the website
 
   ![website-candidate](wireframes/website-candidate.png)
 
   - jobs applied by the relevant candidate
 
   ![job-aplication](job-aplication.png)
+  
+### Linking to the website
+The website is maintained by a separate agency but there is a two way link to the website (which exchanges information only - no changes were made by the development team to the website), the details of which can be found in the issues labelled `BH`: https://github.com/FAC-GM/app/labels/BH
++ **Outgoing:** Roles added to the application will appear as new roles on the website (usually with no more than an hour's delay)
+  + This is done by delivering information to an endpoint (location) which the website looks for at regular intervals
++ **Incoming:** Applicants to specific roles will appear in the app as having applied to that job (contained in the roles list)
+  + If the candidate already exists in the app (as identified by their email address), the job will be added to their profile and their CV linked as well (if they have provided one in their application to the job)
+  + If not, a new candidate profile will be created within the app containing their email address and any other key details they provided in their application
 
 
 ## Working with this repo
