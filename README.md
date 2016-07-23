@@ -125,13 +125,11 @@ Now visit http://localhost:8000 in your browser to view the site.
 
 ## Functionality
 
-A running list of the functionality in the app as it becomes available.
-
-+ [Login via Google](https://github.com/dwyl/hapi-auth-github), access restricted to specific team members
++ [Login via Google](https://github.com/dwyl/hapi-auth-github), with access restricted to specific team members
 
 ![google-auth](google-auth.png)
 
-+ #TODO This access is restricted via a users page which allows admin users the right to create or remove users
++ This access is restricted via a users page which allows admin users the right to create or remove users as well as assign admin rights
 
 ### Homepage/search page navigation
 Logging in takes the user to a page that displays a list of the candidates in the application, with the *most recent candidates* that have been added to the application *at the top*. 
@@ -153,32 +151,39 @@ Logging in takes the user to a page that displays a list of the candidates in th
 
 ![query-skills](wireframes/multiple-skills.png)
 
-+ Search keywords are highlighted in the search results to facilitate quick scanning of the information
++ **Search keywords are highlighted in the search results** to facilitate quick scanning of the information
   + This carries through to the profile pages so that the search terms can be found quickly and easily
 
 ![search-keyword-highlighted-in-search](wireframes/keywords.png)
 
 ![search-keyword-highlighted-in-profile](wireframes/candidateProfile.png)
 
-### Homepage/search page candidate list
++ Searching displays a pie-chart to indicate match-score for search results
 
-+ Initials of who on the team a candidate is connected to are displayed within the candidate blocks #TODO
- _(in the example below, David Dupont is connected to 'Simon L' and 'Anita C')_
+- For example, a 66% match is shown as below (*one* of the two names searched for *and* the location are a match):
+
+![match-score](wireframes/match-score.png)
+
+### Homepage/search page candidate list
+The candidate blocks appearing on this page contain a dense amount of information, allowing the user to make informed decisions at a glance.
+
++ **Initials of who on the team a candidate is connected to** are displayed within the candidate blocks
+ _(in the example below, Nick Waller is connected to 'Adam Foster' (AF) and multiple other teammates)_
   + Clicking on these initials will return all of the candidates connected to the user whose initials have been clicked  
 
 ![Initials-of-who-contact-is-connected-to](wireframes/initials.png)
 
-+ If a user has been put forward for a role, this will also be displayed in the candidate blocks as well as the candidate's profile
++ If the candidate is the employee of a GM client (as defined in the 'Clients' portion of the app), the following 'Client Employee' indicator is displayed on the candidate block:
+
+![client-employee-indicator](wireframes/kayak.png)
+
++ **If a user has been put forward for a role**, this will be displayed in the candidate blocks as well as the candidate's profile
 ![display-status](wireframes/status.png)
 
++ This status can also be seen in the candidate profile page, where it can also be edited or deleted
+  + Here, one can see the initials of who has made the latest change to the candidate's status - this also denotes that the users with those initials are the 'owners' of that candidate (this means the candidate will show up on their dashboards)
+  + Candidates can have **multiple statuses** (i.e. be in various stages of *various* roles) and therefore also have **multiple owners**
 ![display-status-candidate-view](wireframes/candidate-view-status.png)
-
-### Searching 
-+ Display pie-chart to indicate match-score for search results
-
-- 75% match is shown as below:
-
-![match-score](wireframes/match-score.png)
 
 ### Sending emails through the application
 Emails can be sent either to individuals or to multiple candidates by clicking on relevant checkboxes next to the candidate blocks in the home/search pages
@@ -194,23 +199,23 @@ Emails can be sent either to individuals or to multiple candidates by clicking o
   ![email-indicator-green](wireframes/email_over_3months.png)
 
 
-+ Each email will carry the personal signature hard-coded into the app
++ Each email will carry the personal signature of the user currently logged into the appear
+  + The overall formatting of this signature has been hard-coded into the app, but the details are edited through the 'Manage Users' functionality
 
   ![email-dash-signature](wireframes/email-dash.png)
 
 + Dynamically populating candidates first names and text ```Hi {name}``` when sending an email in a message area
 
-+ Blacklist feature
++ Blacklist feature:
+  - The email checkbox has been disabled for the following types of candidates to prevent the accidental sending of mass emails to them:
+    + Candidates marked as 'client employee'
+    + Candidates who have a status and are therefore already part-way through a role application
+    
++ *Note: Users without an email address will also have no email checkbox displayed next to their candidate block as it is impossible to email these candidates*
 
-  - if the candidate is the client employee, we display following indicator:
-
-  ![client-employee-indicator](wireframes/kayak.png)
-
-  - disabled email checkbox for client employee and candidate with status prevents accidently sending email
-
-
-
-* #TODO 'Favourite' contact profiles by clicking the grey star in the corner of the profile page
+### Favouriting
+This functionality is a pre-cursor to the 'Organisation lists' (or 'hot lists') and provides the functionality to *favourite* or *star* candidates, creating a lists that are **specific to that user**
++ 'Favourite' contact profiles by clicking the grey star in the corner of the profile page
 
 ![favouriting-a-contact-functionality](wireframes/star2.png)
 
