@@ -158,11 +158,13 @@ Logging in takes the user to a page that displays a list of the candidates in th
 
 ![search-keyword-highlighted-in-profile](wireframes/candidateProfile.png)
 
-+ Searching displays a pie-chart to indicate match-score for search results
++ Searching displays a pie-chart to indicate 'match score' for search results
 
 - For example, a 66% match is shown as below (*one* of the two names searched for *and* the location are a match):
 
 ![match-score](wireframes/match-score.png)
+
+Further details on the agreements around the match score can be found in the backlog here: https://github.com/FAC-GM/app/issues/206 .
 
 ### Homepage/search page candidate list
 The candidate blocks appearing on this page contain a dense amount of information, allowing the user to make informed decisions at a glance.
