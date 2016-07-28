@@ -14,16 +14,20 @@ This document provides a general technical overview of the application. For more
 
 ## Tech stack:
 
-- Hapi (http://hapijs.com/)
+- HTML5, CSS3 (no pre-processors used), Javascript
 - Node.js (https://nodejs.org/en/)
+- hapi.js (http://hapijs.com/)
+  - Main packages: [env2](https://github.com/dwyl/env2), Handlebars, Inert, Vision
+  - Testing: Lab, Code
 - Handlebars (http://handlebarsjs.com/)
-- CSS (no pre-processors used)
-- Redis database (http://redis.io/)
-- ElasticSearch (https://www.elastic.co/)
-- lab (https://github.com/hapijs/lab)
-- travis (https://travis-ci.org/)
-- codecov (https://codecov.io/)
-- nodemon (https://github.com/remy/nodemon)
+* Databases:
+  - [ElasticSearch](https://www.elastic.co/)
+  - [Redis](http://redis.io/)
+  
+- Build tools
+  + [Travis CI](http://travis-ci.org) runs on every pull request
+  + [codecov](https://codecov.io/) runs test coverage on every pull request
+  + nodemon (https://github.com/remy/nodemon)
 
 Note: the preference here has been to use npm scripts over build tools.
 
